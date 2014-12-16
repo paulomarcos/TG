@@ -1,27 +1,27 @@
 +-----------------------------------------------------------------------+
-|																							                          |
-|					//	Tela de Mensagens	S05										                  |
-|																								                        |
-|		// Pequena janela que abre ao clicar						  	 			          |
-|		//	no link Mensagens. Nela poderá conter:{								          |
-|																								                        |
-|	ºNOME_PESSOA lhe enviou uma mensagem;											            |
-|	ºNOME_PROFESSOR corrigiu uma atividade sua;									          |
-|	ºNova atividade foi adicionada à NOME_DISCIPLINA;							        |
-|	ºSua nota de NOME_DISCIPLINA foi adicionada;									        |
-|	ºNovo material adicionado à sua biblioteca de NOME_DISCIPLINA;			  |
-|	 Ainda não há mensagens a serem mostradas;								           	|
-|	ºAs matrículas já estão abertas para as disciplinas;						      |
+|                                                                       |
+|   // Tela de Mensagens S05                                            |
+|                                                                       |
+|		// Pequena janela que abre ao clicar                                |
+|		//	no link Mensagens. Nela poderá conter:{                         |
+|                                                                       |
+|	ºNOME_PESSOA lhe enviou uma mensagem;                                 |
+|	ºNOME_PROFESSOR corrigiu uma atividade sua;                           |
+|	ºNova atividade foi adicionada à NOME_DISCIPLINA;                     |
+|	ºSua nota de NOME_DISCIPLINA foi adicionada;                          |
+|	ºNovo material adicionado à sua biblioteca de NOME_DISCIPLINA;        |
+|	 Ainda não há mensagens a serem mostradas;                            |
+|	ºAs matrículas já estão abertas para as disciplinas;                  |
 |	ºLembrete: O prazo para entrega da atividade NOME_ATIVIDADE é amanhã; |
-|																							                          |
-|	//Para professores:          													                |
-|	ºNOME_PESSOA lhe enviou uma mensagem;											            |
-|	ºNOME_ALUNO fez a atividade NOME_ATIVIDADE;	//possível desabilitar	  |
-|	ºN alunos fizeram a atividade NOME_ATIVIDADE; //após deadline			    |
-|																								                        |
-|																								                        |
-|	//}																					                          |
-|																							                          |
+|                                                                       |
+|	//Para professores:                                                   |
+|	ºNOME_PESSOA lhe enviou uma mensagem;                                 |
+|	ºNOME_ALUNO fez a atividade NOME_ATIVIDADE;	//possível desabilitar    |
+|	ºN alunos fizeram a atividade NOME_ATIVIDADE; //após deadline         |
+|                                                                       |
+|                                                                       |
+| //}                                                                   |
+|                                                                       |
 +-----------------------------------------------------------------------+
 
 

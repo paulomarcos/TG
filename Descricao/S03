@@ -1,28 +1,27 @@
 +-----------------------------------------------------------------------+
-|																							                          |
-|					//	Tela Perfil  Aluno	S03									                  |
-|				Informações Básicas:														                |
-|					Foto:		{Editar Foto}											                    |
-|					Nome:																		                      |
-|				   Perfil:	// Aluno/Professor										              |
-|				   Instituição de Ensino:												                |
-|				   Curso:																	                      |
-|				   Ano:																		                      |
-|					E-mail:                                    					          |
-|						 																		                        |
-|				Informações Adicionais:													                |
-|					CPF:																		                      |
-|					Cidade, Estado, País:												                  |
-|					CEP:															 			                      |
-|				   Telefone:		  													                    |
-|					Celular:																	                    |
-|																								                        |
-|																								                        |
-|					{Editar}																	                    |
-|																								                        |
-|																							                          |
-|																							                          |
-|																							                          |
+|                                                                       |
+|         //  Tela Perfil Aluno S03                                     |
+|       Informações Básicas:                                            |
+|         Foto:   {Editar Foto}                                         |
+|         Nome:                                                         |
+|         Perfil: // Aluno/Professor                                    |
+|         Instituição de Ensino:                                        |
+|         Curso:                                                        |
+|         Ano:                                                          |
+|         E-mail:                                                       |
+|                                                                       |
+|       Informações Adicionais:                                         |
+|         CPF:                                                          |
+|         Cidade, Estado, País:                                         |
+|         CEP:                                                          |
+|         Telefone:                                                     |
+|         Celular:                                                      |
+|                                                                       |
+|                                                                       |
+|         {Editar}                                                      |
+|                                                                       |
+|                                                                       |
+|                                                                       |
 +-----------------------------------------------------------------------+
 
 

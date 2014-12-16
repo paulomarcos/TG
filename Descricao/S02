@@ -1,27 +1,27 @@
 +-----------------------------------------------------------------------+
-|																							                          |
-|					//	Tela Inicial Aluno	S02									                  |
-|				Bem vindo, NOME_ALUNO				Data: dd/mm/yyyy				            |
-|																							                          |
-|					// Opcoes Aluno:	(ficarão no header sempre visíveis)		      |
-|				ºPerfil 		->	[S03]														                |
-|				ºAjuda		-> [S04]														                  |
-|				ºMensagens	-> [S05]														                |
-|				ºSair			->	[S01 + "Você está desconectado"]					        |
-|						 																		                        |
-|					// Abas:	 (ficarão embaixo do header sempre visíveis)		    |
-|				ºAtividades	-> [S06]														                |
-|				ºAgenda		-> [S07]														                  |
-|				ºBiblioteca	->	[S08]													                  |
-|				ºDisciplinas-> [S09]													                  |
-|																								                        |
-|																								                        |
-|																								                        |
-|																								                        |
-|																								                        |
-|																							                          |
-|																							                          |
-|																							                          |
+|                                                                       |
+|       // Tela Inicial Aluno	S02                                       |
+|       Bem vindo, NOME_ALUNO       Data: dd/mm/yyyy                    |
+|                                                                       |
+|       // Opcoes Aluno:   (ficarão no header sempre visíveis)          |
+|       ºPerfil     -> [S03]                                            |
+|       ºAjuda      -> [S04]                                            |
+|       ºMensagens  -> [S05]                                            |
+|       ºSair       -> [S01 + "Você está desconectado"]                 |
+|                                                                       |
+|       // Abas:	 (ficarão embaixo do header sempre visíveis)          |
+|       ºAtividades -> [S06]                                            |
+|       ºAgenda     -> [S07]                                            |
+|       ºBiblioteca	-> [S08]                                            |
+|       ºDisciplinas-> [S09]                                            |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
+|                                                                       |
 +-----------------------------------------------------------------------+
 
 
