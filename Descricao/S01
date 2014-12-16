@@ -6,7 +6,7 @@
 |       {Entrar}             -> [S02]                                   |
 |       {Cadastrar}          -> [S10]                                   |
 |       {Esqueci meu login}  -> [S11]                                   |
-|       {Esqueci minha senha}->	[S11]                                   |
+|       {Esqueci minha senha}-> [S11]                                   |
 |                                                                       |
 |                                                                       |
 |                                                                       |
