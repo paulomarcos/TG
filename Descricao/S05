@@ -1,27 +1,27 @@
 +-----------------------------------------------------------------------+
-|																							   |	
-|					//	Tela de Mensagens	S05										   |			
-|																								|
-|		// Pequena janela que abre ao clicar						  	 			|
-|		//	no link Mensagens. Nela poderá conter:{								|
-|																								|
-|	ºNOME_PESSOA lhe enviou uma mensagem;											|
-|	ºNOME_PROFESSOR corrigiu uma atividade sua;									|
-|	ºNova atividade foi adicionada à NOME_DISCIPLINA;							|
-|	ºSua nota de NOME_DISCIPLINA foi adicionada;									|
-|	ºNovo material adicionado à sua biblioteca de NOME_DISCIPLINA;			|
-|	 Ainda não há mensagens a serem mostradas;									|
-|	ºAs matrículas já estão abertas para as disciplinas;						|
-|	ºLembrete: O prazo para entrega da atividade NOME_ATIVIDADE é amanhã;|	
-|																							   |	
-|	//Para professores:          													   |			
-|	ºNOME_PESSOA lhe enviou uma mensagem;											|
-|	ºNOME_ALUNO fez a atividade NOME_ATIVIDADE;	//possível desabilitar	|
-|	ºN alunos fizeram a atividade NOME_ATIVIDADE; //após deadline			|
-|																								|
-|																								|	
-|	//}																					   |			
-|																							   |
+|																							                          |
+|					//	Tela de Mensagens	S05										                  |
+|																								                        |
+|		// Pequena janela que abre ao clicar						  	 			          |
+|		//	no link Mensagens. Nela poderá conter:{								          |
+|																								                        |
+|	ºNOME_PESSOA lhe enviou uma mensagem;											            |
+|	ºNOME_PROFESSOR corrigiu uma atividade sua;									          |
+|	ºNova atividade foi adicionada à NOME_DISCIPLINA;							        |
+|	ºSua nota de NOME_DISCIPLINA foi adicionada;									        |
+|	ºNovo material adicionado à sua biblioteca de NOME_DISCIPLINA;			  |
+|	 Ainda não há mensagens a serem mostradas;								           	|
+|	ºAs matrículas já estão abertas para as disciplinas;						      |
+|	ºLembrete: O prazo para entrega da atividade NOME_ATIVIDADE é amanhã; |
+|																							                          |
+|	//Para professores:          													                |
+|	ºNOME_PESSOA lhe enviou uma mensagem;											            |
+|	ºNOME_ALUNO fez a atividade NOME_ATIVIDADE;	//possível desabilitar	  |
+|	ºN alunos fizeram a atividade NOME_ATIVIDADE; //após deadline			    |
+|																								                        |
+|																								                        |
+|	//}																					                          |
+|																							                          |
 +-----------------------------------------------------------------------+
 
 
@@ -33,12 +33,12 @@ TELA S05
 DE ONDE VEM
    O FLUXO: Botão Mensagens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-DESCRIÇÃO:	 
+DESCRIÇÃO:
 			  	Janela de mensagens que mostra as 6 últimas mensa-
-			  	gens disponíveis, com opção para ver mais no fim 
+			  	gens disponíveis, com opção para ver mais no fim
 			  	da janela.
 
-				Cada link da janela leva à página correspondente.  
+				Cada link da janela leva à página correspondente.
 				Por exemplo, ao clicar na mensagem "NOME_PESSOA
 			   lhe enviou uma mensagem" o usuário será levado à
 				página de conversas do sistema.
@@ -50,8 +50,7 @@ DESCRIÇÃO:
 				nas redes sociais atuais.
 
 				O lembrete para fazer a atividade só aparece caso
-				a atividade esteja incompleta. 
+				a atividade esteja incompleta.
 
 				Novas mensagens podem ser adicionadas caso o sistema
-				veja necessidade. 
-	
+				veja necessidade.

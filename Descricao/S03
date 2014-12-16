@@ -1,28 +1,28 @@
 +-----------------------------------------------------------------------+
-|																							   |	
-|					//	Tela Perfil  Aluno	S03									   |			
-|				Informações Básicas:														|
-|					Foto:		{Editar Foto}											   |
-|					Nome:																		|
-|				   Perfil:	// Aluno/Professor										|
-|				   Instituição de Ensino:												|
-|				   Curso:																	|
-|				   Ano:																		|	
-|					E-mail:                                    					|
-|						 																		|
-|				Informações Adicionais:													|
-|					CPF:																		|
-|					Cidade, Estado, País:												|
-|					CEP:															 			|	
-|				   Telefone:		  													   |			
-|					Celular:																	|
-|																								|
-|																								|
-|					{Editar}																	|
-|																								|	
-|																							   |			
-|																							   |	
-|																							   |
+|																							                          |
+|					//	Tela Perfil  Aluno	S03									                  |
+|				Informações Básicas:														                |
+|					Foto:		{Editar Foto}											                    |
+|					Nome:																		                      |
+|				   Perfil:	// Aluno/Professor										              |
+|				   Instituição de Ensino:												                |
+|				   Curso:																	                      |
+|				   Ano:																		                      |
+|					E-mail:                                    					          |
+|						 																		                        |
+|				Informações Adicionais:													                |
+|					CPF:																		                      |
+|					Cidade, Estado, País:												                  |
+|					CEP:															 			                      |
+|				   Telefone:		  													                    |
+|					Celular:																	                    |
+|																								                        |
+|																								                        |
+|					{Editar}																	                    |
+|																								                        |
+|																							                          |
+|																							                          |
+|																							                          |
 +-----------------------------------------------------------------------+
 
 
@@ -34,18 +34,17 @@ TELA S03
 DE ONDE VEM
    O FLUXO: Link_perfil_aluno
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-DESCRIÇÃO:	 
+DESCRIÇÃO:
 			  	Tela do perfil do aluno. Dispõe todas as informa-
 			  	ções referentes ao aluno que podem ser editáveis.
-			  	 
+
 				O botão Editar Foto abre uma tela em cima da pá-
-				gina, não gerando mudança. 
+				gina, não gerando mudança.
 
 				O botão Editar encaminha a uma página semelhante
 				à S03, entretanto com todas as informações cabí-
-				veis de serem editadas, possuindo os botões de 
+				veis de serem editadas, possuindo os botões de
 				salvar e cancelar alterações, retornando assim
 				à S03.
 
 				Outras informações podem ser adicionadas.
-

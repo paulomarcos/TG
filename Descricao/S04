@@ -1,27 +1,27 @@
 +-----------------------------------------------------------------------+
-|																							   |	
-|					//	Tela de Ajuda	S04											   |			
-|																								|
-|					// Aqui são dispostas informações							   |
-|					//	úteis como FAQ e tutoriais										|
-|					//	de utilização do sistema										|
-|																								|
-|																								|
-|																								|
-|						 																		|
-|																								|
-|																								|
-|																								|
-|																	   						|	
-|																	   						|			
-|																								|
-|																								|
-|																								|
-|																								|
-|																								|	
-|																							   |			
-|																							   |	
-|																							   |
+|																							                          |
+|					//	Tela de Ajuda	S04											                    |
+|																								                        |
+|					// Aqui são dispostas informações							                |
+|					//	úteis como FAQ e tutoriais										            |
+|					//	de utilização do sistema										              |
+|																								                        |
+|																								                        |
+|																								                        |
+|						 																		                        |
+|																								                        |
+|																								                        |
+|																								                        |
+|																	   					                         	|
+|																	   						                        |
+|																								                        |
+|																								                        |
+|																								                        |
+|																								                        |
+|																								                        |
+|																							                          |
+|																							                          |
+|																							                          |
 +-----------------------------------------------------------------------+
 
 
@@ -33,9 +33,8 @@ TELA S04
 DE ONDE VEM
    O FLUXO: Link_ajuda_aluno
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-DESCRIÇÃO:	 
+DESCRIÇÃO:
 			  	Tela de ajuda que contém informações sobre como
 			  	utilizar o sistema de maneira correta para o alu-
 			  	no. Além das perguntas frequentes e um link para
 				contato.
-
