@@ -9,7 +9,7 @@
 |       ºMensagens  -> [S05]                                            |
 |       ºSair       -> [S01 + "Você está desconectado"]                 |
 |                                                                       |
-|       // Abas:	 (ficarão embaixo do header sempre visíveis)          |
+|       // Abas:   (ficarão embaixo do header sempre visíveis)          |
 |       ºAtividades -> [S06]                                            |
 |       ºAgenda     -> [S07]                                            |
 |       ºBiblioteca	-> [S08]                                            |
