@@ -1,0 +1,72 @@
+****** T020-02
+
+00: +--------------------------------------------------------------------------------+
+01: |                                                                                |
+02: |    Dados da escala de trabalho:                                                |
+03: |        Enfermeira: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX                               |
+04: |        Posto de Saúde : XXXXXXXXXXXXXXXXXXXX                                   |
+05: |        Hora Início    : XXXXXXXXXXXXXXXXXXXX                                   |
+06: |        Hora Fim       : XXXXXXXXXXXXXXXXXXXX                                   |
+07: +--------------------------------------------------------------------------------+
+08: |                                                                                |
+09: |    Pacientes em espera de atendimento:                                         |
+10: |                                                                                |
+11: |    NC  Hora    Nome                                                            |
+12: |    XX  hh:mm   XXXXXXXXXXXXXXXXXXXXXXXXX                                       |
+13: |    XX  hh:mm   XXXXXXXXXXXXXXXXXXXXXXXXX                                       |
+14: |    XX  hh:mm   XXXXXXXXXXXXXXXXXXXXXXXXX                                       |
+15: |    XX  hh:mm   XXXXXXXXXXXXXXXXXXXXXXXXX                                       |
+16: |                                                                                |
+17: |                                                                                |
+18: |                                                                                |
+19: |                                                                                |
+    +--------------------------------------------------------------------------------+
+
+
+DE ONDE VEM O FLUXO: 
+     - "T020-01"
+
+FUNÇÃO: Lista os pacientes que estão aguardando atendimento em uma
+escala, um por linha. Ao clicar em um deles, abre o atendimento.
+
+PARÂMETROS DE ENTRADA 
+a) ID_POSSOA (id da enfermeira) de login
+b) ID_ESCALA (T020-01)
+
+FUNCIONAMENTO:
+
+Linha 03: nome da enfermeira (via id_médico do login)
+Linha 04: Posto de saúde (id_escala)
+Linha 05: escala
+Linha 06: escala
+
+Pacientes_em_espera := todos os registros de TFA onde (TFA2 == ID_ESCALA)
+
+Linhas 12 em diante:
+     Para cada paciente em Pacientes_em_espera, crie uma linha (hiperlink) onde
+          NC        : TFA-7 (número de vezes que foi chamado) ["Número de vezes que foi chamado"]
+          Hora      : TFA-5 ["Hora de inclusão na fila"] 
+          Nome      : TP-2 via TFA-3 ["nome do paciente"]
+     FimPara
+
+Observações: 
+             1) Os strings acima entre colchetes "[]" devem ser
+mostrados quando o usuário passar o mouse por cima daquele objeto.
+
+             2) Futuramente, haverão cores em cada linha. As cores de
+cada linha serão determinados por um algoritmo que usa como parâmetros
+a hora e prioridade.
+
+             3) Cada objeto "NC" é um botão. Se o profissional clicar neste
+             botão, as seguintes ações serão feitas:
+              - Janela popup com mensagem "paciente não respondeu à chamada?" [Sim/cancela]
+              - Se clicar "sim", 
+                   - aquela entrada de TFA deve ter seu campo TFA-7 incrementado de 1
+              - janela popup desaparece
+              - atualiza lista de pacientes (deve vir com novo valor de TC para aquele paciente)    
+               
+             4) Se clicar em outra parte da linha (abertura de atendimento)
+                - Janela Popup com a mensagem "confirma abertura de atendimento?" [Sim/Não]
+                - Se sim, vai para T020-03
+                - Esta também deve ser a ação para cancelar atendimento por não comparecimento. 
+

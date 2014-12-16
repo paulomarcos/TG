@@ -1,0 +1,41 @@
++-----------------------------------------------------------------------+
+|																							   |	
+|				// Tela Inicial S01													   |			
+|				|Usuário|																	|
+|				|Senha| 																		|
+|				{Entrar}						-> [S02]										|
+|				{Cadastrar} 				-> [S10]										|
+|				{Esqueci meu login}		-> [S11]										|
+|				{Esqueci minha senha}	->	[S11]										|
+|																							   |	
+|																							   |			
+|																								|
+|																								|
+|																								|
+|																								|
+|																								|
+|																							   |	
+|																							   |			
+|																								|
+|																								|
+|																								|
+|																								|
+|																								|
+|																							   |
++-----------------------------------------------------------------------+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TELA S01
+	Nome:		Tela Inicial Sistema
+	Título:	NOME_SISTEMA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DE ONDE VEM
+   O FLUXO: index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESCRIÇÃO:	 
+			  	Tela inicial do sistema com campos de login e com
+				links de recuperação de senha e cadastro.
+
+				É possível também adicionar campos de ajuda, sobre
+				e outras informações extras.
+

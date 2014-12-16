@@ -1,0 +1,46 @@
+***********************
+Módulo de Triagem
+***********************
+
+Este módulo contém as telas e executas por enfermeiras para
+atendimento de triagem. 
+
+-------------------------------
+As telas aqui são as seguintes:
+
+T020-01: Tela de listagem de pacientes em espera para triagem.
+T020-02: Tela de abertura de triagem. 
+T020-03: Tela de execução de triagem. 
+
+---------------------------------
+
+Este módulo trabalha com as seguintes tabelas: 
+
+TFA: Tabela de Fila de Atendimentos. É a tabela que contém todos os
+pacientes que estão aguardando atendimento. Os atendimentos para
+triagem são os de TFA-2 = Triagem. 
+
+TP: Tabela de Pessoas. Não precisa explicar porque. 
+
+TT: Tabela de Triagem. Quando executado o atendimento de triagem, esta
+é a tabela preenchida. Serão incluídas informações como peso, altura,
+etc. 
+
+TA: Tipo de ação. É usado para preencher os encaminhamentos possíveis
+após a triagem. 
+
+
+------------------------------------
+Fluxo
+
+O fluxo deste módulo começa na "T020-01", que lista todos os pacientes
+na fila de espera para triagem. A enfermeira que executar esta tela
+deve selecionar um paciente e o fluxo passa para a "T020-02".
+
+Uma vez nesta tela, o paciente irá relatar o problema, e a enfermeira
+pode executar uma das seguintes ações:
+
+1) Dispensar. Observado que não há necessidade de atendimento médico.
+2) Agendar para outro dia. Quando não há urgência.
+3) Colocar me fila de atendimento médico. 
+

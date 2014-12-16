@@ -1,0 +1,421 @@
+--------------------------
+1) Tabela de Pessoas (TP)
+--------------------------
+
+Esta tabela contém o cadastro da população. A maior parte dos campos é
+da tabela que hoje chamamos de "gestante". Deverá ter o nome alterado
+de "gestante" para "pessoas".
+
+TP-1  id_pessoa               : pk
+TP-2  nome                    :
+TP-3  data_nasc               : data de nascimento
+TP-4  cartao_sus              : cartão do sus
+TP-5  CPF                     :
+TP-6  cert_nasc               : Certidão de Nascimento
+TP-7  livro_cert_nasc         : Livro de TP-6
+TP-8  folha TP-4              : Folha do livro de TP-7
+TP-9  Identidade              : número RG
+TP-10 Emissão TP-9            : orgão emissor TP-9
+TP-11 Carteira_trabalho       : carteira de trabalho
+TP-12 serie_cart_trab         : série de TP-11
+TP-13 UF_cart_trab            : estado emissor de TP-11
+
+TP-14 nome_mae
+TP-15 endereço
+TP-16 numero
+TP-17 complemento
+TP-18 bairro
+TP-19 cidade
+TP-20 CEP
+TP-21 cod_ibge               : Código do Município(IBGE) 
+TP-22 Telefone
+
+
+TP-23 raca-cor               : Classificação de Raça / Cor (fk de TRC)
+TP-24 nacionalidade
+TP-25 etnia
+
+TP-26 observação             : campo livre
+
+TP-27 Área 
+TP-28 Microárea              
+
+Estes dois últimos campos devem ser incluídos, mas só serão usados se
+houver tempo. 
+
+------------------------------------------------
+Tabela de Raça e Cor (TRC)
+------------------------------------------------
+
+TRC-01 id (pk)
+TRC-02 cod_raça 
+TRC-03 descr_raça 
+
+É uma tabela fixa, com os seguintes valores (cod_raça/descr_raça)
+0-Não Inf., 
+1-Branca, 
+2-Preta, 
+3-Amarela, 
+4-Parda, 
+5-Indígena, 
+9-Ignorada.
+
+Em princípio, não pode ser alterada por ningém. Ao criar o banco, deve
+haver um script que cria a tabela e os campos. 
+
+-----------------------------------------------------
+Tabela de código de municípios do IBGE (TMIBGE)
+-----------------------------------------------------
+
+TMIBGE-1 id (pk)
+TMIBGE-2 cod_ibge
+TMIBGE-3 descr_municipio_ibge
+
+é uma tabela fixa, e grande. Ver em
+"http://www.ibge.gov.br/home/geociencias/areaterritorial/principal.shtm"
+
+Em princípio, não pode ser alterada por ningém. Ao criar o banco, deve
+haver um script que cria a tabela e os campos. 
+
+-----------------------------------------------------
+Tabela de Gestação (TGes)
+-----------------------------------------------------
+
+Neste caso, a gestação é uma especialiação da tabela de pessoas. O
+normal seria uma tabela de gestantes, mas é esquisito quando pensamos
+que a mesma gestante pode ter mais de uma gestação. Aqui, cada
+gestação é única.
+
+TGes-1 id_ges (pk)
+TGes-2 id_pessoa (fk)
+TGes-3 id_ups (fk)
+TGes-4 id_cons (fk)
+
+*** Campos específicos para cada gestação, como lista de exames, entre
+    outros.
+
+
+------------------------------------
+Tabela de Fila de Atendimentos (TFA)
+------------------------------------
+
+A fila de atendimentos é que ordena os pacientes que aguardam
+atendimento em algum dos elementos abertos por "escala". Sendo assim,
+não é possível incluir alguém em uma fila se não tem escala aberta
+para aquela fila. 
+
+TFA-1 fila_id    (pk)
+TFA-2 escala_id  (fk)
+TFA-3 pessoa_id  (fk)
+TFA-4 data_inclusão
+TFA-5 hora_inclusão
+TFA-6 prioridade
+TFA-7 chamadas           : número de vezes que foi chamado
+
+TFA-8 situação           : aguardando triagem, aguardando atendimento
+                           via triagem, aguardando atendimento via
+                           agendamento, em triagem, em atendimento, não presente.
+
+TFA-9 numero_inserção    : quantas vezes o paciente foi reinserido na fila.
+
+---------------------
+TABELA DE ESCALA (TE)
+---------------------
+
+Contém informações sobre a solicitação de escala. 
+
+TE-1 id_escala      (pk) : Chave de identificação da escala. Pode
+                           haver mais de uma.  
+TE-2 numero sequencial   : para manter o registro do histórico de
+                           alterações. 
+TE-3 Ação                : inclusão/alteração/remoção/fechamento
+                           (relacionado com TE-2)
+TE-3 id_posto       (fk) : local onde será executada a escala
+TE-4 id_profissional(fk) : quem está alocado à escala
+TE-5 id_responsável (fk) : quem executou esta entrada 
+TE-6 data_solicitacao    : dia/mes/ano que foi solicitada a escala por (E5)
+TE-7 hora_solicitacao    : HH:MM da solicitação da escala por (E5)
+TE-8 data_execucao       : dia/mes/ano para que será executada a escala
+TE-9 hora_inicio_execucao: HH:MM do início da execução da escala 
+TE-10 hora_fim_execucao  : HH:MM do fim da execução da escala 
+TE-11 tipo escala   (fk) : tipo de escala conforme tabela
+TE-12 Observações        : texto livre para observações e comentários
+                           sobre eventos relacionados com esta escala.
+alterações na escala).
+TE-13 num_atendimentos   : é o número de atendimentos (máximo) que o 
+                           profissional irá realizar. É um número de
+                           referência, e não de restrição.
+
+
+Esta tabela não tem registros apagados. A única coisa que aconece é
+inclusão de novos registros se "sobrepondo" ao registro anterior. Para
+implementar isto, usamos dois campos: TE-2 e TE-3. TE-2 é um número
+sequencial de mudanças sobre uma determinada escala, enquanto que TE-3
+indica qual a mudança. Descrevo abaixo como tratar as estas ações.
+
+1) Inclusão:
+
+Uma nova escala, com TE-2 = 1. 
+
+2) Alteração:
+
+A alteração da escala corresponde a criar uma nova entrada e não
+alterar os dados da entrada já existente. O campo "observações"
+permite explicações. A idéia é poder rastrear quem fez quais
+alterações, quando e porque. 
+
+3) Remoção
+
+A remoção também não apaga nada. Só inclui um registro com TE-3 =
+"remoção". Uma vez "removido", não poderão haver outras
+alterações. Esta escala estará fechada. Não se pode remover uma escala
+concluída (abaixo).
+
+4) Fechamento
+
+É um registro especial de escala. Neste registro, podem ser incluídos
+comentários sobre a escala. Normalmente isto é feito quando a escala
+já terminou, e pode incluir comentários como se o médico faltou,
+porque houveram mais consultas, etc.
+
+------------------------------
+TABELA DE TIPO DE ESCALA (TTE)
+------------------------------
+
+Uma escala pode ser de vários tipos, enumerados aqui. Em princípio, a
+idéia é conter pelo menos agendamento com hora marcada, agendamento
+por demanda e exames. Porém, pode ser mais específico incluindo
+agendamento para gestantes, ou de exames específicos.
+
+Esta tabela pode (deve?) ser alterada somente por enfermeiras e
+coordenadores de saúde. 
+
+TTE-1 id_tipo        (pk) : chave de ident. do tipo
+TTE-2 id_responsável (fk) : profisssional que criou este tipo de escala.
+TTE-3 descricao do TE     : exemplos: "atendimento ambulatorial por
+                            demanda", "triagem", "atendimento
+                            ambulatorial por agenda", etc.
+
+
+----------------------
+Tabela de Triagem (TT)
+----------------------
+
+TT-1. id_triagem (pk) : chave primária desta tabela.
+TT-2. id_pessoa (fk) : 
+TT-3. Data agendamento
+TT-4. Hora agendamento
+TT-5. id_profissional (fk) : profissional que executou a triagem. 
+TT-6. id_tipo_acao (fk) : dispensou, direcionou para atendimento, etc..
+TT-7. observações : comentários adicionais 
+TT-8. prioridade : valor numérico (0..9) para indicar prioridade no
+      atendimento. 
+TT-9. Número de vezes que foi chamado.
+TT-10. Peso 
+TT-11. Altura 
+TT-12. Idade
+TT-13. PA-S (pressão arterial sistólica - a maior)
+TT-14. PA-D (pressão arterial diastólica - a menor)
+TT-15. queixa principal
+TT-16. IMC 
+TT-17. Data atendimento
+TT-18. Hora atendimento
+
+
+---------------------------
+Tabela de Tipo de Ação (TTA)
+---------------------------
+
+São os tipos de ação que o enfermeiro pode anotar no encaminhamento de
+paciente em uma triagem.
+
+TTA-1 id_tipo_acao (pk)
+TTA-2 descricao de acao : Dispensado, Agendamento de Consulta,
+      agend. exames, etc.
+
+------------------------------------
+Tabela de Agendamentos (TA)
+------------------------------------
+
+Um agendamento consiste na marcação de consulta ou exame para data
+futura. Só é possível agendar consulta para escalas abertas. 
+
+TA-1 agendamento_id    (pk)
+TA-2 escala_id  (fk)
+TA-3 pessoa_id  (fk)
+TA-4 ordenador_inclusão (fk) é o profissional que solicitou o agend.
+TA-5 executor_inclusão (fk) é o profissional que executou o agend. 
+TA-6 data_inclusão: data em que foi feito o agendamento
+TA-7 hora_inclusão: hora em que foi feito o agendamento
+TA-8 data_agend: para quando é o agendamento 
+TA-9 hora_agend: hora do agendamento
+TA-10 situação : agendado, apresentou-se, não veio,
+               reagendado, "cancelado pelo usuário"
+
+
+-------------------------------------------------------
+Tabela de Consultas TCons
+-------------------------------------------------------
+
+Cada vez que uma pessoa é atendido em uma UBS, gera-se uma nova
+entrada nesta tabela. As consultas desta tabela são gerais, e não
+específicos por programas (por exemplo, não é aqui que vão as entradas
+de consultas para gestantes).
+
+Para simplificar um pouco, neste momento os campos que vem de anamnese
+para baixo são todos texto livre. Futuramente, novas tabelas serão
+*adicionados* (não irão substituir os atuais). 
+
+Esta tabela reflete o que é um atendimento médico: um profissional
+atende uma pessoa em algum local. 
+
+TCons-1  : id_tcons (pk)
+TCons-2  : id_pessoa (fk)
+TCons-3  : id_ubs (fk)
+TCons-4  : id_profissional (fk)
+TCons-5  : data_consulta
+TCons-6  : hora_consulta
+TCons-7  : anamnese
+TCons-8  : diagnóstico provável
+TCons-9  : procedimentos recomendados
+TCons-10 : prescrição de medicamentos
+TCons-11 : id_fila : fila de origem
+TCons-12 : observações
+
+----------------------------------------------------
+Tabela de Relacionamento entre Gestantes e Consultas (TRGC)
+----------------------------------------------------
+
+TRGC-1 : id_trgc (pk)
+TRGC-2 : id_gestacao (fk)
+TRGC-3 : id_tcons (fk)
+TRGC-4 : numero_consulta
+
+Contém a relação de todas as consultas de todas as gestantes. Com ela,
+é possível obter todas as consultas de cada gestante. o campo TRGC-4 é
+sequencial, o número da consulta executada para aquela gestante. 
+
+----------------------------------------------------
+Tabela de Relacionamento entre Gestantes e Exames (TRGE)
+----------------------------------------------------
+
+TRGE-1 : id_trgc (pk)
+TRGE-2 : id_gestacao (fk)
+TRGE-3 : id_rep (fk)
+TRGE-4 : numero_exame
+
+Contém a relação de todos os exames de cada gestante. O campo TRGC-4 é
+sequencial, o número do exame para aquela gestante.
+
+----------------------------------------------------
+Tabela de Requisição de Exames (TRE)
+----------------------------------------------------T
+TRE-1 id_requisição_exame (pk)
+TRE-2 id_exame_tem (fk)
+TRE-3 id_profissional (fk) : quem pediu o exame
+TRE-4 id_us (fk)
+TRE-5 id_tcons (pk)
+TRE-6 data_requisição
+TRE-7 observação : campo livre 
+TRE-8 descrição exame (para id_exame_tem == "outros").
+
+----------------------------------------------------
+Tabela de Transcrição de Resultado de Exames (TTRE)
+----------------------------------------------------
+
+TTRE-1 id_receb_exame (pk)
+TTRE-2 id_profissional (fk)
+TTRE-3 id_us (fk)
+TTRE-4 data_transcrição
+TTRE-5 hora_transcrição
+TTRE-6 id_laboratório (fk)
+TTRE-7 laudo
+
+------------------------------------------------------
+Relação de exames por paciente (REP)
+------------------------------------------------------
+
+REP-1 id_exame_paciente
+REP-2 id_paciente
+REP-3 id_requisicao_exame
+REP-4 id_transcricao_exame
+
+É nesta relação que estão as tuplas requisição/transcrição de exame é
+associado a cada paciente. A idéia é facilitar a busca de qualquer
+exame por paciente.
+
+-----------------------------------
+Tabela de Laboratórios: TL
+-----------------------------------
+
+Uma entrada especial: outros com id=1. 
+
+TL-1 id (pk)
+TL-2 código laboratório
+TL-3 nome do laboratório
+TL-4 endereço
+TL-5 numero
+TL-6 complemento
+TL-7 bairro
+TL-8 cidade
+TL-9 CEP
+TL-10 Telefone1
+TL-11 Telefone2
+TL-12 Telefone3
+TL-13 Telefone4
+
+
+----------------------------------------
+Tabela de digitalização de exames TDE
+---------------------------------
+
+TDE-1 id (pk)
+TDE-2 id_exame_paciente (fk)
+TDE-3 sequencial
+TDE-4 documento (digitalizado)
+
+Não implementar. É só uma idéia de como armazenar a digitalização de
+exames. O TDE-3 é usado quando forem muitas folhas, e indica a
+numeração dos documentos. 
+
+----------------------------------------
+Tabela de Exames do Município (TEM) 
+---------------------------------------
+
+Esta tabela já tem de vir com alguns exames, pelo menos os que são do
+prenatal. Um campo é obrigatórios: "outros", com id=1. Ele é usado
+quando o médico solicitar um exame que não faz parte do elenco de
+exames do  município.
+
+TEM-1 id_tem (pk)
+TEM-2 código exame
+TEM-3 nome-exame
+
+
+
+----------------------------------------
+Tabela de Vacinas do Município (TVM) 
+---------------------------------------
+
+TVM-1 id_tvm (pk)
+TVM-2 código vacina
+TVM-3 nome vacina
+
+----------------------------------------
+Tabela de Baterias de Exames (TBE)
+----------------------------------------
+
+É uma tabela que contém os nomes de baterias de exames. Funciona em
+conjunto com TREB.
+
+TBE-1 id_tce
+TBE-2 nome_bateria
+
+-------------------------------------------
+Tabela de Relação de exames em bateria (TREB)
+-------------------------------------------
+
+TREB-1  id_treb
+TREB-2  id_tce
+TREB-3  id_tem
+

@@ -1,0 +1,206 @@
+7***********************
+Módulo de Triagem
+***********************
+
+Este módulo contém as telas e executas por enfermeiras para
+atendimento de triagem. 
+
+-------------------------------
+As telas aqui são as seguintes:
+
+T020-01: Tela de listagem de pacientes em espera para triagem.
+T020-02: Tela de abertura de triagem. 
+T020-03: Tela de execução de triagem. 
+
+---------------------------------
+
+Este módulo trabalha com as seguintes tabelas: 
+
+TFA: Tabela de Fila de Atendimentos. É a tabela que contém todos os
+pacientes que estão aguardando atendimento. Os atendimentos para
+triagem são os de TFA-2 = Triagem. 
+
+TP: Tabela de Pessoas. Não precisa explicar porque. 
+
+TT: Tabela de Triagem. Quando executado o atendimento de triagem, esta
+é a tabela preenchida. Serão incluídas informações como peso, altura,
+etc. 
+
+TA: Tipo de ação. É usado para preencher os encaminhamentos possíveis
+após a triagem. 
+
+
+------------------------------------
+Fluxo
+
+O fluxo deste módulo começa na "T020-01", que lista todos os pacientes
+na fila de espera para triagem. A enfermeira que executar esta tela
+deve selecionar um paciente e o fluxo passa para a "T020-02".
+
+Uma vez nesta tela, o paciente irá relatar o problema, e a enfermeira
+pode executar uma das seguintes ações:
+
+1) Dispensar. Observado que não há necessidade de atendimento médico.
+2) Agendar para outro dia. Quando não há urgência.
+3) Colocar me fila de atendimento médico. 
+
+-----------------------------------------------------
+T020-01: Tela de listagem de pacientes em espera (para triagem)
+-----------------------------------------------------
+
+Esta é uma tela acessada via menu, e somente disponível para
+enfermeiras.
+
+Esta é a tela que a enfermeira vê antes de executar o atendimento a um
+paciente. A tela mostra uma lista de pessoas que estão aguardando
+triagem. Pode have mais de uma enfermeira executando a triagem, então
+a mesma lista pode ser vista por mais de uma enfermeira. 
+
+O sistema só ordena a lista por ordem de chegada (data/hora de
+chegada) e mostra esta informação. 
+
+A enfermeira deve selecionar um paciente (clicar sobre a linha com o
+seu nome) para ir para a T020-02. Como mais de uma enfermeira pode
+tentar chamar o mesmo paciente, a operação é atômica (condições de
+corrida).
+
+É necessário estipular uma forma de proceder o "timeout" da triagem de
+um paciente. Para isto, criei o TT-10, que indica quantas vezes um
+paciente já foi chamado. A implementação disto é através de um ícone
+na lista de chamada. Este ícone indica quantas vezes o paciente foi
+chamado. Cada vez que for acionado, ele incrementa TT-10 em 1.
+
+****************************************************************
+DÚVIDA: Uma outra forma é abrir atendimento e lá ter este ícone.
+****************************************************************
+
+Como ele mostra também o número de vezes que foi chamado, o
+responsável pelo atendimento deve abrir consulta e colocar
+explicitamente que o paciente desistiu por não comparecência (TTE-3),
+e registrar a hora que isto aconteceu. 
+
+****************************************************************
+TODO: Considerando agora um paciente que foi retirado da fila por
+incomparecência. Deve haver uma forma de colocá-lo de volta na fila, mas
+para isto preciso primeiro entender como é feito no posto de saúde.
+****************************************************************
+
+-----------------------------------------------------
+T020-02: Tela de abertura de triagem
+-----------------------------------------------------
+
+É a tela de início  da triagem. Quando um paciente for chamado da
+lista, ele será atendido pela enfermeira. Só se chega nesta tela
+através da "T020-01". 
+
+Esta tela mostra os valores de TFA do paciente selecionado para
+atendimento (de "T020-01"). São eles TFA-3 até TFA-9. Não são campos
+editáveis.
+
+Além destas informações, também mostra dois botões: "abertura de
+atendimento" e "cancelamento de atendimento". 
+
+********************************************************************
+Uma opção é ter aqui o botão de "cancelamento por não comparecência"
+********************************************************************
+
+Esta tela não corresponde a abertura de atendimento. Há um botão para
+isto. A idéia da presente tela intermediária é confirmar se o paciente
+que está na frente da enfermeira é o mesmo da linha clicada em
+T020-01. Se for, abre atendimento (T020-03). Se não for, cancela
+(volta para T020-01). Se for "timeout", anota como desistente
+(T020-04).
+
+
+-----------------------------------------------------
+T020-03: Tela de execução de triagem
+-----------------------------------------------------
+
+Esta tela é disparada a partir do botão "abrir atendimento" em
+T020-02. 
+
+Após clicar em "abrir atendimento" (T020-02) e antes de mostrar esta
+tela, as seguintes operações são realizadas:
+
+1) O estado de TFA-8 muda de "em espera de triagem" para "em
+triagem". Isto deve ser feito como operação atômica.
+
+2) um nova janela (ou frame, ou parte inferior desta janela) será
+aberta. Os campos ali contidos são todos editáveis. Pode-se considerar
+que esta tela é nova (seria T020-03). 
+
+Os campos de TT relacionados com esta tela, e o seu prenchimento são
+os seguintes:
+
+TT-2. id_pessoa (fk)         : TFA-3.
+TT-3. Data/Hora chegada      : TFA-4
+
+E os seguintes dados devem ser preenchidos:
+
+TT-4. Data/Hora atendimento : data e hora atuais. 
+TT-5. Dados de triagem (peso, altura, idade, queixa principal, pressão
+      arterial, IMC - este último a calcular). 
+TT-6. id_profissional (fk) : profissinal logado 
+TT-7. id_tipo_acao (fk) : combo de TTA.
+TT-8. observações : comentários adicionais a TT-5.
+TT-9. prioridade : valor numérico (0..9) para indicar prioridade no
+      atendimento. 
+
+Um dos botões da tela irá indicar explicitamente o tipo de ação
+(TT-7). Dependendo do encaminhamento, temos as seguintes:
+
+   1) Dispensa: A enfermeira deve registar no campo observações o
+      motivo da dispensa. Salva o registro e o fluxo retorna para a
+      tela T020-01 com a mensagem "paciente dispensado". 
+
+   2) Consulta de Retorno: nesta opção será marcada uma consulta para
+      outro dia. Eu pensei em não deixar esta opção, que só poderia
+      ser feita pela recepcionista. De qualquer forma, o fluxo volta
+      para a tela T020-01 com a mensagem "solicitação de
+      agendamento". 
+
+   3) Atendimento: Ao acionar esta opção deve aperecer uma listagem
+      das escalas abertas, o número de pacientes em cada uma, o nome
+      do médico e a especialidade (tipo da escala). Estas informações
+      são para ajudar na escolha da enfermeira. Deve haver um botão em
+      cada linha. Ao ser clicado, "insere paciente em fila de
+      atendimento" (veja abaixo)
+
+   4) Cancelar: Neste caso, tem de "desfazer" toda a atualização feita
+      em TT. Tudo tem de voltar ao que era antes, em especial TFA-8,
+      que muda para "em fila de triagem". Acho que só precisa mudar
+      esta campo e nada mais. 
+
+------------------------------------------
+"insere paciente em fila de atendimento"
+
+Aqui será descrito todo o procedimento de inclusão do paciente na fila
+de atendimento indicada pela enfermeira. Ao chegar neste ponto,
+temos as seguintes informações:
+
+1) id_pessoa (TT-2), vinda de T020-01
+
+2) id_escala (TE-1), obtida da lista de escalas (o usuário clicou uma
+                     linha)
+
+Com estas duas informações, todas as infos de TT e TE estão "na
+mão". Com isto, preenche-se os campos de TFA da seguinte forma:
+
+TFA-1 fila_id    (pk)    : automático
+TFA-2 escala_id  (fk)    : TE-1 
+TFA-3 pessoa_id  (fk)    : TT-2
+TFA-4 data_inclusão      : data atual
+TFA-5 hora_inclusão      : hora atual
+TFA-6 prioridade         : TT-9
+TFA-7 chamadas           : 0
+TFA-8 situação           : aguardando atendimento 
+TFA-9 numero_inserção    : 0
+
+Após preencher todos os campos, salva-se o registro. 
+
+Em caso de sucesso, voltar para T020-01 com a mensagem "paciente
+inserido em fila de atendimento".
+
+Em caso de erro, mostrar uma mensagem popup com o erro. 
+
+

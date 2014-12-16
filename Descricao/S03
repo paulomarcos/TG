@@ -1,0 +1,51 @@
++-----------------------------------------------------------------------+
+|																							   |	
+|					//	Tela Perfil  Aluno	S03									   |			
+|				Informações Básicas:														|
+|					Foto:		{Editar Foto}											   |
+|					Nome:																		|
+|				   Perfil:	// Aluno/Professor										|
+|				   Instituição de Ensino:												|
+|				   Curso:																	|
+|				   Ano:																		|	
+|					E-mail:                                    					|
+|						 																		|
+|				Informações Adicionais:													|
+|					CPF:																		|
+|					Cidade, Estado, País:												|
+|					CEP:															 			|	
+|				   Telefone:		  													   |			
+|					Celular:																	|
+|																								|
+|																								|
+|					{Editar}																	|
+|																								|	
+|																							   |			
+|																							   |	
+|																							   |
++-----------------------------------------------------------------------+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TELA S03
+	Nome:		Tela Perfil Aluno
+	Título:	NOME_ALUNO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DE ONDE VEM
+   O FLUXO: Link_perfil_aluno
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESCRIÇÃO:	 
+			  	Tela do perfil do aluno. Dispõe todas as informa-
+			  	ções referentes ao aluno que podem ser editáveis.
+			  	 
+				O botão Editar Foto abre uma tela em cima da pá-
+				gina, não gerando mudança. 
+
+				O botão Editar encaminha a uma página semelhante
+				à S03, entretanto com todas as informações cabí-
+				veis de serem editadas, possuindo os botões de 
+				salvar e cancelar alterações, retornando assim
+				à S03.
+
+				Outras informações podem ser adicionadas.
+

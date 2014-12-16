@@ -1,0 +1,172 @@
+****** T020-03
+
+00: +--------------------------------------------------------------------------------+
+01: |                                                                                |
+02: |      Paciente: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                          |
+03: |      Tipo de Atendimento: XXXXXXXXXXXXXXXXXXXXXXXXXXX                          |
+04: |                                                                                |
+05: |      Triagem:                                                                  |
+06: |          Hora Chegada: HH:mm                                                   |
+07: |          Peso: [   ] Altura: [   ]  Idade: [   ]PA: [   ]/[   ] IMC:XXX.xx     |
+08: |                                                                                |
+09: |          Queixa Principal : [                                                ] |
+10: |                             [                                                ] |
+11: |                             [                                                ] |
+12: |          Observação:        [                                                ] |
+13: |                             [                                                ] |
+14: |                             [                                                ] |
+15: |                                                                                |
+16: |          Ação:              <combo ação>     {escolher escala}                 |
+17: |                                              {remover de escala}               |
+18: |          Prioridade         [   ]                                              |
+19: |                                                                                |
+20: |                                                                                |
+21: |                                                                                |
+22: |                                                                                |
+23: |                                                                                |
+24: |                                                                                |
+25: |                                                                                |
+26: |                                                                                |
+27: |                                                                                |
+28: |                                                                                |
+29: |                                                                                |
+30: +--------------------------------------------------------------------------------+
+31: |     {salvar atendimento}                {finalizar atendimento}                |
+32: |                                                                                |
+    +--------------------------------------------------------------------------------+
+
+DE ONDE VEM O FLUXO: 
+     - "T020-02"
+
+FUNÇÃO: Executa atendimento de triagem para um paciente.
+
+PARÂMETROS DE ENTRADA 
+a) ID_MEDICO (id_médico) de login
+b) ID_PESSOA (T040-02) paciente
+
+FUNCIONAMENTO:
+
+   Linha 02: nome_paciente (TP2 via ID_PESSOA)
+   Linha 03: tipo_atendimento ("triagem")
+   Linhas 06 TFA-9
+
+   Linha 07: Peso:   inteiro. (TT-10)
+   Linha 07: Altura: inteiro. (TT-11)
+   Linha 07: Idade:  inteiro. (TT-12)
+   Linha 07: PA:     dois inteiros (pressão arterial) (TT-13 e TT-14)
+   Linha 07: IMC:    real, calculado pela fórmula (real)Peso/((real)Altura/100.0). 
+   Linha 09: Queixa Principal: Texto livre. (TT-15)
+   Linha 12: Observação: Texto livre. (TT-16)
+   Linha 16: <combo Ação> todas as entradas de TTA. 
+   Linha 16: {escolher fila} Veja ESCOLHER FILA
+   Linha 16: {remover de  escala} Veja REMOVER DE ESCALA
+   Linha 18: Prioridade valor inteiro [0..9]
+
+   Linha 31: botão {salvar atendimento}
+         Abre janela popup "Confirma salvamento"{sim/não}
+         - Se sim, cria novo registro em TT
+           TT-1. automático (se for primeiro salvamento. Se já foi salvo antes, reutilizar o id_triagem)
+           TT-2. ID_PESSOA
+           TT-3. TFA-4
+           TT-4. TFA-5
+           TT-5. id da enfermeira
+           TT-6. id_tipo_ação de <Combo Ação> (linha 16)
+           TT-7. linha 16 (Veja ENCAMINHAMENTO DE AÇÃO, mais abaixo)
+           TT-8. linha 17
+           TT-9. zero
+           TT-10. linha 07 (peso)
+           TT-11. linha 07 (altura)
+           TT-12. linha 07 (idade)
+           TT-13. linha 07 (PA - sistólica)
+           TT-14. linha 07 (PA - diastólica)
+           TT-15. linha 09 
+           TT-16. linha 07 (IMC calculado)
+           TT-17. data atual
+           TT-18. hora atual
+           
+         - Salva registro. Em caso de sucesso, mensagem "registro
+           salvo com sucesso". Em caso de erro, mensagem de
+           erro. Mantém-se na mesma tela.
+
+           Neste momento, temos um registro em TFA e um em TT par
+
+
+   Linha 31: botão {finalizar atendimento}
+         Volta para T020-02
+
+   ESCOLHER FILA
+   -------------
+   
+   Este botão só é ativado quando a ação é "Atendimento Médico" (ou
+   algo parecido). É que neste caso, a enfermeira deve indicar na fila
+   de qual médico (ou melhor, em qual escala) deve inserir o paciente. 
+
+01: +--------------------------------------------------------------------------------------+
+02: |    Indique em qual escala inserir o paciente                                         |
+03: |    Escalas para o posto XXXXXXXXXXXXXXX                                              |
+04: |                                                                                      |
+05: |    Tipo Escala  Início Fim      Profissional               Num Pacientes             |
+06: |    XXXXXXXXXX   HH:mm  HH:mm    XXXXXXXXXXXXXXXXXXXXXXXXX         XX      {inserir}  |
+07: |    XXXXXXXXXX   HH:mm  HH:mm    XXXXXXXXXXXXXXXXXXXXXXXXX         XX      {inserir}  |
+08: |    XXXXXXXXXX   HH:mm  HH:mm    XXXXXXXXXXXXXXXXXXXXXXXXX         XX      {inserir}  |
+09: |    XXXXXXXXXX   HH:mm  HH:mm    XXXXXXXXXXXXXXXXXXXXXXXXX         XX      {inserir}  |
+10: +--------------------------------------------------------------------------------------+
+
+
+As linhas 06 em diante mostram quais as escalas de trabalho dos
+médicos disponíveis. Cada linha tem um botão {inserir} que é quem irá
+inserir o paciente em uma fila. 
+
+         
+Linhas 06 em diante
+       LinhasEscala := todos os registros de TE, tal que (TE-8 == data_atual e TE-3 == posto)
+
+       Para cada entrada de linhasEscala, faça
+            Tipo Escala = TTE-3 via TE-11
+            Início Escala = TE-9 
+            Fim Escala = TE-10
+            Num Pacientes = Contar quantos registros em TFA com (TFA-2 == TE-1)
+            {inserir} Veja INSERIR_EM_FILA
+       fimPara
+Fim Linhas
+
+INSERIR_EM_FILA
+
+Aqui será descrito todo o procedimento de inclusão do paciente na fila
+de atendimento indicada pela enfermeira. Ao chegar neste ponto,
+temos as seguintes informações:
+
+1) id_pessoa (TT-2)
+
+2) id_escala (TE-1)
+
+Com estas duas informações, todas as infos de TT e TE estão "na
+mão". Com isto, preenche-se os campos de TFA da seguinte forma:
+
+TFA-1 fila_id    (pk)    : automático
+TFA-2 escala_id  (fk)    : TE-1 
+TFA-3 pessoa_id  (fk)    : TT-2
+TFA-4 data_inclusão      : data atual
+TFA-5 hora_inclusão      : hora atual
+TFA-6 prioridade         : TT-9
+TFA-7 chamadas           : 0
+TFA-8 situação           : aguardando atendimento 
+TFA-9 numero_inserção    : 0
+
+Após preencher todos os campos, salva-se o registro TFA.
+
+Em caso de sucesso, voltar para T020-01 com a mensagem "paciente
+inserido em fila de atendimento".
+
+Em caso de erro, mostrar uma mensagem popup com o erro. 
+
+
+REMOVER DE ESCALA
+
+Este botão serve para remover o paciente da escala escolhida anteriormente. 
+
+Ao ser clicado, deve procurar em TFA todos os registros com 
+"TFA-3 == PESSOA_ID" e "TFA-8 == aguardando atendimento", e removê-los. 
+
+Em caso de sucesso (encontrou registro e removeu), mensagem "paciente removido da fila com sucesso". 
+Em caso de falha (não encontrou registro), mensagem "paciente não encontrado em fila de atendimento".

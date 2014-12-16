@@ -1,0 +1,94 @@
+****** T020-01
+
+00: +--------------------------------------------------------------------------------+
+01: |                                                                                |
+02: |                                                                                |
+03: |      Selecione a escala de trabalho:                                           |
+04: |      Escalas Abertas para hoje, [xx/xx/xxxx]                                   |
+05: |                                                                                |
+06: |      Unid. Saude      Início Escala   Fim Escala                               |
+07: |      xxxxxxxxxxx      xxxxx           xxxxx                                    |
+08: |      xxxxxxxxxxx      xxxxx           xxxxx                                    |
+09: |      xxxxxxxxxxx      xxxxx           xxxxx                                    |
+10: |                                                                                |
+11: |                                                                                |
+12: |                                                                                | 
+13: |                                                                                |
+14: |                                                                                |
+15: |                                                                                |
+16: |                                                                                |
+17: |                                                                                |
+18: |                                                                                |
+19: |                                                                                |
+20: |                                                                                |
+21: |                                                                                |
+22: |                                                                                |
+23: |                                                                                |
+24: |                                                                                |
+25: |                                                                                |
+26: |                                                                                |
+27: |                                                                                |
+28: |                                                                                |
+29: |                                                                                |
+30: |                                                                                |
+31: |                                                                                |
+32: |                                                                                |
+33: |                                                                                |
+34: |                                                                                |
+35: |                                                                                |
+36: |                                                                                |
+37: |                                                                                |
+38: |                                                                                |
+39: |                                                                                |
+    +--------------------------------------------------------------------------------+
+
+
+
+NOME:    T020-01  
+
+DE ONDE VEM O FLUXO: 
+     - Menu (Escalas de trabalho)
+
+FUNÇÃO: Seleciona qual escala de trabalho da enfermeira deve ser
+aberta. Também lista as demais escalas dos próximos dias. Deve ser a
+tela de abertura de médicos e enfermeiras.
+
+Diferentemetne de T040-01, esta tela não lista a escala de UMA
+enfermeira, mas escalas de QUALQUER enfermeira. A idéia é que duas ou
+mais enfermeiras possam atender à mesma escala.
+
+
+PARÂMETROS DE ENTRADA
+a) ID_ENFERMEIRA (id_pessoa) de login
+
+FUNCIONAMENTO:
+
+Linha 04 (xx/xx/xxxx): Dia, mês e ano atual
+
+Linhas 07 em diante
+       LinhasEscala := todos os registros de TE, tal que (TE-11 == triagem) (TE-8 == data_atual)
+
+       Para cada entrada de linhasEscala, faça
+            Unid. Saúde = nome do posto via TE-3
+            Início Escala = TE-9 
+            Fim Escala = TE-10
+            Se (TE-10 < hora_atual < TE-9), 
+               linha é um hiperlink. (ABERTURA DE ATENDIMENTO EM ESCALA)
+            fimSe
+       fimPara
+Fim Linhas
+
+
+---------------------------------
+ABERTURA DE ATENDIMENTO EM ESCALA
+---------------------------------
+
+Ao clicar neste hiperlink, o profissional está indicando sua intenção
+de iniciar o atendimento naquela escala. Ações:
+
+1) Janela Popup com os dizeres "Confirma abertura de Atendimento?". 
+   Se "sim", T020-02
+
+TODO: Será que tem de pensar em uma forma de visualizar todas as
+enfermeiras que estão atuando na mesma escala. Isto é útil para a tela
+de consulta da fila de atendimentos na recepção. 

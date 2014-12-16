@@ -1,0 +1,49 @@
++-----------------------------------------------------------------------+
+|																							   |	
+|					//	Tela Inicial Aluno	S02									   |			
+|				Bem vindo, NOME_ALUNO				Data: dd/mm/yyyy				|
+|																							   |
+|					// Opcoes Aluno:	(ficarão no header sempre visíveis)		|
+|				ºPerfil 		->	[S03]														|
+|				ºAjuda		-> [S04]														|
+|				ºMensagens	-> [S05]														|
+|				ºSair			->	[S01 + "Você está desconectado"]					|
+|						 																		|
+|					// Abas:	 (ficarão embaixo do header sempre visíveis)		|
+|				ºAtividades	-> [S06]														|
+|				ºAgenda		-> [S07]														|
+|				ºBiblioteca	->	[S08]													   |	
+|				ºDisciplinas-> [S09]													   |			
+|																								|
+|																								|
+|																								|
+|																								|
+|																								|	
+|																							   |			
+|																							   |	
+|																							   |
++-----------------------------------------------------------------------+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TELA S02
+	Nome:		Tela Inicial Aluno
+	Título:	NOME_SISTEMA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DE ONDE VEM
+   O FLUXO: S01
+				Botões retorna_home
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DESCRIÇÃO:	 
+			  	Tela inicial do aluno pós login, disponibilizando
+			  	todas as páginas disponíveis no topo da árvore de
+			  	telas. 
+
+				O link Sair exibe um alerta de que o usuário está
+				desconectado e volta à tela S01.
+			
+				Se possível alertar o aluno dos passos que faltam,
+				como por exemplo completar as informações do perfil,
+				breve tour sobre o sistema caso seja os primeiros
+				logins, se matricular em disciplinas.
+

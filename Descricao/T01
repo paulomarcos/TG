@@ -1,0 +1,20 @@
+
+Tabela Aluno
+
+	Id: int
+
+Informações Básicas:														
+	Foto: ?											   
+	Nome:	String																	
+	Perfil: String 			
+	Instituição de Ensino: String											
+	Curso: String									
+	Ano: String/Year																			
+	E-mail: String                           					
+						 																		
+Informações Adicionais:													
+	CPF: String/CPF																	
+	Cidade, Estado, País: TIMBGE stuff												
+	CEP: String/CEP					 				
+	Telefone: String  													   			
+	Celular: String		
