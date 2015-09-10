@@ -1,0 +1,11 @@
+
+WYSIWYG Rails: TinyMCE
+
+   Installation:
+      http://www.tinymce.com/wiki.php/Installation
+
+   Download:   
+      http://www.tinymce.com/download/download.php
+
+   Creating a plugin:
+      http://www.tinymce.com/wiki.php/Tutorials:Creating_a_plugin
