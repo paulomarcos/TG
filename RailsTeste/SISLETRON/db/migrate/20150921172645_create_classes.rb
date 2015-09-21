@@ -5,6 +5,7 @@ class CreateClasses < ActiveRecord::Migration
       t.integer :ano, :limit => 1
       t.string :turma, :limit => 2
       t.string :descricao, :limit => 140
+      t.references :escola
       t.timestamps
     end
   end

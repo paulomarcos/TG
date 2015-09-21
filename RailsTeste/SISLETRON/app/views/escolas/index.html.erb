@@ -1,0 +1,10 @@
+<div class="campo_escola">
+
+  <% @escolas.each do |e| %>
+    <h3> <%= e.nome %> </h3>
+    <!-- <%= image_tag(e.imagem, :title => e.nome) %> -->
+    <p> Telefone: <%= e.telefone %> </p>
+    <p> Estado: <%= e.estado %> - Cidade: <%= e.cidade %></p>
+  <% end %>
+
+</div>

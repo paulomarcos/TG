@@ -1,4 +1,4 @@
 class Escola < ActiveRecord::Base
-  has many: :classes
-  
+  has_many :classes
+
 end
