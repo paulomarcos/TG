@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/escolas' => 'escolas#index'
-  get '/classes' => 'classes#index'
-
+  get '/turmas' => 'turmas#index'
+  get '/escolas/:id' => 'escolas#show', as: :escola
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

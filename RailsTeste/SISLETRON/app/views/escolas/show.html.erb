@@ -1,0 +1,7 @@
+    <% @tclasses.each do |c| %>
+      <div class="card col-xs-4">
+        <h2><%= c.ano + c.turma %></h2>
+        <p><%= c.descricao %></p>
+        <%= link_to "Veja mais", turma_path(c) %>
+      </div>
+      <% end %>

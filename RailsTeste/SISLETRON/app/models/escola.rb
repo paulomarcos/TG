@@ -1,4 +1,3 @@
 class Escola < ActiveRecord::Base
-  has_many :classes
-
+  has_many :turmas
 end
