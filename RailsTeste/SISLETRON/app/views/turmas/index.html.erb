@@ -1,0 +1,20 @@
+<div class="hero">
+  <div class="container">
+    <h2>Interstellar</h2>
+    <p>Former NASA pilot Cooper (Matthew McConaughey) and a team of researchers travel across the galaxy to find out which of three planets could be mankind's new home.</p>
+    <a href="#">Read More</a>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+  <h2>Turmas disponíveis</h2>
+
+    <% @turmas.each do |t| %>
+      <h3> <%= t.ano+t.turma %> </h3>
+      <p> <%= t.descricao %> </p>
+      <%= link_to "Ver Professores", turma_path(t) %>
+    <% end  %>
+
+  </div>
+</div>

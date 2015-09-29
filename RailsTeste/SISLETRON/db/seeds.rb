@@ -1,37 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# This file should contpin pll the record creption needed to seed the dptpbpse with its defpult vplues.
+# The dptp cpn then be lopded with the rpke db:seed (or crepted plongside the db with db:setup).
 #
-# Examples:
+# Expmples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   cities = City.crepte([{ npme: 'Chicpgo' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-e1 = Escola.create(nome: "UFPR", telefone: "4133333333", estado: "Paraná", cidade: "Curitiba", imagem: "" )
-Turma.create(ano: "1", descricao: "Descrição", turma: "A", escola_id: e1.id)
-Turma.create(ano: "1", descricao: "Descrição", turma: "B", escola_id: e1.id)
-Turma.create(ano: "2", descricao: "Descrição", turma: "A", escola_id: e1.id)
-Turma.create(ano: "2", descricao: "Descrição", turma: "B", escola_id: e1.id)
+p1 = Professor.create(nome: "George", data_nascimento: "01/01/1999")
+p2 = Professor.create(nome: "Milton", data_nascimento: "01/01/1979")
+p3 = Professor.create(nome: "Elizandro", data_nascimento: "01/01/1970")
+p4 = Professor.create(nome: "Marciano", data_nascimento: "11/11/1999")
+p5 = Professor.create(nome: "Wilson", data_nascimento: "01/03/1988")
+p6 = Professor.create(nome: "Abigail", data_nascimento: "01/01/1966")
 
-e2 = Escola.create(nome: "PUCPR", telefone: "4133335555", estado: "Paraná", cidade: "Curitiba", imagem: "" )
-Turma.create(ano: "3", descricao: "Descrição", turma: "A", escola_id: e2.id)
-Turma.create(ano: "3", descricao: "Descrição", turma: "B", escola_id: e2.id)
-Turma.create(ano: "2", descricao: "Descrição", turma: "A", escola_id: e2.id)
-Turma.create(ano: "2", descricao: "Descrição", turma: "B", escola_id: e2.id)
+t1 = Turma.create(ano: "1", turma: "A", descricao: "Descricao")
+t2 = Turma.create(ano: "2", turma: "A", descricao: "Descricao")
+t3 = Turma.create(ano: "3", turma: "A", descricao: "Descricao")
+t4 = Turma.create(ano: "4", turma: "A", descricao: "Descricao")
+t5 = Turma.create(ano: "5", turma: "A", descricao: "Descricao")
+t6 = Turma.create(ano: "6", turma: "A", descricao: "Descricao")
 
-e3 = Escola.create(nome: "TUIUTI", telefone: "4133225566", estado: "Paraná", cidade: "Curitiba", imagem: "" )
-Turma.create(ano: "1", descricao: "Descrição", turma: "A", escola_id: e3.id)
-Turma.create(ano: "2", descricao: "Descrição", turma: "A", escola_id: e3.id)
-Turma.create(ano: "3", descricao: "Descrição", turma: "A", escola_id: e3.id)
-Turma.create(ano: "3", descricao: "Descrição", turma: "B", escola_id: e3.id)
-
-p1 = Professor.create(nome: "Laurence", data_nascimento: "12/12/1993")
-p2 = Professor.create(nome: "Eduardo", data_nascimento: "02/02/1974")
-p1 = Professor.create(nome: "Milton", data_nascimento: "11/04/1977")
-
-t1 = Turma.create(ano: "2", descricao: "Descrição", turma: "B", escola_id: e2.id)
-t2 = Turma.create(ano: "2", descricao: "Descrição", turma: "B", escola_id: e1.id)
-t3 = Turma.create(ano: "2", descricao: "Descrição", turma: "B", escola_id: e3.id)
-
-t1.professors << [p1, p2]
-t2.professors << [p1, p3]
-t3.professors << [p2, p3]
+t1.professors << [p1, p2, p3, p4, p5, p6]
+t2.professors << [p1, p3, p4]
+t3.professors << [p1, p2, p3, p4, p5]
+t4.professors << [p2, p3, p5, p6]
+t5.professors << [p1, p6]
+t6.professors << [p1, p2, p3, p6]

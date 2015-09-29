@@ -11,24 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921181818) do
+ActiveRecord::Schema.define(version: 20150928205749) do
 
-  create_table "classes", force: true do |t|
-    t.string   "nome",       limit: 100
-    t.integer  "ano",        limit: 1
-    t.string   "turma",      limit: 2
-    t.string   "descricao",  limit: 140
+  create_table "professor_turmas", force: true do |t|
+    t.integer  "turma_id"
+    t.integer  "professor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "escola_id"
   end
 
-  create_table "escolas", force: true do |t|
-    t.string   "nome",       limit: 100
-    t.string   "telefone",   limit: 14
-    t.string   "imagem"
-    t.string   "estado"
-    t.string   "cidade"
+  add_index "professor_turmas", ["professor_id"], name: "index_professor_turmas_on_professor_id"
+  add_index "professor_turmas", ["turma_id"], name: "index_professor_turmas_on_turma_id"
+
+  create_table "professors", force: true do |t|
+    t.string   "nome"
+    t.date     "data_nascimento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "turmas", force: true do |t|
+    t.string   "ano"
+    t.string   "turma"
+    t.string   "descricao"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

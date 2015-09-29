@@ -1,0 +1,8 @@
+<h3> <%= @turma.ano+@turma.turma %> </h3>
+<p>  <%= @turma.descricao %> </p>
+
+<h2>Professores</h2>
+<% @professors.each do |p| %>
+  <h3> <%= p.nome %> </h3>
+  <p>  <%= p.data_nascimento %>  </p>
+<% end %>
