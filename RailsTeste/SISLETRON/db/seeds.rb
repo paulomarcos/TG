@@ -13,12 +13,18 @@ p4 = Professor.create(nome: "Marciano", data_nascimento: "11/11/1999")
 p5 = Professor.create(nome: "Wilson", data_nascimento: "01/03/1988")
 p6 = Professor.create(nome: "Abigail", data_nascimento: "01/01/1966")
 
-t1 = Turma.create(ano: "1", turma: "A", descricao: "Descricao")
-t2 = Turma.create(ano: "2", turma: "A", descricao: "Descricao")
-t3 = Turma.create(ano: "3", turma: "A", descricao: "Descricao")
-t4 = Turma.create(ano: "4", turma: "A", descricao: "Descricao")
-t5 = Turma.create(ano: "5", turma: "A", descricao: "Descricao")
-t6 = Turma.create(ano: "6", turma: "A", descricao: "Descricao")
+e1 = Escola.create(nome: "UFPR", telefone: "4133334556")
+e2 = Escola.create(nome: "UTFPR", telefone: "4133234422")
+e3 = Escola.create(nome: "PUCPR", telefone: "4133001155")
+e4 = Escola.create(nome: "Tuiuti", telefone: "4130242753")
+e5 = Escola.create(nome: "Unicuritiba", telefone: "4130234456")
+
+t1 = Turma.create(ano: "1", turma: "A", descricao: "Lorem ipsum dolor sit amet.", escola_id: e1.id)
+t2 = Turma.create(ano: "2", turma: "A", descricao: "Consectetur adipiscing elit.", escola_id: e1.id)
+t3 = Turma.create(ano: "3", turma: "A", descricao: "Aenean rhoncus, mauris fringilla ultrices semper.", escola_id: e2.id)
+t4 = Turma.create(ano: "4", turma: "A", descricao: "Dolor neque vestibulum neque.", escola_id: e2.id)
+t5 = Turma.create(ano: "5", turma: "A", descricao: "Et tempus augue ipsum et magna.", escola_id: e3.id)
+t6 = Turma.create(ano: "6", turma: "A", descricao: "Sed eleifend dolor lectus, vehicula porttitor nibh volutpat eget.", escola_id: e4.id)
 
 t1.professors << [p1, p2, p3, p4, p5, p6]
 t2.professors << [p1, p3, p4]

@@ -1,7 +1,9 @@
-    <% @tclasses.each do |c| %>
-      <div class="card col-xs-4">
-        <h2><%= c.ano + c.turma %></h2>
-        <p><%= c.descricao %></p>
-        <%= link_to "Veja mais", turma_path(c) %>
-      </div>
-      <% end %>
+<h2> <%= @escola.nome %> </h2>
+<p> <%= @escola.telefone %> </p>
+
+<h3>Turmas desta escola:</h3>
+<ul>
+  <% @turmas.each do |t| %>
+    <li> <%= t.ano + t.turma %> </li>
+  <% end %>
+</ul>
