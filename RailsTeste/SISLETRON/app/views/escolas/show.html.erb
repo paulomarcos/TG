@@ -1,9 +1,9 @@
 <h2> <%= @escola.nome %> </h2>
-<p> <%= @escola.telefone %> </p>
+<p>Telefone: <i><%= @escola.telefone %></i> </p>
 
 <h3>Turmas desta escola:</h3>
 <ul>
   <% @turmas.each do |t| %>
-    <li> <%= t.ano + t.turma %> </li>
+    <li> <%= link_to t.ano+t.turma, turma_path(t) %> </li>
   <% end %>
 </ul>

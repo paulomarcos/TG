@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930164604) do
+ActiveRecord::Schema.define(version: 20150930195319) do
+
+  create_table "alunos", force: true do |t|
+    t.string   "nome"
+    t.string   "data_nascimento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "turma_id"
+  end
+
+  add_index "alunos", ["turma_id"], name: "index_alunos_on_turma_id"
 
   create_table "escolas", force: true do |t|
     t.string   "nome"

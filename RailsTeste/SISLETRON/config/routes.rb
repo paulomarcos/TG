@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/alunos' => 'alunos#index'
+  get '/alunos/:id' => 'alunos#show', as: :aluno
   get '/escolas' => 'escolas#index'
   get '/escolas/:id' => 'escolas#show', as: :escola
   get '/turmas' => 'turmas#index'

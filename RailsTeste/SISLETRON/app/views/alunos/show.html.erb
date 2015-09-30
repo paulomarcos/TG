@@ -1,0 +1,3 @@
+<h2> <%= @aluno.nome %> </h2>
+<p>Data de nascimento: <%= @aluno.data_nascimento %> </p>
+<p>Turma: <%= link_to @aluno.turma.ano+@aluno.turma.turma, turma_path(@aluno.turma) %> </p>
