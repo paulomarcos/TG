@@ -5,6 +5,6 @@ class EscolasController < ApplicationController
 
   def show
     @escola = Escola.find(params[:id])
-    @classes = @escola.classes
+    @turmas = @escola.turmas
   end
 end
