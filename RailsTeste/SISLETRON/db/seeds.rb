@@ -26,6 +26,12 @@ t4 = Turma.create(ano: "4", turma: "A", descricao: "Dolor neque vestibulum neque
 t5 = Turma.create(ano: "5", turma: "A", descricao: "Et tempus augue ipsum et magna.", escola_id: e3.id)
 t6 = Turma.create(ano: "6", turma: "A", descricao: "Sed eleifend dolor lectus, vehicula porttitor nibh volutpat eget.", escola_id: e4.id)
 
+
+pj1 = Projeto.create(titulo: "Meio Ambiente", avaliacao: "8/10", descricao: "Lorem ipsum dolor sit amet.")
+pj2 = Projeto.create(titulo: "Desenvolvimento de Jogos", avaliacao: "7/10", descricao: "Consectetur adipiscing elit.")
+pj3 = Projeto.create(titulo: "Empreendedorismo", avaliacao: "9.5/10", descricao: "Aenean rhoncus, mauris fringilla ultrices semper.")
+
+
 a1 = Aluno.create(nome: "Jorge", data_nascimento: "12/12/2002", turma_id: t1.id)
 a2 = Aluno.create(nome: "André", data_nascimento: "12/03/2002", turma_id: t1.id)
 a3 = Aluno.create(nome: "Abigail", data_nascimento: "11/02/2002", turma_id: t1.id)
@@ -69,3 +75,10 @@ t3.professors << [p1, p2, p3, p4, p5]
 t4.professors << [p2, p3, p5, p6]
 t5.professors << [p1, p6]
 t6.professors << [p1, p2, p3, p6]
+
+t1.projetos << [pj1, pj2, pj3]
+t2.projetos << [pj1, pj3]
+t3.projetos << [pj1, pj2]
+t4.projetos << [pj2, pj3]
+t5.projetos << [pj1]
+t6.projetos << [pj1]

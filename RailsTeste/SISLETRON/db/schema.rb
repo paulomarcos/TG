@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930195319) do
+ActiveRecord::Schema.define(version: 20151001173853) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome"
@@ -43,6 +43,24 @@ ActiveRecord::Schema.define(version: 20150930195319) do
   create_table "professors", force: true do |t|
     t.string   "nome"
     t.date     "data_nascimento"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projeto_turmas", force: true do |t|
+    t.integer  "turma_id"
+    t.integer  "projeto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projeto_turmas", ["projeto_id"], name: "index_projeto_turmas_on_projeto_id"
+  add_index "projeto_turmas", ["turma_id"], name: "index_projeto_turmas_on_turma_id"
+
+  create_table "projetos", force: true do |t|
+    t.string   "titulo"
+    t.string   "descricao"
+    t.string   "avaliacao"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

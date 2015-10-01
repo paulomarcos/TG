@@ -1,0 +1,8 @@
+<h2> <%= @projeto.titulo %> </h2>
+<h3> Avaliação: <%= @projeto.avaliacao %> </h3>
+<p>Descrição: <%= @projeto.descricao %> </p>
+
+<h3>Projeto aplicado nas seguintes turmas: </h3>
+<% @turmas.each do |t| %>
+  <p><%= t.ano+t.turma %> </p>
+<% end %>

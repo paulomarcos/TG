@@ -1,0 +1,6 @@
+<h2>Todos os projetos:</h2>
+<ul>
+  <% @projetos.each do |p| %>
+    <li> <%= link_to p.titulo, projeto_path(p) %> </li>
+  <% end %>
+</ul>

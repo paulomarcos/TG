@@ -3306,3 +3306,1034 @@ Processing by TurmasController#show as HTML
   [1m[35mAluno Load (0.1ms)[0m  SELECT "alunos".* FROM "alunos"  WHERE "alunos"."turma_id" = ?  [["turma_id", 4]]
   Rendered turmas/show.html.erb within layouts/application (1.6ms)
 Completed 200 OK in 82ms (Views: 80.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-01 14:14:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/railties-4.1.10/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 54ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/turmas" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+Processing by TurmasController#index as HTML
+  [1m[35mTurma Load (0.2ms)[0m  SELECT "turmas".* FROM "turmas"
+  [1m[36mEscola Load (0.2ms)[0m  [1mSELECT  "escolas".* FROM "escolas"  WHERE "escolas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "escolas".* FROM "escolas"  WHERE "escolas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEscola Load (0.1ms)[0m  [1mSELECT  "escolas".* FROM "escolas"  WHERE "escolas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "escolas".* FROM "escolas"  WHERE "escolas"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEscola Load (0.0ms)[0m  [1mSELECT  "escolas".* FROM "escolas"  WHERE "escolas"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mEscola Load (0.0ms)[0m  SELECT  "escolas".* FROM "escolas"  WHERE "escolas"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered turmas/index.html.erb within layouts/application (74.8ms)
+Completed 200 OK in 335ms (Views: 312.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/escolas.css?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/professor.css?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/turmas.css?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/escolas.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/professor.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-01 14:14:25 -0300
+
+
+Started GET "/turmas/1" for 127.0.0.1 at 2015-10-01 14:14:27 -0300
+Processing by TurmasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTurma Load (0.2ms)[0m  [1mSELECT  "turmas".* FROM "turmas"  WHERE "turmas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT "professors".* FROM "professors" INNER JOIN "professor_turmas" ON "professors"."id" = "professor_turmas"."professor_id" WHERE "professor_turmas"."turma_id" = ?  [["turma_id", 1]]
+  [1m[36mAluno Load (0.2ms)[0m  [1mSELECT "alunos".* FROM "alunos"  WHERE "alunos"."turma_id" = ?[0m  [["turma_id", 1]]
+  Rendered turmas/show.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 128ms (Views: 91.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/turmas/professores" for 127.0.0.1 at 2015-10-01 14:14:34 -0300
+Processing by TurmasController#show as HTML
+  Parameters: {"id"=>"professores"}
+  [1m[35mTurma Load (0.7ms)[0m  SELECT  "turmas".* FROM "turmas"  WHERE "turmas"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Turma with 'id'=professores):
+  app/controllers/turmas_controller.rb:7:in `show'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started GET "/turmas/professors" for 127.0.0.1 at 2015-10-01 14:14:36 -0300
+Processing by TurmasController#show as HTML
+  Parameters: {"id"=>"professors"}
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT  "turmas".* FROM "turmas"  WHERE "turmas"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Turma with 'id'=professors):
+  app/controllers/turmas_controller.rb:7:in `show'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+
+
+Started GET "/turmas/professor" for 127.0.0.1 at 2015-10-01 14:14:38 -0300
+Processing by TurmasController#show as HTML
+  Parameters: {"id"=>"professor"}
+  [1m[35mTurma Load (0.1ms)[0m  SELECT  "turmas".* FROM "turmas"  WHERE "turmas"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Turma with 'id'=professor):
+  app/controllers/turmas_controller.rb:7:in `show'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started GET "/turmas/alunos" for 127.0.0.1 at 2015-10-01 14:14:44 -0300
+Processing by TurmasController#show as HTML
+  Parameters: {"id"=>"alunos"}
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT  "turmas".* FROM "turmas"  WHERE "turmas"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Turma with 'id'=alunos):
+  app/controllers/turmas_controller.rb:7:in `show'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-01 14:14:50 -0300
+
+LoadError (Unable to autoload constant ProfessorsController, expected /home/gother/repos/TG/RailsTeste/SISLETRON/app/controllers/professors_controller.rb to define it):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:481:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/professor" for 127.0.0.1 at 2015-10-01 14:14:52 -0300
+
+ActionController::RoutingError (No route matches [GET] "/professor"):
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.5ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (57.8ms)
+
+
+Started GET "/alunos" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+Processing by AlunosController#index as HTML
+  [1m[35mAluno Load (0.2ms)[0m  SELECT "alunos".* FROM "alunos"
+  Rendered alunos/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/escolas.css?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/escolas.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/professor.css?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/turmas.css?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/professor.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-01 14:15:00 -0300
+
+
+Started GET "/alunos/1" for 127.0.0.1 at 2015-10-01 14:15:06 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1mSELECT  "alunos".* FROM "alunos"  WHERE "alunos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTurma Load (0.1ms)[0m  SELECT  "turmas".* FROM "turmas"  WHERE "turmas"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered alunos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 87ms (Views: 85.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/turmas/1" for 127.0.0.1 at 2015-10-01 14:15:08 -0300
+Processing by TurmasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT  "turmas".* FROM "turmas"  WHERE "turmas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProfessor Load (0.1ms)[0m  SELECT "professors".* FROM "professors" INNER JOIN "professor_turmas" ON "professors"."id" = "professor_turmas"."professor_id" WHERE "professor_turmas"."turma_id" = ?  [["turma_id", 1]]
+  [1m[36mAluno Load (0.1ms)[0m  [1mSELECT "alunos".* FROM "alunos"  WHERE "alunos"."turma_id" = ?[0m  [["turma_id", 1]]
+  Rendered turmas/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProjetos (20151001173559)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "projetos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "avaliacao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151001173559"]]
+  [1m[36m (146.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateProjetoTurmas (20151001173853)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "projeto_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_turma_id" ON "projeto_turmas" ("turma_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_turma_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_turma_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_projeto_id" ON "projeto_turmas" ("projeto_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151001173853"]]
+  [1m[36m (198.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_alunos_on_turma_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_alunos_on_turma_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_turma_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_turma_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_turma_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_turma_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_turmas_on_escola_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_turmas_on_escola_id' AND type='index'
+
+  [1m[36m (146.4ms)[0m  [1mCREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" varchar(255), "created_at" datetime, "updated_at" datetime, "turma_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (146.9ms)[0m  [1mCREATE  INDEX "index_alunos_on_turma_id" ON "alunos" ("turma_id")[0m
+  [1m[35m (149.9ms)[0m  CREATE TABLE "escolas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (150.0ms)[0m  [1mCREATE TABLE "professor_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "professor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (150.3ms)[0m  CREATE  INDEX "index_professor_turmas_on_professor_id" ON "professor_turmas" ("professor_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+[0m
+  [1m[35m (158.4ms)[0m  CREATE  INDEX "index_professor_turmas_on_turma_id" ON "professor_turmas" ("turma_id")
+  [1m[36m (174.4ms)[0m  [1mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (158.4ms)[0m  CREATE TABLE "projeto_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (161.7ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_projeto_id" ON "projeto_turmas" ("projeto_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+
+  [1m[36m (149.5ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_turma_id" ON "projeto_turmas" ("turma_id")[0m
+  [1m[35m (150.0ms)[0m  CREATE TABLE "projetos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "avaliacao" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (158.2ms)[0m  [1mCREATE TABLE "turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ano" varchar(255), "turma" varchar(255), "descricao" varchar(255), "created_at" datetime, "updated_at" datetime, "escola_id" integer) [0m
+  [1m[35m (158.5ms)[0m  CREATE  INDEX "index_turmas_on_escola_id" ON "turmas" ("escola_id")
+  [1m[36m (178.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (175.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (149.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173853')
+  [1m[36m (158.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205735')[0m
+  [1m[35m (167.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173559')
+  [1m[36m (151.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150930164604')[0m
+  [1m[35m (142.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930195319')
+  [1m[36m (150.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929201051')[0m
+  [1m[35m (150.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150928205749')
+  [1m[36m (167.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205745')[0m
+  [1m[35m (158.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930192852')
+  [1m[36m (165.2ms)[0m  [1mCREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" varchar(255), "created_at" datetime, "updated_at" datetime, "turma_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (166.3ms)[0m  [1mCREATE  INDEX "index_alunos_on_turma_id" ON "alunos" ("turma_id")[0m
+  [1m[35m (166.7ms)[0m  CREATE TABLE "escolas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (150.1ms)[0m  [1mCREATE TABLE "professor_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "professor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (159.8ms)[0m  CREATE  INDEX "index_professor_turmas_on_professor_id" ON "professor_turmas" ("professor_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+[0m
+  [1m[35m (149.5ms)[0m  CREATE  INDEX "index_professor_turmas_on_turma_id" ON "professor_turmas" ("turma_id")
+  [1m[36m (166.3ms)[0m  [1mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (166.4ms)[0m  CREATE TABLE "projeto_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (158.6ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_projeto_id" ON "projeto_turmas" ("projeto_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+
+  [1m[36m (157.8ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_turma_id" ON "projeto_turmas" ("turma_id")[0m
+  [1m[35m (158.0ms)[0m  CREATE TABLE "projetos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "avaliacao" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (150.2ms)[0m  [1mCREATE TABLE "turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ano" varchar(255), "turma" varchar(255), "descricao" varchar(255), "created_at" datetime, "updated_at" datetime, "escola_id" integer) [0m
+  [1m[35m (150.1ms)[0m  CREATE  INDEX "index_turmas_on_escola_id" ON "turmas" ("escola_id")
+  [1m[36m (399.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (176.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (158.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173853')
+  [1m[36m (167.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205735')[0m
+  [1m[35m (150.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173559')
+  [1m[36m (158.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150930164604')[0m
+  [1m[35m (150.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930195319')
+  [1m[36m (142.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929201051')[0m
+  [1m[35m (408.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150928205749')
+  [1m[36m (158.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205745')[0m
+  [1m[35m (413.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930192852')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:55.851713"], ["data_nascimento", "1999-01-01"], ["nome", "George"], ["updated_at", "2015-10-01 17:55:55.851713"]]
+  [1m[35m (164.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:55:56.020848"], ["data_nascimento", "1979-01-01"], ["nome", "Milton"], ["updated_at", "2015-10-01 17:55:56.020848"]]
+  [1m[36m (173.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:56.195970"], ["data_nascimento", "1970-01-01"], ["nome", "Elizandro"], ["updated_at", "2015-10-01 17:55:56.195970"]]
+  [1m[35m (149.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:55:56.347020"], ["data_nascimento", "1999-11-11"], ["nome", "Marciano"], ["updated_at", "2015-10-01 17:55:56.347020"]]
+  [1m[36m (148.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:56.497329"], ["data_nascimento", "1988-03-01"], ["nome", "Wilson"], ["updated_at", "2015-10-01 17:55:56.497329"]]
+  [1m[35m (149.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:55:56.648343"], ["data_nascimento", "1966-01-01"], ["nome", "Abigail"], ["updated_at", "2015-10-01 17:55:56.648343"]]
+  [1m[36m (148.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:56.807568"], ["nome", "UFPR"], ["telefone", "4133334556"], ["updated_at", "2015-10-01 17:55:56.807568"]]
+  [1m[35m (148.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:55:56.958015"], ["nome", "UTFPR"], ["telefone", "4133234422"], ["updated_at", "2015-10-01 17:55:56.958015"]]
+  [1m[36m (165.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:57.125195"], ["nome", "PUCPR"], ["telefone", "4133001155"], ["updated_at", "2015-10-01 17:55:57.125195"]]
+  [1m[35m (148.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:55:57.275818"], ["nome", "Tuiuti"], ["telefone", "4130242753"], ["updated_at", "2015-10-01 17:55:57.275818"]]
+  [1m[36m (390.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:57.667755"], ["nome", "Unicuritiba"], ["telefone", "4130234456"], ["updated_at", "2015-10-01 17:55:57.667755"]]
+  [1m[35m (174.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "1"], ["created_at", "2015-10-01 17:55:57.858712"], ["descricao", "Lorem ipsum dolor sit amet."], ["escola_id", 1], ["turma", "A"], ["updated_at", "2015-10-01 17:55:57.858712"]]
+  [1m[36m (167.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "2"], ["created_at", "2015-10-01 17:55:58.028916"], ["descricao", "Consectetur adipiscing elit."], ["escola_id", 1], ["turma", "A"], ["updated_at", "2015-10-01 17:55:58.028916"]]
+  [1m[35m (140.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "3"], ["created_at", "2015-10-01 17:55:58.170856"], ["descricao", "Aenean rhoncus, mauris fringilla ultrices semper."], ["escola_id", 2], ["turma", "A"], ["updated_at", "2015-10-01 17:55:58.170856"]]
+  [1m[36m (140.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "4"], ["created_at", "2015-10-01 17:55:58.313433"], ["descricao", "Dolor neque vestibulum neque."], ["escola_id", 2], ["turma", "A"], ["updated_at", "2015-10-01 17:55:58.313433"]]
+  [1m[35m (140.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "5"], ["created_at", "2015-10-01 17:55:58.455620"], ["descricao", "Et tempus augue ipsum et magna."], ["escola_id", 3], ["turma", "A"], ["updated_at", "2015-10-01 17:55:58.455620"]]
+  [1m[36m (140.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "6"], ["created_at", "2015-10-01 17:55:58.598115"], ["descricao", "Sed eleifend dolor lectus, vehicula porttitor nibh volutpat eget."], ["escola_id", 4], ["turma", "A"], ["updated_at", "2015-10-01 17:55:58.598115"]]
+  [1m[35m (173.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)  [["avaliacao", "8/10"], ["created_at", "2015-10-01 17:55:58.784910"], ["descricao", "Lorem ipsum dolor sit amet."], ["titulo", "Meio Ambiente"], ["updated_at", "2015-10-01 17:55:58.784910"]]
+  [1m[36m (145.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["avaliacao", "7/10"], ["created_at", "2015-10-01 17:55:58.932643"], ["descricao", "Consectetur adipiscing elit."], ["titulo", "Desenvolvimento de Jogos"], ["updated_at", "2015-10-01 17:55:58.932643"]]
+  [1m[35m (165.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)  [["avaliacao", "9.5/10"], ["created_at", "2015-10-01 17:55:59.099941"], ["descricao", "Aenean rhoncus, mauris fringilla ultrices semper."], ["titulo", "Empreendedorismo"], ["updated_at", "2015-10-01 17:55:59.099941"]]
+  [1m[36m (165.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:59.272674"], ["data_nascimento", "12/12/2002"], ["nome", "Jorge"], ["turma_id", 1], ["updated_at", "2015-10-01 17:55:59.272674"]]
+  [1m[35m (326.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:55:59.601027"], ["data_nascimento", "12/03/2002"], ["nome", "André"], ["turma_id", 1], ["updated_at", "2015-10-01 17:55:59.601027"]]
+  [1m[36m (200.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:55:59.802986"], ["data_nascimento", "11/02/2002"], ["nome", "Abigail"], ["turma_id", 1], ["updated_at", "2015-10-01 17:55:59.802986"]]
+  [1m[35m (140.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:55:59.945207"], ["data_nascimento", "06/06/2002"], ["nome", "Arthur"], ["turma_id", 1], ["updated_at", "2015-10-01 17:55:59.945207"]]
+  [1m[36m (140.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:00.087390"], ["data_nascimento", "01/10/2002"], ["nome", "Jennifer"], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:00.087390"]]
+  [1m[35m (141.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:00.230140"], ["data_nascimento", "11/11/2002"], ["nome", "Tabata"], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:00.230140"]]
+  [1m[36m (423.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:00.655233"], ["data_nascimento", "09/08/2002"], ["nome", "Huiz"], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:00.655233"]]
+  [1m[35m (148.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:00.805994"], ["data_nascimento", "05/12/2002"], ["nome", "Madelvino"], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:00.805994"]]
+  [1m[36m (174.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:00.981363"], ["data_nascimento", "12/12/2002"], ["nome", "Cris"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:00.981363"]]
+  [1m[35m (157.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:01.140571"], ["data_nascimento", "12/03/2002"], ["nome", "Pablo"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:01.140571"]]
+  [1m[36m (149.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:01.291203"], ["data_nascimento", "11/02/2002"], ["nome", "Gerian"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:01.291203"]]
+  [1m[35m (140.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:01.433292"], ["data_nascimento", "06/06/2002"], ["nome", "Rafe"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:01.433292"]]
+  [1m[36m (151.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:01.585619"], ["data_nascimento", "01/10/2002"], ["nome", "Tristao"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:01.585619"]]
+  [1m[35m (141.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:01.728296"], ["data_nascimento", "11/11/2002"], ["nome", "Kara"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:01.728296"]]
+  [1m[36m (149.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:01.878986"], ["data_nascimento", "09/08/2002"], ["nome", "Miguitin"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:01.878986"]]
+  [1m[35m (149.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:02.029791"], ["data_nascimento", "05/12/2002"], ["nome", "Madelvo"], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:02.029791"]]
+  [1m[36m (165.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:02.197015"], ["data_nascimento", "12/12/2002"], ["nome", "Diego"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:02.197015"]]
+  [1m[35m (166.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:02.364376"], ["data_nascimento", "12/03/2002"], ["nome", "Andrade"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:02.364376"]]
+  [1m[36m (165.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:02.531634"], ["data_nascimento", "11/02/2002"], ["nome", "Melissa"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:02.531634"]]
+  [1m[35m (157.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:02.690754"], ["data_nascimento", "06/06/2002"], ["nome", "Jefferson"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:02.690754"]]
+  [1m[36m (165.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:02.858317"], ["data_nascimento", "01/10/2002"], ["nome", "Ulisses"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:02.858317"]]
+  [1m[35m (141.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:03.001821"], ["data_nascimento", "11/11/2002"], ["nome", "Modrogo"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:03.001821"]]
+  [1m[36m (148.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:03.152543"], ["data_nascimento", "09/08/2002"], ["nome", "Matapá"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:03.152543"]]
+  [1m[35m (148.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:03.303366"], ["data_nascimento", "05/12/2002"], ["nome", "Larissa"], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:03.303366"]]
+  [1m[36m (165.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:03.470516"], ["data_nascimento", "12/12/2002"], ["nome", "Cordoba"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:03.470516"]]
+  [1m[35m (165.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:03.637908"], ["data_nascimento", "12/03/2002"], ["nome", "Monalisa"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:03.637908"]]
+  [1m[36m (165.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:03.804877"], ["data_nascimento", "11/02/2002"], ["nome", "Linda"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:03.804877"]]
+  [1m[35m (149.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:03.955905"], ["data_nascimento", "06/06/2002"], ["nome", "Edivan"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:03.955905"]]
+  [1m[36m (165.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:04.123279"], ["data_nascimento", "01/10/2002"], ["nome", "Warchal"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:04.123279"]]
+  [1m[35m (290.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:04.415249"], ["data_nascimento", "11/11/2002"], ["nome", "Thiago"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:04.415249"]]
+  [1m[36m (223.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:04.640632"], ["data_nascimento", "09/08/2002"], ["nome", "Yullia"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:04.640632"]]
+  [1m[35m (150.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:04.792588"], ["data_nascimento", "05/12/2002"], ["nome", "Pluto"], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:04.792588"]]
+  [1m[36m (166.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.014074"], ["professor_id", 1], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:05.014074"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.015697"], ["professor_id", 2], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:05.015697"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.016730"], ["professor_id", 3], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:05.016730"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.017927"], ["professor_id", 4], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:05.017927"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.019366"], ["professor_id", 5], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:05.019366"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.020860"], ["professor_id", 6], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:05.020860"]]
+  [1m[36m (155.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.178150"], ["professor_id", 1], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:05.178150"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.179509"], ["professor_id", 3], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:05.179509"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.180477"], ["professor_id", 4], ["turma_id", 2], ["updated_at", "2015-10-01 17:56:05.180477"]]
+  [1m[35m (163.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.345323"], ["professor_id", 1], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:05.345323"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.346536"], ["professor_id", 2], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:05.346536"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.347584"], ["professor_id", 3], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:05.347584"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.348455"], ["professor_id", 4], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:05.348455"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.349325"], ["professor_id", 5], ["turma_id", 3], ["updated_at", "2015-10-01 17:56:05.349325"]]
+  [1m[36m (178.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.529384"], ["professor_id", 2], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:05.529384"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.530736"], ["professor_id", 3], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:05.530736"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.531665"], ["professor_id", 5], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:05.531665"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.532550"], ["professor_id", 6], ["turma_id", 4], ["updated_at", "2015-10-01 17:56:05.532550"]]
+  [1m[36m (154.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.689045"], ["professor_id", 1], ["turma_id", 5], ["updated_at", "2015-10-01 17:56:05.689045"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.690733"], ["professor_id", 6], ["turma_id", 5], ["updated_at", "2015-10-01 17:56:05.690733"]]
+  [1m[36m (171.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.864060"], ["professor_id", 1], ["turma_id", 6], ["updated_at", "2015-10-01 17:56:05.864060"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.865385"], ["professor_id", 2], ["turma_id", 6], ["updated_at", "2015-10-01 17:56:05.865385"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:05.866264"], ["professor_id", 3], ["turma_id", 6], ["updated_at", "2015-10-01 17:56:05.866264"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:05.867112"], ["professor_id", 6], ["turma_id", 6], ["updated_at", "2015-10-01 17:56:05.867112"]]
+  [1m[36m (154.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:06.031836"], ["projeto_id", 1], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:06.031836"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:56:06.033940"], ["projeto_id", 2], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:06.033940"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:56:06.035473"], ["projeto_id", 3], ["turma_id", 1], ["updated_at", "2015-10-01 17:56:06.035473"]]
+  [1m[35m (144.4ms)[0m  commit transaction
+  [1m[36m (160.6ms)[0m  [1mCREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" varchar(255), "created_at" datetime, "updated_at" datetime, "turma_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (150.6ms)[0m  [1mCREATE  INDEX "index_alunos_on_turma_id" ON "alunos" ("turma_id")[0m
+  [1m[35m (149.7ms)[0m  CREATE TABLE "escolas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (141.3ms)[0m  [1mCREATE TABLE "professor_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "professor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (158.5ms)[0m  CREATE  INDEX "index_professor_turmas_on_professor_id" ON "professor_turmas" ("professor_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+[0m
+  [1m[35m (158.3ms)[0m  CREATE  INDEX "index_professor_turmas_on_turma_id" ON "professor_turmas" ("turma_id")
+  [1m[36m (141.5ms)[0m  [1mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (168.0ms)[0m  CREATE TABLE "projeto_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (150.4ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_projeto_id" ON "projeto_turmas" ("projeto_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+
+  [1m[36m (149.5ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_turma_id" ON "projeto_turmas" ("turma_id")[0m
+  [1m[35m (166.3ms)[0m  CREATE TABLE "projetos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "avaliacao" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (141.6ms)[0m  [1mCREATE TABLE "turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ano" varchar(255), "turma" varchar(255), "descricao" varchar(255), "created_at" datetime, "updated_at" datetime, "escola_id" integer) [0m
+  [1m[35m (141.9ms)[0m  CREATE  INDEX "index_turmas_on_escola_id" ON "turmas" ("escola_id")
+  [1m[36m (154.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (175.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (158.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173853')
+  [1m[36m (375.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205735')[0m
+  [1m[35m (168.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173559')
+  [1m[36m (167.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150930164604')[0m
+  [1m[35m (142.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930195319')
+  [1m[36m (142.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929201051')[0m
+  [1m[35m (142.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150928205749')
+  [1m[36m (142.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205745')[0m
+  [1m[35m (142.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930192852')
+  [1m[36m (148.3ms)[0m  [1mCREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" varchar(255), "created_at" datetime, "updated_at" datetime, "turma_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (166.8ms)[0m  [1mCREATE  INDEX "index_alunos_on_turma_id" ON "alunos" ("turma_id")[0m
+  [1m[35m (166.5ms)[0m  CREATE TABLE "escolas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (167.5ms)[0m  [1mCREATE TABLE "professor_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "professor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (125.0ms)[0m  CREATE  INDEX "index_professor_turmas_on_professor_id" ON "professor_turmas" ("professor_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+[0m
+  [1m[35m (141.3ms)[0m  CREATE  INDEX "index_professor_turmas_on_turma_id" ON "professor_turmas" ("turma_id")
+  [1m[36m (150.1ms)[0m  [1mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (149.9ms)[0m  CREATE TABLE "projeto_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (167.0ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_projeto_id" ON "projeto_turmas" ("projeto_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+
+  [1m[36m (166.5ms)[0m  [1mCREATE  INDEX "index_projeto_turmas_on_turma_id" ON "projeto_turmas" ("turma_id")[0m
+  [1m[35m (166.4ms)[0m  CREATE TABLE "projetos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "avaliacao" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (166.5ms)[0m  [1mCREATE TABLE "turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ano" varchar(255), "turma" varchar(255), "descricao" varchar(255), "created_at" datetime, "updated_at" datetime, "escola_id" integer) [0m
+  [1m[35m (166.9ms)[0m  CREATE  INDEX "index_turmas_on_escola_id" ON "turmas" ("escola_id")
+  [1m[36m (143.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (166.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (149.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173853')
+  [1m[36m (167.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205735')[0m
+  [1m[35m (150.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173559')
+  [1m[36m (150.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150930164604')[0m
+  [1m[35m (167.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930195319')
+  [1m[36m (150.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929201051')[0m
+  [1m[35m (167.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150928205749')
+  [1m[36m (167.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205745')[0m
+  [1m[35m (151.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930192852')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:23.275526"], ["data_nascimento", "1999-01-01"], ["nome", "George"], ["updated_at", "2015-10-01 17:58:23.275526"]]
+  [1m[35m (153.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:23.432546"], ["data_nascimento", "1979-01-01"], ["nome", "Milton"], ["updated_at", "2015-10-01 17:58:23.432546"]]
+  [1m[36m (140.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:23.574643"], ["data_nascimento", "1970-01-01"], ["nome", "Elizandro"], ["updated_at", "2015-10-01 17:58:23.574643"]]
+  [1m[35m (149.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:23.725646"], ["data_nascimento", "1999-11-11"], ["nome", "Marciano"], ["updated_at", "2015-10-01 17:58:23.725646"]]
+  [1m[36m (164.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:23.892484"], ["data_nascimento", "1988-03-01"], ["nome", "Wilson"], ["updated_at", "2015-10-01 17:58:23.892484"]]
+  [1m[35m (166.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:24.060252"], ["data_nascimento", "1966-01-01"], ["nome", "Abigail"], ["updated_at", "2015-10-01 17:58:24.060252"]]
+  [1m[36m (164.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:24.232891"], ["nome", "UFPR"], ["telefone", "4133334556"], ["updated_at", "2015-10-01 17:58:24.232891"]]
+  [1m[35m (159.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:24.394496"], ["nome", "UTFPR"], ["telefone", "4133234422"], ["updated_at", "2015-10-01 17:58:24.394496"]]
+  [1m[36m (157.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:24.553817"], ["nome", "PUCPR"], ["telefone", "4133001155"], ["updated_at", "2015-10-01 17:58:24.553817"]]
+  [1m[35m (148.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:24.704070"], ["nome", "Tuiuti"], ["telefone", "4130242753"], ["updated_at", "2015-10-01 17:58:24.704070"]]
+  [1m[36m (167.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:24.873052"], ["nome", "Unicuritiba"], ["telefone", "4130234456"], ["updated_at", "2015-10-01 17:58:24.873052"]]
+  [1m[35m (165.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "1"], ["created_at", "2015-10-01 17:58:25.057134"], ["descricao", "Lorem ipsum dolor sit amet."], ["escola_id", 1], ["turma", "A"], ["updated_at", "2015-10-01 17:58:25.057134"]]
+  [1m[36m (147.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "2"], ["created_at", "2015-10-01 17:58:25.207431"], ["descricao", "Consectetur adipiscing elit."], ["escola_id", 1], ["turma", "A"], ["updated_at", "2015-10-01 17:58:25.207431"]]
+  [1m[35m (157.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "3"], ["created_at", "2015-10-01 17:58:25.366658"], ["descricao", "Aenean rhoncus, mauris fringilla ultrices semper."], ["escola_id", 2], ["turma", "A"], ["updated_at", "2015-10-01 17:58:25.366658"]]
+  [1m[36m (156.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "4"], ["created_at", "2015-10-01 17:58:25.525208"], ["descricao", "Dolor neque vestibulum neque."], ["escola_id", 2], ["turma", "A"], ["updated_at", "2015-10-01 17:58:25.525208"]]
+  [1m[35m (149.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "5"], ["created_at", "2015-10-01 17:58:25.675847"], ["descricao", "Et tempus augue ipsum et magna."], ["escola_id", 3], ["turma", "A"], ["updated_at", "2015-10-01 17:58:25.675847"]]
+  [1m[36m (140.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "6"], ["created_at", "2015-10-01 17:58:25.818243"], ["descricao", "Sed eleifend dolor lectus, vehicula porttitor nibh volutpat eget."], ["escola_id", 4], ["turma", "A"], ["updated_at", "2015-10-01 17:58:25.818243"]]
+  [1m[35m (149.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)  [["avaliacao", "8/10"], ["created_at", "2015-10-01 17:58:25.979557"], ["descricao", "Lorem ipsum dolor sit amet."], ["titulo", "Meio Ambiente"], ["updated_at", "2015-10-01 17:58:25.979557"]]
+  [1m[36m (137.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["avaliacao", "7/10"], ["created_at", "2015-10-01 17:58:26.119559"], ["descricao", "Consectetur adipiscing elit."], ["titulo", "Desenvolvimento de Jogos"], ["updated_at", "2015-10-01 17:58:26.119559"]]
+  [1m[35m (149.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)  [["avaliacao", "9.5/10"], ["created_at", "2015-10-01 17:58:26.270165"], ["descricao", "Aenean rhoncus, mauris fringilla ultrices semper."], ["titulo", "Empreendedorismo"], ["updated_at", "2015-10-01 17:58:26.270165"]]
+  [1m[36m (149.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:26.429794"], ["data_nascimento", "12/12/2002"], ["nome", "Jorge"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:26.429794"]]
+  [1m[35m (140.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:26.572867"], ["data_nascimento", "12/03/2002"], ["nome", "André"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:26.572867"]]
+  [1m[36m (157.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:26.731897"], ["data_nascimento", "11/02/2002"], ["nome", "Abigail"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:26.731897"]]
+  [1m[35m (165.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:26.899079"], ["data_nascimento", "06/06/2002"], ["nome", "Arthur"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:26.899079"]]
+  [1m[36m (148.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:27.049844"], ["data_nascimento", "01/10/2002"], ["nome", "Jennifer"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:27.049844"]]
+  [1m[35m (142.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:27.193854"], ["data_nascimento", "11/11/2002"], ["nome", "Tabata"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:27.193854"]]
+  [1m[36m (397.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:27.592201"], ["data_nascimento", "09/08/2002"], ["nome", "Huiz"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:27.592201"]]
+  [1m[35m (149.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:27.743103"], ["data_nascimento", "05/12/2002"], ["nome", "Madelvino"], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:27.743103"]]
+  [1m[36m (140.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:27.885472"], ["data_nascimento", "12/12/2002"], ["nome", "Cris"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:27.885472"]]
+  [1m[35m (140.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:28.027847"], ["data_nascimento", "12/03/2002"], ["nome", "Pablo"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:28.027847"]]
+  [1m[36m (156.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:28.186704"], ["data_nascimento", "11/02/2002"], ["nome", "Gerian"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:28.186704"]]
+  [1m[35m (150.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:28.338672"], ["data_nascimento", "06/06/2002"], ["nome", "Rafe"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:28.338672"]]
+  [1m[36m (165.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:28.505874"], ["data_nascimento", "01/10/2002"], ["nome", "Tristao"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:28.505874"]]
+  [1m[35m (174.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:28.681739"], ["data_nascimento", "11/11/2002"], ["nome", "Kara"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:28.681739"]]
+  [1m[36m (174.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:28.857289"], ["data_nascimento", "09/08/2002"], ["nome", "Miguitin"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:28.857289"]]
+  [1m[35m (149.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:29.007886"], ["data_nascimento", "05/12/2002"], ["nome", "Madelvo"], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:29.007886"]]
+  [1m[36m (148.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:29.158650"], ["data_nascimento", "12/12/2002"], ["nome", "Diego"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:29.158650"]]
+  [1m[35m (132.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:29.292536"], ["data_nascimento", "12/03/2002"], ["nome", "Andrade"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:29.292536"]]
+  [1m[36m (149.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:29.443248"], ["data_nascimento", "11/02/2002"], ["nome", "Melissa"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:29.443248"]]
+  [1m[35m (165.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:29.610542"], ["data_nascimento", "06/06/2002"], ["nome", "Jefferson"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:29.610542"]]
+  [1m[36m (165.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:29.777961"], ["data_nascimento", "01/10/2002"], ["nome", "Ulisses"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:29.777961"]]
+  [1m[35m (175.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:29.954641"], ["data_nascimento", "11/11/2002"], ["nome", "Modrogo"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:29.954641"]]
+  [1m[36m (157.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:30.113656"], ["data_nascimento", "09/08/2002"], ["nome", "Matapá"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:30.113656"]]
+  [1m[35m (157.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:30.272464"], ["data_nascimento", "05/12/2002"], ["nome", "Larissa"], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:30.272464"]]
+  [1m[36m (157.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:30.431472"], ["data_nascimento", "12/12/2002"], ["nome", "Cordoba"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:30.431472"]]
+  [1m[35m (149.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:30.582116"], ["data_nascimento", "12/03/2002"], ["nome", "Monalisa"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:30.582116"]]
+  [1m[36m (148.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:30.732792"], ["data_nascimento", "11/02/2002"], ["nome", "Linda"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:30.732792"]]
+  [1m[35m (149.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:30.883566"], ["data_nascimento", "06/06/2002"], ["nome", "Edivan"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:30.883566"]]
+  [1m[36m (165.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:31.050701"], ["data_nascimento", "01/10/2002"], ["nome", "Warchal"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:31.050701"]]
+  [1m[35m (165.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:31.218279"], ["data_nascimento", "11/11/2002"], ["nome", "Thiago"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:31.218279"]]
+  [1m[36m (165.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:31.385185"], ["data_nascimento", "09/08/2002"], ["nome", "Yullia"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:31.385185"]]
+  [1m[35m (174.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:31.561092"], ["data_nascimento", "05/12/2002"], ["nome", "Pluto"], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:31.561092"]]
+  [1m[36m (174.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:31.791430"], ["professor_id", 1], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:31.791430"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:31.793151"], ["professor_id", 2], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:31.793151"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:31.794145"], ["professor_id", 3], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:31.794145"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:31.795302"], ["professor_id", 4], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:31.795302"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:31.796237"], ["professor_id", 5], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:31.796237"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:31.797178"], ["professor_id", 6], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:31.797178"]]
+  [1m[36m (140.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:31.939369"], ["professor_id", 1], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:31.939369"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:31.940692"], ["professor_id", 3], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:31.940692"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:31.941613"], ["professor_id", 4], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:31.941613"]]
+  [1m[35m (146.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.090215"], ["professor_id", 1], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:32.090215"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.091512"], ["professor_id", 2], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:32.091512"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.092491"], ["professor_id", 3], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:32.092491"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.093438"], ["professor_id", 4], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:32.093438"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.094847"], ["professor_id", 5], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:32.094847"]]
+  [1m[36m (135.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.232751"], ["professor_id", 2], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:32.232751"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.234540"], ["professor_id", 3], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:32.234540"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.236059"], ["professor_id", 5], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:32.236059"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.237932"], ["professor_id", 6], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:32.237932"]]
+  [1m[36m (150.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.391207"], ["professor_id", 1], ["turma_id", 5], ["updated_at", "2015-10-01 17:58:32.391207"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.392535"], ["professor_id", 6], ["turma_id", 5], ["updated_at", "2015-10-01 17:58:32.392535"]]
+  [1m[36m (147.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.542679"], ["professor_id", 1], ["turma_id", 6], ["updated_at", "2015-10-01 17:58:32.542679"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.544799"], ["professor_id", 2], ["turma_id", 6], ["updated_at", "2015-10-01 17:58:32.544799"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.546557"], ["professor_id", 3], ["turma_id", 6], ["updated_at", "2015-10-01 17:58:32.546557"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.548444"], ["professor_id", 6], ["turma_id", 6], ["updated_at", "2015-10-01 17:58:32.548444"]]
+  [1m[36m (150.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.712070"], ["projeto_id", 1], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:32.712070"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:32.714177"], ["projeto_id", 2], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:32.714177"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:32.715559"], ["projeto_id", 3], ["turma_id", 1], ["updated_at", "2015-10-01 17:58:32.715559"]]
+  [1m[35m (283.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:33.002166"], ["projeto_id", 1], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:33.002166"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:33.003999"], ["projeto_id", 3], ["turma_id", 2], ["updated_at", "2015-10-01 17:58:33.003999"]]
+  [1m[35m (162.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:33.169010"], ["projeto_id", 1], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:33.169010"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:33.170839"], ["projeto_id", 2], ["turma_id", 3], ["updated_at", "2015-10-01 17:58:33.170839"]]
+  [1m[35m (162.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:33.336669"], ["projeto_id", 2], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:33.336669"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:33.338518"], ["projeto_id", 3], ["turma_id", 4], ["updated_at", "2015-10-01 17:58:33.338518"]]
+  [1m[35m (363.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-01 17:58:33.704736"], ["projeto_id", 1], ["turma_id", 5], ["updated_at", "2015-10-01 17:58:33.704736"]]
+  [1m[36m (147.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-01 17:58:33.854985"], ["projeto_id", 1], ["turma_id", 6], ["updated_at", "2015-10-01 17:58:33.854985"]]
+  [1m[35m (148.3ms)[0m  commit transaction
+
+
+Started GET "/projetos" for 127.0.0.1 at 2015-10-01 15:10:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjetosController#index as HTML
+  [1m[35mProjeto Load (0.3ms)[0m  SELECT "projetos".* FROM "projetos"
+  Rendered projetos/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 597ms (Views: 585.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2015-10-01 15:10:02 -0300
+
+
+Started GET "/assets/escolas.css?body=1" for 127.0.0.1 at 2015-10-01 15:10:02 -0300
+
+
+Started GET "/assets/professor.css?body=1" for 127.0.0.1 at 2015-10-01 15:10:02 -0300
+
+
+Started GET "/assets/projetos.css?body=1" for 127.0.0.1 at 2015-10-01 15:10:02 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-01 15:10:02 -0300
+
+
+Started GET "/assets/turmas.css?body=1" for 127.0.0.1 at 2015-10-01 15:10:02 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/escolas.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/professor.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/projetos.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-01 15:10:03 -0300
+
+
+Started GET "/projetos/1" for 127.0.0.1 at 2015-10-01 15:10:06 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProjeto Load (0.2ms)[0m  [1mSELECT  "projetos".* FROM "projetos"  WHERE "projetos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTurma Load (0.2ms)[0m  SELECT "turmas".* FROM "turmas" INNER JOIN "projeto_turmas" ON "turmas"."id" = "projeto_turmas"."turma_id" WHERE "projeto_turmas"."projeto_id" = ?  [["projeto_id", 1]]
+  Rendered projetos/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 110ms (Views: 59.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projetos/2" for 127.0.0.1 at 2015-10-01 15:10:12 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProjeto Load (0.1ms)[0m  [1mSELECT  "projetos".* FROM "projetos"  WHERE "projetos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTurma Load (0.1ms)[0m  SELECT "turmas".* FROM "turmas" INNER JOIN "projeto_turmas" ON "turmas"."id" = "projeto_turmas"."turma_id" WHERE "projeto_turmas"."projeto_id" = ?  [["projeto_id", 2]]
+  Rendered projetos/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 93ms (Views: 90.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projetos/3" for 127.0.0.1 at 2015-10-01 15:10:15 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProjeto Load (0.1ms)[0m  [1mSELECT  "projetos".* FROM "projetos"  WHERE "projetos"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTurma Load (0.1ms)[0m  SELECT "turmas".* FROM "turmas" INNER JOIN "projeto_turmas" ON "turmas"."id" = "projeto_turmas"."turma_id" WHERE "projeto_turmas"."projeto_id" = ?  [["projeto_id", 3]]
+  Rendered projetos/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 58ms (Views: 55.8ms | ActiveRecord: 0.3ms)
