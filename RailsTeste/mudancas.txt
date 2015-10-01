@@ -1,0 +1,9 @@
+
+Classe -> Turma
+   -texto -> descricao
+
+Professor_Classe -> ProfessorTurma (professor_turma)
+
+Projeto_Classe -> ProjetoTurma (projeto_turma)
+
+
