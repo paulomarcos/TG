@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001173853) do
+ActiveRecord::Schema.define(version: 20151001190045) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 20151001173853) do
   end
 
   add_index "alunos", ["turma_id"], name: "index_alunos_on_turma_id"
+
+  create_table "area_conhecimentos", force: true do |t|
+    t.string   "titulo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "conteudos", force: true do |t|
+    t.string   "titulo"
+    t.string   "descricao"
+    t.integer  "ano"
+    t.integer  "area_conhecimento_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "conteudos", ["area_conhecimento_id"], name: "index_conteudos_on_area_conhecimento_id"
 
   create_table "escolas", force: true do |t|
     t.string   "nome"
@@ -46,6 +63,16 @@ ActiveRecord::Schema.define(version: 20151001173853) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "projeto_conteudos", force: true do |t|
+    t.integer  "projeto_id"
+    t.integer  "conteudo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projeto_conteudos", ["conteudo_id"], name: "index_projeto_conteudos_on_conteudo_id"
+  add_index "projeto_conteudos", ["projeto_id"], name: "index_projeto_conteudos_on_projeto_id"
 
   create_table "projeto_turmas", force: true do |t|
     t.integer  "turma_id"

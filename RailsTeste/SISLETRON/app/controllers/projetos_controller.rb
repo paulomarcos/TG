@@ -6,5 +6,6 @@ class ProjetosController < ApplicationController
   def show
     @projeto = Projeto.find(params[:id])
     @turmas = @projeto.turmas
+    @conteudos = @projeto.conteudos
   end
 end

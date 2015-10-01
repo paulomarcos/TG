@@ -32,6 +32,19 @@ pj2 = Projeto.create(titulo: "Desenvolvimento de Jogos", avaliacao: "7/10", desc
 pj3 = Projeto.create(titulo: "Empreendedorismo", avaliacao: "9.5/10", descricao: "Aenean rhoncus, mauris fringilla ultrices semper.")
 
 
+ac1 = AreaConhecimento.create(titulo: "Ciências")
+ac2 = AreaConhecimento.create(titulo: "Matemática")
+ac3 = AreaConhecimento.create(titulo: "Ciências Sociais")
+
+c1 = Conteudo.create(titulo: "Sustentabilidade", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac1.id)
+c2 = Conteudo.create(titulo: "Trigonometria", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac2.id)
+c3 = Conteudo.create(titulo: "Cálculo I", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac3.id)
+c4 = Conteudo.create(titulo: "Vida selvagem", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac1.id)
+c5 = Conteudo.create(titulo: "Técnica de Jogos", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac2.id)
+c6 = Conteudo.create(titulo: "Introducao ao Negócio", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac3.id)
+c7 = Conteudo.create(titulo: "Produção Agrícola", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac1.id)
+c8 = Conteudo.create(titulo: "Gráficos Visuais", descricao: "Lalalala", ano: "1", area_conhecimento_id: ac2.id)
+
 a1 = Aluno.create(nome: "Jorge", data_nascimento: "12/12/2002", turma_id: t1.id)
 a2 = Aluno.create(nome: "André", data_nascimento: "12/03/2002", turma_id: t1.id)
 a3 = Aluno.create(nome: "Abigail", data_nascimento: "11/02/2002", turma_id: t1.id)
@@ -82,3 +95,7 @@ t3.projetos << [pj1, pj2]
 t4.projetos << [pj2, pj3]
 t5.projetos << [pj1]
 t6.projetos << [pj1]
+
+pj1.conteudos << [c1, c4, c7]
+pj2.conteudos << [c2, c5, c8]
+pj3.conteudos << [c3, c6]
