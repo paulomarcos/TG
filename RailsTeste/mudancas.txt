@@ -6,4 +6,13 @@ Professor_Classe -> ProfessorTurma (professor_turma)
 
 Projeto_Classe -> ProjetoTurma (projeto_turma)
 
+AreaConhecimento
+   -nome -> titulo
+   
+Conteudo
+   -texto -> descricao
+   +titulo
+
+Projeto_Conteudo -> ProjetoConteudo (projeto_conteudo)
+
 
