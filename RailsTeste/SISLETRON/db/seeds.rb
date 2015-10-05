@@ -99,3 +99,23 @@ t6.projetos << [pj1]
 pj1.conteudos << [c1, c4, c7]
 pj2.conteudos << [c2, c5, c8]
 pj3.conteudos << [c3, c6]
+
+ex1 = Execucao.create(professor_id: p1.id, projeto_id: pj1.id)
+ex2 = Execucao.create(professor_id: p2.id, projeto_id: pj1.id)
+ex3 = Execucao.create(professor_id: p3.id, projeto_id: pj1.id)
+ex4 = Execucao.create(professor_id: p4.id, projeto_id: pj2.id)
+ex5 = Execucao.create(professor_id: p5.id, projeto_id: pj2.id)
+ex6 = Execucao.create(professor_id: p6.id, projeto_id: pj2.id)
+ex7 = Execucao.create(professor_id: p2.id, projeto_id: pj3.id)
+ex8 = Execucao.create(professor_id: p4.id, projeto_id: pj3.id)
+ex9 = Execucao.create(professor_id: p6.id, projeto_id: pj3.id)
+
+pl1 = Plano.create(professor_id: p4.id, projeto_id: pj1.id)
+pl2 = Plano.create(professor_id: p5.id, projeto_id: pj1.id)
+pl3 = Plano.create(professor_id: p6.id, projeto_id: pj1.id)
+pl4 = Plano.create(professor_id: p4.id, projeto_id: pj2.id)
+pl5 = Plano.create(professor_id: p1.id, projeto_id: pj2.id)
+pl6 = Plano.create(professor_id: p2.id, projeto_id: pj2.id)
+pl7 = Plano.create(professor_id: p2.id, projeto_id: pj3.id)
+pl8 = Plano.create(professor_id: p3.id, projeto_id: pj3.id)
+pl9 = Plano.create(professor_id: p6.id, projeto_id: pj3.id)

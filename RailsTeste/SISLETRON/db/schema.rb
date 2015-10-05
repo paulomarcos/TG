@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001190045) do
+ActiveRecord::Schema.define(version: 20151005174427) do
 
   create_table "alunos", force: true do |t|
     t.string   "nome"
@@ -46,6 +46,26 @@ ActiveRecord::Schema.define(version: 20151001190045) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "execucaos", force: true do |t|
+    t.integer  "professor_id"
+    t.integer  "projeto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "execucaos", ["professor_id"], name: "index_execucaos_on_professor_id"
+  add_index "execucaos", ["projeto_id"], name: "index_execucaos_on_projeto_id"
+
+  create_table "planos", force: true do |t|
+    t.integer  "professor_id"
+    t.integer  "projeto_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "planos", ["professor_id"], name: "index_planos_on_professor_id"
+  add_index "planos", ["projeto_id"], name: "index_planos_on_projeto_id"
 
   create_table "professor_turmas", force: true do |t|
     t.integer  "turma_id"

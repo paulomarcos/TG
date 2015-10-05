@@ -17,3 +17,13 @@
 <% @turmas.each do |t| %>
   <p><%= t.ano+t.turma %> </p>
 <% end %>
+
+<h3>Projeto aplicado pelos seguintes professores: </h3>
+<% @professores_execucao.each do |p| %>
+  <p><%= p.nome %> </p>
+<% end %>
+
+<h3>Projeto planejado pelos seguintes professores: </h3>
+<% @professores_plano.each do |p| %>
+  <p><%= p.nome %> </p>
+<% end %>
