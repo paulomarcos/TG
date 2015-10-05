@@ -8525,3 +8525,1450 @@ Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-05 16:51:12 -030
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-05 16:51:12 -0300
+
+
+Started GET "/projetos" for 127.0.0.1 at 2015-10-05 17:12:00 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjetosController#index as HTML
+  [1m[35mProjeto Load (0.2ms)[0m  SELECT "projetos".* FROM "projetos"
+  Rendered projetos/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 128ms (Views: 112.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/projetos.css?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/escolas.css?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/professor.css?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/turmas.css?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/escolas.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/professor.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/projetos.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-05 17:12:01 -0300
+
+
+Started GET "/projetos/2" for 127.0.0.1 at 2015-10-05 17:12:04 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProjeto Load (0.2ms)[0m  [1mSELECT  "projetos".* FROM "projetos"  WHERE "projetos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."professor_id" FROM "execucaos"  WHERE "execucaos"."projeto_id" = 2
+  [1m[36m (0.1ms)[0m  [1mSELECT "planos"."professor_id" FROM "planos"  WHERE "planos"."projeto_id" = 2[0m
+  [1m[35mConteudo Load (0.2ms)[0m  SELECT "conteudos".* FROM "conteudos" INNER JOIN "projeto_conteudos" ON "conteudos"."id" = "projeto_conteudos"."conteudo_id" WHERE "projeto_conteudos"."projeto_id" = ?  [["projeto_id", 2]]
+  [1m[36mAreaConhecimento Load (0.1ms)[0m  [1mSELECT  "area_conhecimentos".* FROM "area_conhecimentos"  WHERE "area_conhecimentos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "area_conhecimentos".* FROM "area_conhecimentos"  WHERE "area_conhecimentos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "area_conhecimentos".* FROM "area_conhecimentos"  WHERE "area_conhecimentos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTurma Load (0.1ms)[0m  SELECT "turmas".* FROM "turmas" INNER JOIN "projeto_turmas" ON "turmas"."id" = "projeto_turmas"."turma_id" WHERE "projeto_turmas"."projeto_id" = ?  [["projeto_id", 2]]
+  [1m[36mProfessor Load (0.2ms)[0m  [1mSELECT "professors".* FROM "professors"  WHERE "professors"."id" IN (4, 5, 6)[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT "professors".* FROM "professors"  WHERE "professors"."id" IN (4, 1, 2)
+  Rendered projetos/show.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 137ms (Views: 100.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/professor" for 127.0.0.1 at 2015-10-05 17:39:26 -0300
+
+ActionController::RoutingError (No route matches [GET] "/professor"):
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.8ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.5ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-05 17:39:29 -0300
+
+LoadError (Unable to autoload constant ProfessorsController, expected /home/gother/repos/TG/RailsTeste/SISLETRON/app/controllers/professors_controller.rb to define it):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:481:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/projetos" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjetosController#index as HTML
+  [1m[35mProjeto Load (0.2ms)[0m  SELECT "projetos".* FROM "projetos"
+  Rendered projetos/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 127ms (Views: 112.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/escolas.css?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/professor.css?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/projetos.css?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/turmas.css?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/escolas.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/professor.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/projetos.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-05 17:40:02 -0300
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-05 17:40:24 -0300
+
+LoadError (Unable to autoload constant ProfessorsController, expected /home/gother/repos/TG/RailsTeste/SISLETRON/app/controllers/professors_controller.rb to define it):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:481:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-05 17:40:54 -0300
+
+RuntimeError (Circular dependency detected while autoloading constant ProfessorsController):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:478:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-05 17:41:26 -0300
+
+RuntimeError (Circular dependency detected while autoloading constant ProfessorsController):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:478:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-05 17:43:23 -0300
+
+RuntimeError (Circular dependency detected while autoloading constant ProfessorsController):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:478:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-05 17:43:25 -0300
+
+RuntimeError (Circular dependency detected while autoloading constant ProfessorsController):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:478:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+  [1m[36m (105.2ms)[0m  [1mCREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" varchar(255), "created_at" datetime, "updated_at" datetime, "turma_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (99.4ms)[0m  [1mCREATE  INDEX "index_alunos_on_turma_id" ON "alunos" ("turma_id")[0m
+  [1m[35m (99.6ms)[0m  CREATE TABLE "area_conhecimentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (99.6ms)[0m  [1mCREATE TABLE "conteudos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "ano" integer, "area_conhecimento_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (101.2ms)[0m  CREATE  INDEX "index_conteudos_on_area_conhecimento_id" ON "conteudos" ("area_conhecimento_id")
+  [1m[36m (108.0ms)[0m  [1mCREATE TABLE "escolas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (124.5ms)[0m  CREATE TABLE "execucaos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "professor_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (108.3ms)[0m  [1mCREATE  INDEX "index_execucaos_on_professor_id" ON "execucaos" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_execucaos_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_execucaos_on_professor_id' AND type='index'
+
+  [1m[36m (99.3ms)[0m  [1mCREATE  INDEX "index_execucaos_on_projeto_id" ON "execucaos" ("projeto_id")[0m
+  [1m[35m (116.3ms)[0m  CREATE TABLE "planos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "professor_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (99.9ms)[0m  [1mCREATE  INDEX "index_planos_on_professor_id" ON "planos" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_planos_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_planos_on_professor_id' AND type='index'
+
+  [1m[36m (99.5ms)[0m  [1mCREATE  INDEX "index_planos_on_projeto_id" ON "planos" ("projeto_id")[0m
+  [1m[35m (99.6ms)[0m  CREATE TABLE "professor_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "professor_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (99.9ms)[0m  [1mCREATE  INDEX "index_professor_turmas_on_professor_id" ON "professor_turmas" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+
+  [1m[36m (99.4ms)[0m  [1mCREATE  INDEX "index_professor_turmas_on_turma_id" ON "professor_turmas" ("turma_id")[0m
+  [1m[35m (108.0ms)[0m  CREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (109.2ms)[0m  [1mCREATE TABLE "projeto_conteudos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "projeto_id" integer, "conteudo_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (124.8ms)[0m  CREATE  INDEX "index_projeto_conteudos_on_conteudo_id" ON "projeto_conteudos" ("conteudo_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_conteudos_on_conteudo_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_conteudos_on_conteudo_id' AND type='index'
+[0m
+  [1m[35m (116.2ms)[0m  CREATE  INDEX "index_projeto_conteudos_on_projeto_id" ON "projeto_conteudos" ("projeto_id")
+  [1m[36m (99.6ms)[0m  [1mCREATE TABLE "projeto_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (99.9ms)[0m  CREATE  INDEX "index_projeto_turmas_on_projeto_id" ON "projeto_turmas" ("projeto_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+[0m
+  [1m[35m (99.8ms)[0m  CREATE  INDEX "index_projeto_turmas_on_turma_id" ON "projeto_turmas" ("turma_id")
+  [1m[36m (99.6ms)[0m  [1mCREATE TABLE "projetos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "avaliacao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (99.5ms)[0m  CREATE TABLE "turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ano" varchar(255), "turma" varchar(255), "descricao" varchar(255), "created_at" datetime, "updated_at" datetime, "escola_id" integer) 
+  [1m[36m (99.9ms)[0m  [1mCREATE  INDEX "index_turmas_on_escola_id" ON "turmas" ("escola_id")[0m
+  [1m[35m (103.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (108.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (332.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005174427')[0m
+  [1m[35m (118.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001190028')
+  [1m[36m (125.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205735')[0m
+  [1m[35m (100.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173559')
+  [1m[36m (100.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005174417')[0m
+  [1m[35m (100.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001190006')
+  [1m[36m (100.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151001190045')[0m
+  [1m[35m (100.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930164604')
+  [1m[36m (100.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151001173853')[0m
+  [1m[35m (133.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930195319')
+  [1m[36m (108.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929201051')[0m
+  [1m[35m (108.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150928205749')
+  [1m[36m (108.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205745')[0m
+  [1m[35m (108.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930192852')
+  [1m[36m (99.2ms)[0m  [1mCREATE TABLE "alunos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" varchar(255), "created_at" datetime, "updated_at" datetime, "turma_id" integer) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (116.7ms)[0m  [1mCREATE  INDEX "index_alunos_on_turma_id" ON "alunos" ("turma_id")[0m
+  [1m[35m (99.8ms)[0m  CREATE TABLE "area_conhecimentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (99.6ms)[0m  [1mCREATE TABLE "conteudos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "ano" integer, "area_conhecimento_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (100.0ms)[0m  CREATE  INDEX "index_conteudos_on_area_conhecimento_id" ON "conteudos" ("area_conhecimento_id")
+  [1m[36m (99.7ms)[0m  [1mCREATE TABLE "escolas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "telefone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (124.6ms)[0m  CREATE TABLE "execucaos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "professor_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (167.7ms)[0m  [1mCREATE  INDEX "index_execucaos_on_professor_id" ON "execucaos" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_execucaos_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_execucaos_on_professor_id' AND type='index'
+
+  [1m[36m (107.8ms)[0m  [1mCREATE  INDEX "index_execucaos_on_projeto_id" ON "execucaos" ("projeto_id")[0m
+  [1m[35m (116.3ms)[0m  CREATE TABLE "planos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "professor_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (116.8ms)[0m  [1mCREATE  INDEX "index_planos_on_professor_id" ON "planos" ("professor_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_planos_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_planos_on_professor_id' AND type='index'
+
+  [1m[36m (109.6ms)[0m  [1mCREATE  INDEX "index_planos_on_projeto_id" ON "planos" ("projeto_id")[0m
+  [1m[35m (108.3ms)[0m  CREATE TABLE "professor_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "professor_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (325.0ms)[0m  [1mCREATE  INDEX "index_professor_turmas_on_professor_id" ON "professor_turmas" ("professor_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_professor_turmas_on_professor_id' AND type='index'
+
+  [1m[36m (149.3ms)[0m  [1mCREATE  INDEX "index_professor_turmas_on_turma_id" ON "professor_turmas" ("turma_id")[0m
+  [1m[35m (99.8ms)[0m  CREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "data_nascimento" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (107.9ms)[0m  [1mCREATE TABLE "projeto_conteudos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "projeto_id" integer, "conteudo_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (99.9ms)[0m  CREATE  INDEX "index_projeto_conteudos_on_conteudo_id" ON "projeto_conteudos" ("conteudo_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_conteudos_on_conteudo_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_conteudos_on_conteudo_id' AND type='index'
+[0m
+  [1m[35m (124.6ms)[0m  CREATE  INDEX "index_projeto_conteudos_on_projeto_id" ON "projeto_conteudos" ("projeto_id")
+  [1m[36m (116.2ms)[0m  [1mCREATE TABLE "projeto_turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "turma_id" integer, "projeto_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (108.3ms)[0m  CREATE  INDEX "index_projeto_turmas_on_projeto_id" ON "projeto_turmas" ("projeto_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projeto_turmas_on_projeto_id' AND type='index'
+[0m
+  [1m[35m (116.1ms)[0m  CREATE  INDEX "index_projeto_turmas_on_turma_id" ON "projeto_turmas" ("turma_id")
+  [1m[36m (141.4ms)[0m  [1mCREATE TABLE "projetos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar(255), "descricao" varchar(255), "avaliacao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (100.9ms)[0m  CREATE TABLE "turmas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ano" varchar(255), "turma" varchar(255), "descricao" varchar(255), "created_at" datetime, "updated_at" datetime, "escola_id" integer) 
+  [1m[36m (366.3ms)[0m  [1mCREATE  INDEX "index_turmas_on_escola_id" ON "turmas" ("escola_id")[0m
+  [1m[35m (108.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (108.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (99.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005174427')[0m
+  [1m[35m (108.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001190028')
+  [1m[36m (108.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205735')[0m
+  [1m[35m (108.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001173559')
+  [1m[36m (108.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005174417')[0m
+  [1m[35m (108.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151001190006')
+  [1m[36m (108.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151001190045')[0m
+  [1m[35m (125.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930164604')
+  [1m[36m (100.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151001173853')[0m
+  [1m[35m (109.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930195319')
+  [1m[36m (100.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150929201051')[0m
+  [1m[35m (100.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150928205749')
+  [1m[36m (108.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150928205745')[0m
+  [1m[35m (108.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150930192852')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:43.183733"], ["data_nascimento", "1999-01-01"], ["nome", "George"], ["updated_at", "2015-10-05 20:43:43.183733"]]
+  [1m[35m (103.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:43.289814"], ["data_nascimento", "1979-01-01"], ["nome", "Milton"], ["updated_at", "2015-10-05 20:43:43.289814"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:43.390181"], ["data_nascimento", "1970-01-01"], ["nome", "Elizandro"], ["updated_at", "2015-10-05 20:43:43.390181"]]
+  [1m[35m (99.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:43.490703"], ["data_nascimento", "1999-11-11"], ["nome", "Marciano"], ["updated_at", "2015-10-05 20:43:43.490703"]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:43.591252"], ["data_nascimento", "1988-03-01"], ["nome", "Wilson"], ["updated_at", "2015-10-05 20:43:43.591252"]]
+  [1m[35m (107.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professors" ("created_at", "data_nascimento", "nome", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:43.700070"], ["data_nascimento", "1966-01-01"], ["nome", "Abigail"], ["updated_at", "2015-10-05 20:43:43.700070"]]
+  [1m[36m (115.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:43.823841"], ["nome", "UFPR"], ["telefone", "4133334556"], ["updated_at", "2015-10-05 20:43:43.823841"]]
+  [1m[35m (100.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:43.926208"], ["nome", "UTFPR"], ["telefone", "4133234422"], ["updated_at", "2015-10-05 20:43:43.926208"]]
+  [1m[36m (108.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:44.036215"], ["nome", "PUCPR"], ["telefone", "4133001155"], ["updated_at", "2015-10-05 20:43:44.036215"]]
+  [1m[35m (107.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:44.145106"], ["nome", "Tuiuti"], ["telefone", "4130242753"], ["updated_at", "2015-10-05 20:43:44.145106"]]
+  [1m[36m (107.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "escolas" ("created_at", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:44.253927"], ["nome", "Unicuritiba"], ["telefone", "4130234456"], ["updated_at", "2015-10-05 20:43:44.253927"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "1"], ["created_at", "2015-10-05 20:43:44.369195"], ["descricao", "Lorem ipsum dolor sit amet."], ["escola_id", 1], ["turma", "A"], ["updated_at", "2015-10-05 20:43:44.369195"]]
+  [1m[36m (100.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "2"], ["created_at", "2015-10-05 20:43:44.471753"], ["descricao", "Consectetur adipiscing elit."], ["escola_id", 1], ["turma", "A"], ["updated_at", "2015-10-05 20:43:44.471753"]]
+  [1m[35m (99.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "3"], ["created_at", "2015-10-05 20:43:44.572549"], ["descricao", "Aenean rhoncus, mauris fringilla ultrices semper."], ["escola_id", 2], ["turma", "A"], ["updated_at", "2015-10-05 20:43:44.572549"]]
+  [1m[36m (98.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "4"], ["created_at", "2015-10-05 20:43:44.673173"], ["descricao", "Dolor neque vestibulum neque."], ["escola_id", 2], ["turma", "A"], ["updated_at", "2015-10-05 20:43:44.673173"]]
+  [1m[35m (114.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", "5"], ["created_at", "2015-10-05 20:43:44.790329"], ["descricao", "Et tempus augue ipsum et magna."], ["escola_id", 3], ["turma", "A"], ["updated_at", "2015-10-05 20:43:44.790329"]]
+  [1m[36m (98.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "turmas" ("ano", "created_at", "descricao", "escola_id", "turma", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", "6"], ["created_at", "2015-10-05 20:43:44.890612"], ["descricao", "Sed eleifend dolor lectus, vehicula porttitor nibh volutpat eget."], ["escola_id", 4], ["turma", "A"], ["updated_at", "2015-10-05 20:43:44.890612"]]
+  [1m[35m (115.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)  [["avaliacao", "8/10"], ["created_at", "2015-10-05 20:43:45.024671"], ["descricao", "Lorem ipsum dolor sit amet."], ["titulo", "Meio Ambiente"], ["updated_at", "2015-10-05 20:43:45.024671"]]
+  [1m[36m (115.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["avaliacao", "7/10"], ["created_at", "2015-10-05 20:43:45.141919"], ["descricao", "Consectetur adipiscing elit."], ["titulo", "Desenvolvimento de Jogos"], ["updated_at", "2015-10-05 20:43:45.141919"]]
+  [1m[35m (98.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projetos" ("avaliacao", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?)  [["avaliacao", "9.5/10"], ["created_at", "2015-10-05 20:43:45.242103"], ["descricao", "Aenean rhoncus, mauris fringilla ultrices semper."], ["titulo", "Empreendedorismo"], ["updated_at", "2015-10-05 20:43:45.242103"]]
+  [1m[36m (107.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "area_conhecimentos" ("created_at", "titulo", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:45.358271"], ["titulo", "Ciências"], ["updated_at", "2015-10-05 20:43:45.358271"]]
+  [1m[35m (109.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "area_conhecimentos" ("created_at", "titulo", "updated_at") VALUES (?, ?, ?)  [["created_at", "2015-10-05 20:43:45.469563"], ["titulo", "Matemática"], ["updated_at", "2015-10-05 20:43:45.469563"]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "area_conhecimentos" ("created_at", "titulo", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:45.570032"], ["titulo", "Ciências Sociais"], ["updated_at", "2015-10-05 20:43:45.570032"]]
+  [1m[35m (98.6ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", 1], ["area_conhecimento_id", 1], ["created_at", "2015-10-05 20:43:45.712241"], ["descricao", "Lalalala"], ["titulo", "Sustentabilidade"], ["updated_at", "2015-10-05 20:43:45.712241"]]
+  [1m[36m (98.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", 1], ["area_conhecimento_id", 2], ["created_at", "2015-10-05 20:43:45.812984"], ["descricao", "Lalalala"], ["titulo", "Trigonometria"], ["updated_at", "2015-10-05 20:43:45.812984"]]
+  [1m[35m (98.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", 1], ["area_conhecimento_id", 3], ["created_at", "2015-10-05 20:43:45.913490"], ["descricao", "Lalalala"], ["titulo", "Cálculo I"], ["updated_at", "2015-10-05 20:43:45.913490"]]
+  [1m[36m (98.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", 1], ["area_conhecimento_id", 1], ["created_at", "2015-10-05 20:43:46.013845"], ["descricao", "Lalalala"], ["titulo", "Vida selvagem"], ["updated_at", "2015-10-05 20:43:46.013845"]]
+  [1m[35m (98.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", 1], ["area_conhecimento_id", 2], ["created_at", "2015-10-05 20:43:46.114487"], ["descricao", "Lalalala"], ["titulo", "Técnica de Jogos"], ["updated_at", "2015-10-05 20:43:46.114487"]]
+  [1m[36m (306.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", 1], ["area_conhecimento_id", 3], ["created_at", "2015-10-05 20:43:46.423144"], ["descricao", "Lalalala"], ["titulo", "Introducao ao Negócio"], ["updated_at", "2015-10-05 20:43:46.423144"]]
+  [1m[35m (164.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["ano", 1], ["area_conhecimento_id", 1], ["created_at", "2015-10-05 20:43:46.590113"], ["descricao", "Lalalala"], ["titulo", "Produção Agrícola"], ["updated_at", "2015-10-05 20:43:46.590113"]]
+  [1m[36m (106.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "conteudos" ("ano", "area_conhecimento_id", "created_at", "descricao", "titulo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["ano", 1], ["area_conhecimento_id", 2], ["created_at", "2015-10-05 20:43:46.699025"], ["descricao", "Lalalala"], ["titulo", "Gráficos Visuais"], ["updated_at", "2015-10-05 20:43:46.699025"]]
+  [1m[35m (98.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:46.809056"], ["data_nascimento", "12/12/2002"], ["nome", "Jorge"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:46.809056"]]
+  [1m[36m (97.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:46.908452"], ["data_nascimento", "12/03/2002"], ["nome", "André"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:46.908452"]]
+  [1m[35m (106.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:47.017251"], ["data_nascimento", "11/02/2002"], ["nome", "Abigail"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:47.017251"]]
+  [1m[36m (341.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:47.360489"], ["data_nascimento", "06/06/2002"], ["nome", "Arthur"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:47.360489"]]
+  [1m[35m (98.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:47.460999"], ["data_nascimento", "01/10/2002"], ["nome", "Jennifer"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:47.460999"]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:47.561470"], ["data_nascimento", "11/11/2002"], ["nome", "Tabata"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:47.561470"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:47.662082"], ["data_nascimento", "09/08/2002"], ["nome", "Huiz"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:47.662082"]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:47.762540"], ["data_nascimento", "05/12/2002"], ["nome", "Madelvino"], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:47.762540"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:47.863111"], ["data_nascimento", "12/12/2002"], ["nome", "Cris"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:47.863111"]]
+  [1m[36m (107.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:47.971993"], ["data_nascimento", "12/03/2002"], ["nome", "Pablo"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:47.971993"]]
+  [1m[35m (115.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:48.089268"], ["data_nascimento", "11/02/2002"], ["nome", "Gerian"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:48.089268"]]
+  [1m[36m (115.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:48.206364"], ["data_nascimento", "06/06/2002"], ["nome", "Rafe"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:48.206364"]]
+  [1m[35m (98.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:48.306867"], ["data_nascimento", "01/10/2002"], ["nome", "Tristao"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:48.306867"]]
+  [1m[36m (107.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:48.415775"], ["data_nascimento", "11/11/2002"], ["nome", "Kara"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:48.415775"]]
+  [1m[35m (107.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:48.524622"], ["data_nascimento", "09/08/2002"], ["nome", "Miguitin"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:48.524622"]]
+  [1m[36m (340.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:48.866701"], ["data_nascimento", "05/12/2002"], ["nome", "Madelvo"], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:48.866701"]]
+  [1m[35m (108.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:48.976759"], ["data_nascimento", "12/12/2002"], ["nome", "Diego"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:48.976759"]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:49.077326"], ["data_nascimento", "12/03/2002"], ["nome", "Andrade"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:49.077326"]]
+  [1m[35m (98.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:49.177796"], ["data_nascimento", "11/02/2002"], ["nome", "Melissa"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:49.177796"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:49.278412"], ["data_nascimento", "06/06/2002"], ["nome", "Jefferson"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:49.278412"]]
+  [1m[35m (98.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:49.378857"], ["data_nascimento", "01/10/2002"], ["nome", "Ulisses"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:49.378857"]]
+  [1m[36m (264.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:49.645509"], ["data_nascimento", "11/11/2002"], ["nome", "Modrogo"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:49.645509"]]
+  [1m[35m (124.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:49.771518"], ["data_nascimento", "09/08/2002"], ["nome", "Matapá"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:49.771518"]]
+  [1m[36m (123.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:49.897013"], ["data_nascimento", "05/12/2002"], ["nome", "Larissa"], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:49.897013"]]
+  [1m[35m (115.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:50.014146"], ["data_nascimento", "12/12/2002"], ["nome", "Cordoba"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.014146"]]
+  [1m[36m (107.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:50.123285"], ["data_nascimento", "12/03/2002"], ["nome", "Monalisa"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.123285"]]
+  [1m[35m (106.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:50.232036"], ["data_nascimento", "11/02/2002"], ["nome", "Linda"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.232036"]]
+  [1m[36m (107.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:50.340951"], ["data_nascimento", "06/06/2002"], ["nome", "Edivan"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.340951"]]
+  [1m[35m (106.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:50.449672"], ["data_nascimento", "01/10/2002"], ["nome", "Warchal"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.449672"]]
+  [1m[36m (108.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:50.559929"], ["data_nascimento", "11/11/2002"], ["nome", "Thiago"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.559929"]]
+  [1m[35m (107.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:50.668840"], ["data_nascimento", "09/08/2002"], ["nome", "Yullia"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.668840"]]
+  [1m[36m (107.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "alunos" ("created_at", "data_nascimento", "nome", "turma_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:50.777602"], ["data_nascimento", "05/12/2002"], ["nome", "Pluto"], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:50.777602"]]
+  [1m[35m (107.2ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:50.906938"], ["professor_id", 1], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:50.906938"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:50.908414"], ["professor_id", 2], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:50.908414"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:50.909289"], ["professor_id", 3], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:50.909289"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:50.910102"], ["professor_id", 4], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:50.910102"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:50.910914"], ["professor_id", 5], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:50.910914"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:50.911730"], ["professor_id", 6], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:50.911730"]]
+  [1m[35m (99.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.013460"], ["professor_id", 1], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:51.013460"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.015402"], ["professor_id", 3], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:51.015402"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.017147"], ["professor_id", 4], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:51.017147"]]
+  [1m[36m (110.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.130541"], ["professor_id", 1], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:51.130541"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.132460"], ["professor_id", 2], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:51.132460"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.134204"], ["professor_id", 3], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:51.134204"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.135907"], ["professor_id", 4], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:51.135907"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.137642"], ["professor_id", 5], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:51.137642"]]
+  [1m[35m (123.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.264268"], ["professor_id", 2], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:51.264268"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.266226"], ["professor_id", 3], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:51.266226"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.267935"], ["professor_id", 5], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:51.267935"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.269704"], ["professor_id", 6], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:51.269704"]]
+  [1m[35m (117.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.389776"], ["professor_id", 1], ["turma_id", 5], ["updated_at", "2015-10-05 20:43:51.389776"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.391673"], ["professor_id", 6], ["turma_id", 5], ["updated_at", "2015-10-05 20:43:51.391673"]]
+  [1m[35m (112.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.507159"], ["professor_id", 1], ["turma_id", 6], ["updated_at", "2015-10-05 20:43:51.507159"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.509244"], ["professor_id", 2], ["turma_id", 6], ["updated_at", "2015-10-05 20:43:51.509244"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.510933"], ["professor_id", 3], ["turma_id", 6], ["updated_at", "2015-10-05 20:43:51.510933"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "professor_turmas" ("created_at", "professor_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.512618"], ["professor_id", 6], ["turma_id", 6], ["updated_at", "2015-10-05 20:43:51.512618"]]
+  [1m[35m (117.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.645015"], ["projeto_id", 1], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:51.645015"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.646474"], ["projeto_id", 2], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:51.646474"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.647309"], ["projeto_id", 3], ["turma_id", 1], ["updated_at", "2015-10-05 20:43:51.647309"]]
+  [1m[36m (100.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.750088"], ["projeto_id", 1], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:51.750088"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.752078"], ["projeto_id", 3], ["turma_id", 2], ["updated_at", "2015-10-05 20:43:51.752078"]]
+  [1m[36m (95.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.850242"], ["projeto_id", 1], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:51.850242"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.852222"], ["projeto_id", 2], ["turma_id", 3], ["updated_at", "2015-10-05 20:43:51.852222"]]
+  [1m[36m (95.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:51.950710"], ["projeto_id", 2], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:51.950710"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:51.952645"], ["projeto_id", 3], ["turma_id", 4], ["updated_at", "2015-10-05 20:43:51.952645"]]
+  [1m[36m (97.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:52.052539"], ["projeto_id", 1], ["turma_id", 5], ["updated_at", "2015-10-05 20:43:52.052539"]]
+  [1m[35m (105.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projeto_turmas" ("created_at", "projeto_id", "turma_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:52.161414"], ["projeto_id", 1], ["turma_id", 6], ["updated_at", "2015-10-05 20:43:52.161414"]]
+  [1m[36m (339.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["conteudo_id", 1], ["created_at", "2015-10-05 20:43:52.512499"], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:52.512499"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["conteudo_id", 4], ["created_at", "2015-10-05 20:43:52.513994"], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:52.513994"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["conteudo_id", 7], ["created_at", "2015-10-05 20:43:52.514838"], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:52.514838"]]
+  [1m[35m (111.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["conteudo_id", 2], ["created_at", "2015-10-05 20:43:52.629194"], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:52.629194"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["conteudo_id", 5], ["created_at", "2015-10-05 20:43:52.631121"], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:52.631121"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["conteudo_id", 8], ["created_at", "2015-10-05 20:43:52.632873"], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:52.632873"]]
+  [1m[36m (110.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["conteudo_id", 3], ["created_at", "2015-10-05 20:43:52.746243"], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:52.746243"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "projeto_conteudos" ("conteudo_id", "created_at", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["conteudo_id", 6], ["created_at", "2015-10-05 20:43:52.748203"], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:52.748203"]]
+  [1m[36m (120.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:52.879452"], ["professor_id", 1], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:52.879452"]]
+  [1m[35m (114.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:52.996016"], ["professor_id", 2], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:52.996016"]]
+  [1m[36m (315.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:53.312996"], ["professor_id", 3], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:53.312996"]]
+  [1m[35m (148.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:53.463399"], ["professor_id", 4], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:53.463399"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:53.563901"], ["professor_id", 5], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:53.563901"]]
+  [1m[35m (98.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:53.664411"], ["professor_id", 6], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:53.664411"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:53.764984"], ["professor_id", 2], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:53.764984"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:53.865497"], ["professor_id", 4], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:53.865497"]]
+  [1m[36m (116.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "execucaos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:53.984010"], ["professor_id", 6], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:53.984010"]]
+  [1m[35m (115.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:54.107528"], ["professor_id", 4], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:54.107528"]]
+  [1m[36m (109.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:54.218445"], ["professor_id", 5], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:54.218445"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:54.318955"], ["professor_id", 6], ["projeto_id", 1], ["updated_at", "2015-10-05 20:43:54.318955"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:54.419471"], ["professor_id", 4], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:54.419471"]]
+  [1m[35m (132.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:54.553551"], ["professor_id", 1], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:54.553551"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:54.654144"], ["professor_id", 2], ["projeto_id", 2], ["updated_at", "2015-10-05 20:43:54.654144"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:54.754647"], ["professor_id", 2], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:54.754647"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-10-05 20:43:54.855162"], ["professor_id", 3], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:54.855162"]]
+  [1m[35m (98.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "planos" ("created_at", "professor_id", "projeto_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2015-10-05 20:43:54.955667"], ["professor_id", 6], ["projeto_id", 3], ["updated_at", "2015-10-05 20:43:54.955667"]]
+  [1m[36m (98.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/projetos" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjetosController#index as HTML
+  [1m[35mProjeto Load (0.2ms)[0m  SELECT "projetos".* FROM "projetos"
+  Rendered projetos/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 127ms (Views: 112.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/projetos.css?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/turmas.css?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/professor.css?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/escolas.css?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/escolas.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/professor.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/projetos.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-05 17:44:07 -0300
+
+
+Started GET "/projetos/1" for 127.0.0.1 at 2015-10-05 17:44:09 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProjeto Load (0.2ms)[0m  [1mSELECT  "projetos".* FROM "projetos"  WHERE "projetos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "execucaos"."professor_id" FROM "execucaos"  WHERE "execucaos"."projeto_id" = 1
+  [1m[36m (0.1ms)[0m  [1mSELECT "planos"."professor_id" FROM "planos"  WHERE "planos"."projeto_id" = 1[0m
+  [1m[35mConteudo Load (0.2ms)[0m  SELECT "conteudos".* FROM "conteudos" INNER JOIN "projeto_conteudos" ON "conteudos"."id" = "projeto_conteudos"."conteudo_id" WHERE "projeto_conteudos"."projeto_id" = ?  [["projeto_id", 1]]
+  [1m[36mAreaConhecimento Load (0.1ms)[0m  [1mSELECT  "area_conhecimentos".* FROM "area_conhecimentos"  WHERE "area_conhecimentos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "area_conhecimentos".* FROM "area_conhecimentos"  WHERE "area_conhecimentos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "area_conhecimentos".* FROM "area_conhecimentos"  WHERE "area_conhecimentos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTurma Load (0.2ms)[0m  SELECT "turmas".* FROM "turmas" INNER JOIN "projeto_turmas" ON "turmas"."id" = "projeto_turmas"."turma_id" WHERE "projeto_turmas"."projeto_id" = ?  [["projeto_id", 1]]
+  [1m[36mProfessor Load (0.2ms)[0m  [1mSELECT "professors".* FROM "professors"  WHERE "professors"."id" IN (1, 2, 3)[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT "professors".* FROM "professors"  WHERE "professors"."id" IN (4, 5, 6)
+  Rendered projetos/show.html.erb within layouts/application (54.8ms)
+Completed 200 OK in 136ms (Views: 100.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/professors" for 127.0.0.1 at 2015-10-05 17:44:16 -0300
+
+LoadError (Unable to autoload constant ProfessorsController, expected /home/gother/repos/TG/RailsTeste/SISLETRON/app/controllers/professors_controller.rb to define it):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:481:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/professors/1" for 127.0.0.1 at 2015-10-05 17:44:18 -0300
+
+RuntimeError (Circular dependency detected while autoloading constant ProfessorsController):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:478:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/professors/" for 127.0.0.1 at 2015-10-05 17:47:02 -0300
+
+RuntimeError (Circular dependency detected while autoloading constant ProfessorsController):
+  activesupport (4.1.10) lib/active_support/dependencies.rb:478:in `load_missing_constant'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:180:in `const_missing'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `const_get'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:238:in `block in constantize'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `each'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `inject'
+  activesupport (4.1.10) lib/active_support/inflector/methods.rb:236:in `constantize'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:552:in `get'
+  activesupport (4.1.10) lib/active_support/dependencies.rb:583:in `constantize'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:78:in `controller_reference'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:68:in `controller'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:46:in `call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.10) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.10) lib/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.10) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.10) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.10) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.10) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.10) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.10) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.10) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.10) lib/rails/engine.rb:514:in `call'
+  railties (4.1.10) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/gother/.rvm/rubies/ruby-2.0.0-p481/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/gother/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.9ms)
+
+
+Started GET "/professors/" for 127.0.0.1 at 2015-10-05 17:52:26 -0300
+Processing by ProfessorsController#index as HTML
+  [1m[36mProfessor Load (0.5ms)[0m  [1mSELECT "professors".* FROM "professors"[0m
+  Rendered professors/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 60ms (Views: 51.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/alunos.css?body=1" for 127.0.0.1 at 2015-10-05 17:52:26 -0300
+
+
+Started GET "/assets/escolas.css?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/professor.css?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/turmas.css?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/projetos.css?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/alunos.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/escolas.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/projetos.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/professor.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/turmas.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-05 17:52:27 -0300
+
+
+Started GET "/professors/1" for 127.0.0.1 at 2015-10-05 17:52:29 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors"  WHERE "professors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "planos"."projeto_id" FROM "planos"  WHERE "planos"."professor_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."projeto_id" FROM "execucaos"  WHERE "execucaos"."professor_id" = 1
+  [1m[36mTurma Load (0.2ms)[0m  [1mSELECT "turmas".* FROM "turmas" INNER JOIN "professor_turmas" ON "turmas"."id" = "professor_turmas"."turma_id" WHERE "professor_turmas"."professor_id" = ?[0m  [["professor_id", 1]]
+  [1m[35mProjeto Load (0.1ms)[0m  SELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (2)
+  [1m[36mProjeto Load (0.1ms)[0m  [1mSELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (1)[0m
+  Rendered professors/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 123ms (Views: 57.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/professors/2" for 127.0.0.1 at 2015-10-05 17:52:38 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProfessor Load (0.1ms)[0m  SELECT  "professors".* FROM "professors"  WHERE "professors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "planos"."projeto_id" FROM "planos"  WHERE "planos"."professor_id" = 2[0m
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."projeto_id" FROM "execucaos"  WHERE "execucaos"."professor_id" = 2
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT "turmas".* FROM "turmas" INNER JOIN "professor_turmas" ON "turmas"."id" = "professor_turmas"."turma_id" WHERE "professor_turmas"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mProjeto Load (0.1ms)[0m  SELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (2, 3)
+  [1m[36mProjeto Load (0.1ms)[0m  [1mSELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (1, 3)[0m
+  Rendered professors/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors/3" for 127.0.0.1 at 2015-10-05 17:52:41 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProfessor Load (0.1ms)[0m  SELECT  "professors".* FROM "professors"  WHERE "professors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "planos"."projeto_id" FROM "planos"  WHERE "planos"."professor_id" = 3[0m
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."projeto_id" FROM "execucaos"  WHERE "execucaos"."professor_id" = 3
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT "turmas".* FROM "turmas" INNER JOIN "professor_turmas" ON "turmas"."id" = "professor_turmas"."turma_id" WHERE "professor_turmas"."professor_id" = ?[0m  [["professor_id", 3]]
+  [1m[35mProjeto Load (0.1ms)[0m  SELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (3)
+  [1m[36mProjeto Load (0.1ms)[0m  [1mSELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (1)[0m
+  Rendered professors/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 90ms (Views: 87.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/professors/4" for 127.0.0.1 at 2015-10-05 17:52:43 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProfessor Load (0.1ms)[0m  SELECT  "professors".* FROM "professors"  WHERE "professors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "planos"."projeto_id" FROM "planos"  WHERE "planos"."professor_id" = 4[0m
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."projeto_id" FROM "execucaos"  WHERE "execucaos"."professor_id" = 4
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT "turmas".* FROM "turmas" INNER JOIN "professor_turmas" ON "turmas"."id" = "professor_turmas"."turma_id" WHERE "professor_turmas"."professor_id" = ?[0m  [["professor_id", 4]]
+  [1m[35mProjeto Load (0.2ms)[0m  SELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (1, 2)
+  [1m[36mProjeto Load (0.2ms)[0m  [1mSELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (2, 3)[0m
+  Rendered professors/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 49.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors/4" for 127.0.0.1 at 2015-10-05 17:52:52 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mProfessor Load (0.1ms)[0m  SELECT  "professors".* FROM "professors"  WHERE "professors"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "planos"."projeto_id" FROM "planos"  WHERE "planos"."professor_id" = 4[0m
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."projeto_id" FROM "execucaos"  WHERE "execucaos"."professor_id" = 4
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT "turmas".* FROM "turmas" INNER JOIN "professor_turmas" ON "turmas"."id" = "professor_turmas"."turma_id" WHERE "professor_turmas"."professor_id" = ?[0m  [["professor_id", 4]]
+  [1m[35mProjeto Load (0.2ms)[0m  SELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (1, 2)
+  [1m[36mProjeto Load (0.2ms)[0m  [1mSELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (2, 3)[0m
+  Rendered professors/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 92ms (Views: 88.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/professors/5" for 127.0.0.1 at 2015-10-05 17:52:55 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProfessor Load (0.1ms)[0m  SELECT  "professors".* FROM "professors"  WHERE "professors"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT "planos"."projeto_id" FROM "planos"  WHERE "planos"."professor_id" = 5[0m
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."projeto_id" FROM "execucaos"  WHERE "execucaos"."professor_id" = 5
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT "turmas".* FROM "turmas" INNER JOIN "professor_turmas" ON "turmas"."id" = "professor_turmas"."turma_id" WHERE "professor_turmas"."professor_id" = ?[0m  [["professor_id", 5]]
+  [1m[35mProjeto Load (0.1ms)[0m  SELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (1)
+  [1m[36mProjeto Load (0.1ms)[0m  [1mSELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (2)[0m
+  Rendered professors/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/professors/6" for 127.0.0.1 at 2015-10-05 17:53:02 -0300
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProfessor Load (0.1ms)[0m  SELECT  "professors".* FROM "professors"  WHERE "professors"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "planos"."projeto_id" FROM "planos"  WHERE "planos"."professor_id" = 6[0m
+  [1m[35m (0.1ms)[0m  SELECT "execucaos"."projeto_id" FROM "execucaos"  WHERE "execucaos"."professor_id" = 6
+  [1m[36mTurma Load (0.1ms)[0m  [1mSELECT "turmas".* FROM "turmas" INNER JOIN "professor_turmas" ON "turmas"."id" = "professor_turmas"."turma_id" WHERE "professor_turmas"."professor_id" = ?[0m  [["professor_id", 6]]
+  [1m[35mProjeto Load (0.1ms)[0m  SELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (1, 3)
+  [1m[36mProjeto Load (0.1ms)[0m  [1mSELECT "projetos".* FROM "projetos"  WHERE "projetos"."id" IN (2, 3)[0m
+  Rendered professors/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 0.7ms)
