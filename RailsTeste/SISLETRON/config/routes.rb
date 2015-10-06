@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   get '/alunos/:id' => 'alunos#show', as: :aluno
   get '/escolas' => 'escolas#index'
   get '/escolas/:id' => 'escolas#show', as: :escola
-  get '/turmas' => 'turmas#index'
-  get '/turmas/:id' => 'turmas#show', as: :turma
+  get '/material_motivadors/' => 'material_motivadors#index'
+  get '/material_motivadors/new' => 'material_motivadors#new'
+  get '/material_motivadors/:id' => 'material_motivadors#show', as: :material_motivador
   get '/professors' => 'professors#index'
   get '/professors/:id' => 'professors#show', as: :professor
   get '/projetos' => 'projetos#index'
   get '/projetos/:id' => 'projetos#show', as: :projeto
+  get '/turmas' => 'turmas#index'
+  get '/turmas/:id' => 'turmas#show', as: :turma
+
+  post 'material_motivadors' => 'material_motivadors#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

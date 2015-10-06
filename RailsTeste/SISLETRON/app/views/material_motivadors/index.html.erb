@@ -1,0 +1,14 @@
+
+
+<h2>Materiais Motivadores</h2>
+
+<h3>Lista de materiais</h3>
+<ul>
+  <% @material_motivadors.each do |m| %>
+    <li><%= link_to m.titulo, material_motivador_path(m) %></li>
+  <% end %>
+</ul>
+
+<br>
+
+<h3><%= link_to 'Criar material', "material_motivadors/new"%> </h3>
