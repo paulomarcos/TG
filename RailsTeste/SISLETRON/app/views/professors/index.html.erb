@@ -1,0 +1,6 @@
+<h2>Lista dos Professores:</h2>
+<ul>
+  <% @professors.each do |p| %>
+    <li><%= link_to p.nome, professor_path(p)%></li>
+  <% end %>
+</ul>

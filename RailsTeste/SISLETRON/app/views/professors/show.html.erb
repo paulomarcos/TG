@@ -1,0 +1,26 @@
+<h2><%= @professor.nome %></h2>
+<p>Data de Nascimento: <%= @professor.data_nascimento %></p>
+
+<h3>Lecionando nas turmas:</h3>
+<ul>
+  <% @turmas.each do |t| %>
+    <li> <%= link_to t.ano+t.turma, turma_path(t) %></li>
+  <% end %>
+</ul>
+
+
+<h3>Projetos planejados:</h3>
+<ul>
+  <% @projetos_plano.each do |p| %>
+    <li> <%= link_to p.titulo, projeto_path(p) %></li>
+  <% end %>
+</ul>
+
+<br>
+
+<h3>Projetos executados:</h3>
+<ul>
+  <% @projetos_execucao.each do |p| %>
+    <li> <%= link_to p.titulo, projeto_path(p) %></li>
+  <% end %>
+</ul>

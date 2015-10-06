@@ -1,0 +1,2 @@
+class MaterialMotivadorsController < ApplicationController
+end

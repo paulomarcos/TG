@@ -1,3 +1,7 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@  Este arquivo descreve quais as mudanças obtidas em @
+@  relação com a tabela de entidade e relacionamento  @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 Classe -> Turma
    -texto -> descricao
@@ -14,5 +18,21 @@ Conteudo
    +titulo
 
 Projeto_Conteudo -> ProjetoConteudo (projeto_conteudo)
+
+Professor_Projeto_Execucao -> Execucao
+
+Professor_Projeto_Plano -> Plano
+
+MaterialMotivador
+   -palavraChave -> palavrasChave
+   +has_many exercicios
+   
+Exercício
+   -belongs_to atividade -> belongs_to material_motivador 
+   -enunciadoParteDois
+   +numero
+   
+Atividade
+    -has_many exercicios 
 
 

@@ -10,4 +10,6 @@ class Projeto < ActiveRecord::Base
 
   has_many :planos
   has_many :professors, through: :planos
+
+  has_many :atividades
 end
