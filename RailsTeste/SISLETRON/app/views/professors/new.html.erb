@@ -1,0 +1,13 @@
+<h1>Cadastro de Professores</h1>
+
+<%= form_for :professor, url: '/professors' do |f| %>
+  <%= f.error_messages %>
+
+  Nome: <%= f.text_field :nome %> </br>
+  Identificador: <%= f.text_field :identificador %> </br>
+  Data de Nascimento: <%= f.text_field :data_nascimento %> </br>
+  Senha: <%= f.password_field :password %> </br>
+  Confirme sua senha: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Cadastrar" %>
+
+<% end %>

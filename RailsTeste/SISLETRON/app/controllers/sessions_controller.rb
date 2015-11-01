@@ -4,21 +4,25 @@ class SessionsController < ApplicationController
    end
 
    def create
-       aluno = Aluno.find_by_identificador(params[:identificador])
-       # If the aluno exists AND the password entered is correct.
-       if aluno && aluno.authenticate(params[:password])
-         # Save the aluno id inside the browser cookie. This is how we keep the aluno
-         # logged in when they navigate around our website.
-         session[:aluno_id] = aluno.id
-         redirect_to '/alunos'
-       else
-       # If aluno's login doesn't work, send them back to the login form.
-         redirect_to '/login'
-       end
+     aluno = Aluno.find_by_identificador(params[:identificador])
+         if aluno.present? && aluno.authenticate(params[:password])
+           session[:aluno_id] = aluno.id
+           redirect_to aluno
+         else
+           professor = Professor.find_by_identificador(params[:identificador])
+           if professor.present? && professor.authenticate(params[:password])
+             session[:professor_id] = professor.id
+             redirect_to professor
+           else
+             flash.now[:notice] = "Identificador ou senha inválidos"
+             render 'new'
+           end
+         end
      end
 
      def destroy
        session[:aluno_id] = nil
+       session[:professor_id] = nil
        redirect_to '/login'
      end
 

@@ -8,7 +8,12 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_aluno
 
+  def current_professor
+    @current_professor ||= Professor.find(session[:professor_id]) if session[:professor_id]
+  end
+  helper_method :current_professor
+
   def authorize
-    redirect_to '/login' unless current_aluno
+    redirect_to '/login' unless current_aluno || current_professor
   end
 end

@@ -11,7 +11,11 @@
   <% if current_aluno %>
     Logado como <%= current_aluno.nome %> | <%= link_to "Logout", '/logout' %>
   <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Cadastro', '/cadastro' %>
+    <% if current_professor %>
+      Logado como <%= current_professor.nome %> | <%= link_to "Logout", '/logout' %>
+    <% else %>
+      <%= link_to 'Login', '/login' %> | <%= link_to 'Cadastro de Alunos', '/cadastro_aluno' %> | <%= link_to 'Cadastro de Professores', '/cadastro_professor' %>
+    <% end %>
   <% end %>
 
   <% flash.each do |k, v| %>

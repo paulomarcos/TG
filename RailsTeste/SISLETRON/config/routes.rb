@@ -15,8 +15,11 @@ Rails.application.routes.draw do
 
   post 'material_motivadors' => 'material_motivadors#create'
 
-  get '/cadastro' => 'alunos#new'
+  get '/cadastro_aluno' => 'alunos#new'
   post '/alunos' => 'alunos#create'
+
+  get '/cadastro_professor' => 'professors#new'
+  post '/professors' => 'professors#create'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

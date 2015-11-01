@@ -22,7 +22,7 @@ class AlunosController < ApplicationController
               flash[:error] = "Este identificador já existe"
             end
           end
-          redirect_to '/cadastro'
+          redirect_to '/cadastro_aluno'
         end
   end
 

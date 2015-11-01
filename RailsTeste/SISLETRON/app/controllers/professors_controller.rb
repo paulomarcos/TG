@@ -16,4 +16,30 @@ class ProfessorsController < ApplicationController
 
   end
 
+  def new
+  end
+
+  def create
+    @professor = Professor.new(professor_params)
+        if @professor.save
+          session[:professor_id] = @professor.id
+          redirect_to '/professors'
+        else
+          if params[:professor][:identificador]
+            p = Professor.where(:identificador => params[:professor][:identificador])
+            if p.size > 0
+              flash[:error] = "Este identificador já existe"
+            end
+          end
+          redirect_to '/cadastro_professor'
+        end
+  end
+
+    private
+
+      def professor_params
+        params.require(:professor).permit(:nome, :identificador, :data_nascimento, :password, :password_confirmation)
+      end
+
+
 end
