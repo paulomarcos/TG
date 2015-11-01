@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <% if current_aluno %>
+    Logado como <%= current_aluno.nome %> | <%= link_to "Logout", '/logout' %>
+  <% else %>
+    <%= link_to 'Login', '/login' %> | <%= link_to 'Cadastro', '/cadastro' %>
+  <% end %>
+
 <%= yield %>
 
 </body>

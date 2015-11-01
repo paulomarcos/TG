@@ -2,6 +2,6 @@
 
 <ul>
   <% @alunos.each do |a| %>
-    <li> <%= link_to a.nome+" - "+a.data_nascimento, aluno_path(a) %> </li>
+    <li> <%= link_to a.nome, aluno_path(a) %> </li>
   <% end %>
 </ul>

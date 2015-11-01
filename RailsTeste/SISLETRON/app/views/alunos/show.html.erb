@@ -1,3 +1,12 @@
 <h2> <%= @aluno.nome %> </h2>
 <p>Data de nascimento: <%= @aluno.data_nascimento %> </p>
-<p>Turma: <%= link_to @aluno.turma.ano+@aluno.turma.turma, turma_path(@aluno.turma) %> </p>
+<% if @aluno.turma != nil %>
+  <p>Turma: <%= link_to @aluno.turma.ano+@aluno.turma.turma, turma_path(@aluno.turma) %> </p>
+<% else %>
+  <p>Turma: este aluno não pertence a nenhuma turma</p>
+<% end %>
+<% if @aluno.identificador != nil %>
+  <p>Identificação: <%= @aluno.identificador %> </p>
+<% else %>
+  <p>Identificação: este aluno não possui um número de identificação </p>
+<% end %>

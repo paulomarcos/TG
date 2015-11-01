@@ -1,0 +1,12 @@
+<h1>Cadastro de Alunos</h1>
+
+<%= form_for :aluno, url: '/alunos' do |f| %>
+
+  Nome: <%= f.text_field :nome %>
+  Identificador: <%= f.text_field :identificador %>
+  Data de Nascimento: <%= f.text_field :data_nascimento %>
+  Senha: <%= f.password_field :password %>
+  Confirme sua senha: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Cadastrar" %>
+
+<% end %>

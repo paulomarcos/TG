@@ -7,4 +7,6 @@ class Professor < ActiveRecord::Base
 
   has_many :planos
   has_many :projetos, through: :planos
+
+  has_secure_password
 end
