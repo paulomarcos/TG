@@ -8,15 +8,20 @@ class AlunosController < ApplicationController
   end
 
   def new
-
   end
 
   def create
-    aluno = Aluno.new(aluno_params)
-        if aluno.save
-          session[:aluno_id] = aluno.id
+    @aluno = Aluno.new(aluno_params)
+        if @aluno.save
+          session[:aluno_id] = @aluno.id
           redirect_to '/alunos'
         else
+          if params[:aluno][:identificador]
+            a = Aluno.where(:identificador => params[:aluno][:identificador])
+            if a.size > 0
+              flash[:error] = "Este identificador já existe"
+            end
+          end
           redirect_to '/cadastro'
         end
   end
