@@ -27,6 +27,16 @@ class ProjetosController < ApplicationController
       @professor = current_professor
       plano = Plano.new(:professor_id => @professor.id, :projeto_id => @projeto.id)
       plano.save!
+
+      conteudos = params[:projeto][:conteudo_ids]
+      conteudos.each do |conteudo|
+        c = Conteudo.find_by_id(conteudo)
+        if c != nil
+          @projeto.conteudos << c
+        end
+      end
+      @projeto.save
+
       redirect_to '/projetos'
     else
       render 'new'
