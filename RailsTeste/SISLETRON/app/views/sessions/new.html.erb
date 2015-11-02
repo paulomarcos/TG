@@ -1,9 +1,11 @@
-<h1>Login</h1>
+<div class="basic-grey">
+  <%= form_tag '/login' do %>
+    <h1>Login
+        <span>Preencha os campos abaixo para logar.</span>
+    </h1>
+    <span>Identificador: <%= text_field_tag :identificador %></span>
+    <span>Senha: <%= password_field_tag :password %></span>
+    <%= submit_tag "Logar" %>
 
-<%= form_tag '/login' do %>
-
-  Identificador: <%= text_field_tag :identificador %>
-  Senha: <%= password_field_tag :password %>
-  <%= submit_tag "Logar" %>
-
-<% end %>
+  <% end %>
+</div>
