@@ -5,19 +5,26 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+
 </head>
 <body>
 
-  <% if current_aluno %>
-    Logado como <%= current_aluno.nome %> | <%= link_to "Logout", '/logout' %>
-  <% else %>
-    <% if current_professor %>
-      Logado como <%= current_professor.nome %> | <%= link_to "Logout", '/logout' %>
+<div id="login-box">
+  <div class="login-text">
+    <% if current_aluno %>
+      Logado como <%= current_aluno.nome %> | <%= link_to "Logout", '/logout' %>
     <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Cadastro de Alunos', '/cadastro_aluno' %> | <%= link_to 'Cadastro de Professores', '/cadastro_professor' %>
+      <% if current_professor %>
+        Logado como <%= current_professor.nome %> | <%= link_to "Logout", '/logout' %>
+      <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Cadastro de Alunos', '/cadastro_aluno' %> | <%= link_to 'Cadastro de Professores', '/cadastro_professor' %>
+      <% end %>
     <% end %>
-  <% end %>
-
+  </div>
+</div>
   <% flash.each do |k, v| %>
      <div id="<%= k %>"><%= v %></div>
    <% end %>

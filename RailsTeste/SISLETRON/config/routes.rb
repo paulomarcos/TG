@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pagina_inicial#index'
+
   get '/alunos' => 'alunos#index'
   get '/alunos/:id' => 'alunos#show', as: :aluno
   get '/escolas' => 'escolas#index'
