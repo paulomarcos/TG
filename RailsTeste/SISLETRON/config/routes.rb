@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   get '/professors' => 'professors#index'
   get '/professors/:id' => 'professors#show', as: :professor
   get '/projetos' => 'projetos#index'
+  get '/projetos/new' => 'projetos#new'
   get '/projetos/:id' => 'projetos#show', as: :projeto
   get '/turmas' => 'turmas#index'
   get '/turmas/:id' => 'turmas#show', as: :turma
 
   post 'material_motivadors' => 'material_motivadors#create'
-
+  post 'projetos' => 'projetos#create'
+  
   get '/cadastro_aluno' => 'alunos#new'
   post '/alunos' => 'alunos#create'
 
