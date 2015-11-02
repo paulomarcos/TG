@@ -16,4 +16,14 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to '/login' unless current_aluno || current_professor
   end
+
+  def require_professor
+     redirect_to :root unless current_professor
+   end
+
+   def require_aluno
+      redirect_to :root unless current_aluno
+   end
+
+
 end

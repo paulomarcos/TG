@@ -1,4 +1,6 @@
 class AlunosController < ApplicationController
+  before_action :require_aluno, only: [:show, :index]
+
   def index
     @alunos = Aluno.all
   end
@@ -14,7 +16,7 @@ class AlunosController < ApplicationController
     @aluno = Aluno.new(aluno_params)
         if @aluno.save
           session[:aluno_id] = @aluno.id
-          redirect_to '/alunos'
+          redirect_to :root
         else
           if params[:aluno][:identificador]
             a = Aluno.where(:identificador => params[:aluno][:identificador])

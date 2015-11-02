@@ -1,3 +1,11 @@
 
-  <h1 class="title">SISLETRON</h1>
-  <h2 class="title">Sistema de Letramento Online</h2>
+  <% if !(current_aluno or current_professor) %>
+    <h1 class="title">SISLETRON</h1>
+    <h2 class="title">Sistema de Letramento Online</h2>
+  <% else %>
+    <% if current_aluno %>
+      Bem-vindo(a), aluno <%= current_aluno.nome %>.
+    <% else %>
+      Bem-vindo(a), professor <%= current_professor.nome %>.
+    <% end %>
+  <% end %>

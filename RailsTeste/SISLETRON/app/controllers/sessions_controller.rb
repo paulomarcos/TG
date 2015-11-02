@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
      aluno = Aluno.find_by_identificador(params[:identificador])
          if aluno.present? && aluno.authenticate(params[:password])
            session[:aluno_id] = aluno.id
-           redirect_to aluno
+           redirect_to :root
          else
            professor = Professor.find_by_identificador(params[:identificador])
            if professor.present? && professor.authenticate(params[:password])
              session[:professor_id] = professor.id
-             redirect_to professor
+             redirect_to :root
            else
              flash.now[:notice] = "Identificador ou senha inválidos"
              render 'new'

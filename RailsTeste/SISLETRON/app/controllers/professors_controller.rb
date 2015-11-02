@@ -1,4 +1,6 @@
 class ProfessorsController < ApplicationController
+  before_action :require_professor, only: [:show, :index]
+
   def index
     @professors = Professor.all
   end
