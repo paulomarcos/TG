@@ -13,6 +13,14 @@
 
 <br>
 
+<h3>Atividades deste projeto:</h3>
+<% @atividades.each do |a| %>
+  <h4> <%= link_to a.titulo, atividade_path(a)%> </h4>
+<% end %>
+<h3><%= link_to "Criar Atividade", '/atividades/new' %> </h3>
+
+
+
 <h3>Projeto aplicado nas seguintes turmas: </h3>
 <% @turmas.each do |t| %>
   <p><%= t.ano+t.turma %> (<%= t.escola.nome %>)</p>

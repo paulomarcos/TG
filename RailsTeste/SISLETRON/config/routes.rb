@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/alunos' => 'alunos#index'
   get '/alunos/:id' => 'alunos#show', as: :aluno
+  get '/atividades/new' => 'atividades#new'
+  get '/atividades/:id' => 'atividades#show', as: :atividade
   get '/escolas' => 'escolas#index'
   get '/escolas/:id' => 'escolas#show', as: :escola
   get '/material_motivadors/' => 'material_motivadors#index'
@@ -18,7 +20,8 @@ Rails.application.routes.draw do
 
   post 'material_motivadors' => 'material_motivadors#create'
   post 'projetos' => 'projetos#create'
-  
+  post 'atividades' => 'atividades#create'
+
   get '/cadastro_aluno' => 'alunos#new'
   post '/alunos' => 'alunos#create'
 
@@ -28,6 +31,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

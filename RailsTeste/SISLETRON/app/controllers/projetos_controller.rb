@@ -9,6 +9,7 @@ class ProjetosController < ApplicationController
     @projeto = Projeto.find(params[:id])
     @turmas = @projeto.turmas
     @conteudos = @projeto.conteudos
+    @atividades = @projeto.atividades
 
     @execucao = Execucao.where(projeto_id: @projeto.id).pluck('professor_id')
     @professores_execucao = Professor.where(id: @execucao)
