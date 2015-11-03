@@ -15,7 +15,7 @@
 
 <h3>Projeto aplicado nas seguintes turmas: </h3>
 <% @turmas.each do |t| %>
-  <p><%= t.ano+t.turma %> </p>
+  <p><%= t.ano+t.turma %> (<%= t.escola.nome %>)</p>
 <% end %>
 
 <h3>Projeto aplicado pelos seguintes professores: </h3>

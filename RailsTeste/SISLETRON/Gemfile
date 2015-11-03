@@ -43,6 +43,9 @@ gem "dynamic_form"
 # Gem to allow style for checkbox
 gem 'simple_form'
 
+## Gem paginate to allow N results per page
+gem 'will_paginate', '~> 3.0.6'
+
 # Gem to better debug
 group :development do
   gem "better_errors"

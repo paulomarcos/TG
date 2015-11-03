@@ -19,6 +19,7 @@ class ProjetosController < ApplicationController
 
   def new
     @projeto = Projeto.new
+    @turmas = Turma.all
   end
 
   def create
@@ -35,6 +36,15 @@ class ProjetosController < ApplicationController
           @projeto.conteudos << c
         end
       end
+
+      turmas = params[:projeto][:turma_ids]
+      turmas.each do |turma|
+        t = Turma.find_by_id(turma)
+        if t != nil
+          @projeto.turmas << t
+        end
+      end
+
       @projeto.save
 
       redirect_to '/projetos'
