@@ -5,6 +5,7 @@ class MaterialMotivadorsController < ApplicationController
 
   def show
     @material_motivador = MaterialMotivador.find(params[:id])
+    @exercicios = @material_motivador.exercicios
   end
 
   def new

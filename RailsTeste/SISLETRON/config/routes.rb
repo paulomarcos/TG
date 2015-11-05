@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/atividades/:id' => 'atividades#show', as: :atividade
   get '/escolas' => 'escolas#index'
   get '/escolas/:id' => 'escolas#show', as: :escola
+  get '/exercicios' => 'exercicios#index'
+  get '/exercicios/new' => 'exercicios#new'
+  get '/exercicios/:id' => 'exercicios#show', as: :exercicio
   get '/material_motivadors/' => 'material_motivadors#index'
   get '/material_motivadors/new' => 'material_motivadors#new'
   get '/material_motivadors/:id' => 'material_motivadors#show', as: :material_motivador
@@ -18,9 +21,11 @@ Rails.application.routes.draw do
   get '/turmas' => 'turmas#index'
   get '/turmas/:id' => 'turmas#show', as: :turma
 
+  post 'atividades' => 'atividades#create'
+  post 'exercicios' => 'exercicios#create'
   post 'material_motivadors' => 'material_motivadors#create'
   post 'projetos' => 'projetos#create'
-  post 'atividades' => 'atividades#create'
+
 
   resources :projetos do
     resources :atividades, shallow: true
@@ -32,6 +37,12 @@ Rails.application.routes.draw do
     resources :material_motivadors, shallow: true
   end
   resources :material_motivadors
+
+
+  resources :material_motivadors do
+    resources :exercicios, shallow: true
+  end
+  resources :exercicios
 
 
   get '/cadastro_aluno' => 'alunos#new'

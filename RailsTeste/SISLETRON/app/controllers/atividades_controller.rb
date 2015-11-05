@@ -7,6 +7,7 @@ class AtividadesController < ApplicationController
 
   def show
     @atividade = Atividade.find(params[:id])
+    aouehoahe
     @projeto = Projeto.find_by_id(@atividade.projeto_id)
     @materiais = @atividade.material_motivadors
   end

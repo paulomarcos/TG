@@ -1,3 +1,16 @@
 <h2><%= @material_motivador.titulo %></h2>
 
 <%= @material_motivador.conteudo.html_safe %>
+
+<h3>Exercícios</h3>
+<% if !@exercicios.nil? %>
+  <ul>
+    <% @exercicios.each do |e| %>
+      <li><%= link_to e.numero.to_s+") "+e.enunciado, exercicio_path(e) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Este material não possui exercícios</p>
+<% end %>
+
+<%= link_to "Criar Exercício", new_exercicio_path(:material_motivador_id => @material_motivador.id) %>
