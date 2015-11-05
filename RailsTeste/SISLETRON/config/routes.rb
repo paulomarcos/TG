@@ -22,6 +22,12 @@ Rails.application.routes.draw do
   post 'projetos' => 'projetos#create'
   post 'atividades' => 'atividades#create'
 
+  resources :projetos do
+    resources :atividades, shallow: true
+  end
+
+  resources :atividades
+
   get '/cadastro_aluno' => 'alunos#new'
   post '/alunos' => 'alunos#create'
 
