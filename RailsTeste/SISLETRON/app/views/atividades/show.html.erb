@@ -1,0 +1,15 @@
+<h3>
+  Atividade
+  <i><%= @atividade.titulo %></i>
+  do projeto
+  <%= link_to @projeto.titulo, projeto_path(@projeto)%>
+</h3>
+
+<h3>Lista de Materiais Motivadores</h3>
+<ul>
+  <% @materiais.each do |m| %>
+    <li><%= link_to m.titulo, material_motivador_path(m) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Criar Material Motivador", new_material_motivador_path(:atividade_id => @atividade.id) %>

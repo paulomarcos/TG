@@ -5,6 +5,12 @@ class AtividadesController < ApplicationController
     @projeto_id = params[:projeto_id]
   end
 
+  def show
+    @atividade = Atividade.find(params[:id])
+    @projeto = Projeto.find_by_id(@atividade.projeto_id)
+    @materiais = @atividade.material_motivadors
+  end
+
   def create
     @atividade = Atividade.new(atividade_params)
     @projeto_id = params[:projeto_id]
@@ -14,7 +20,7 @@ class AtividadesController < ApplicationController
         p.atividades << @atividade
     end
     if @atividade.save
-      redirect_to '/projetos'
+      redirect_to projeto_path(p)
     else
       render new
     end

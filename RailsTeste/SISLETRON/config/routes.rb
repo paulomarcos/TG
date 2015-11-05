@@ -25,8 +25,14 @@ Rails.application.routes.draw do
   resources :projetos do
     resources :atividades, shallow: true
   end
-
   resources :atividades
+
+
+  resources :atividades do
+    resources :material_motivadors, shallow: true
+  end
+  resources :material_motivadors
+
 
   get '/cadastro_aluno' => 'alunos#new'
   post '/alunos' => 'alunos#create'
