@@ -1,0 +1,13 @@
+<div class="basic-grey">
+  <%= simple_form_for(@atividade) do |f| %>
+    <h1>Criar atividade
+        <span>Preencha o formulário para criar uma nova atividade.</span>
+    </h1>
+    <span>Título: <%= f.text_field :titulo %></span>
+    <h2>Projetos
+      <span>Selecione o projeto que terá esta atividade</span>
+    </h2>
+    <%= f.input :projeto_id,:collection => Projeto.all,:label_method => :titulo,:value_method => :id, :include_blank => false %>
+    <%= submit_tag "Criar" %>
+  <% end %>
+</div>
