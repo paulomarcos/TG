@@ -99,6 +99,20 @@ a:hover{
 }
 
 
+#alert, #notice{
+  background-color: #efefef;
+  border: 1px solid #e0e0e0;
+  border-radius: 7px;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 30px;
+  height: 20px;
+  width: 500px;
+  color: #EB2F32;
+}
+
+
 /*
 
 -------------------------------------------------

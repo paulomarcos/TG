@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// Esconder a noticia automaticamente
+setTimeout((function() {
+  $("#alert").slideUp("slow");
+  $("#notice").slideUp("slow");
+}), 6000);

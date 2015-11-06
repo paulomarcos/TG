@@ -6,10 +6,9 @@
     <h1>Criar exercício
       <span></span>
     </h1>
-    <span>Número: <%= f.text_field :numero %> </span>
-    <%= f.text_area :enunciado, :class => "tinymce", :rows => 20, :cols => 120 %>
+    <%= f.text_area :enunciado, :class => "tinymce", :rows => 20, :cols => 20 %>
     </br>
     <%= hidden_field_tag(:material_motivador_id, params[:material_motivador_id]) %>
-      <%= f.submit "Create" %>
+      <%= f.submit "Enviar" %>
   <% end %>
 </div>

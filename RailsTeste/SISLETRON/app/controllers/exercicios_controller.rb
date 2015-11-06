@@ -16,16 +16,20 @@ class ExerciciosController < ApplicationController
 
   def create
     @exercicio = Exercicio.new(exercicio_params)
-    @material_motivador_id = params[:material_motivador_id]
-    @exercicio.material_motivador_id = @material_motivador_id
-    m = MaterialMotivador.find_by_id(@material_motivador_id)
-    if m != nil
-        m.exercicios << @exercicio
-    end
-    if @exercicio.save
-      redirect_to material_motivador_path(m)
+    if exercicio_params[:enunciado].empty?
+      redirect_to :back, alert: "Conteúdo vazio. Não foi possível salvar."
     else
-      render new
+      @material_motivador_id = params[:material_motivador_id]
+      @exercicio.material_motivador_id = @material_motivador_id
+      m = MaterialMotivador.find_by_id(@material_motivador_id)
+      if m != nil
+          m.exercicios << @exercicio
+      end
+      if @exercicio.save
+        redirect_to material_motivador_path(m)
+      else
+        render new
+      end
     end
   end
 
