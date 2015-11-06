@@ -4,13 +4,15 @@
 
 <h3>Exercícios</h3>
 <% if !@exercicios.nil? %>
-  <ul>
-    <% @exercicios.each do |e| %>
-      <li><%= link_to e.numero.to_s+") "+e.enunciado, exercicio_path(e) %></li>
+  <% @exercicios.each do |e| %>
+    <%= link_to exercicio_path(e), class: "exercicio"  do %>
+      <span class="exercicio">
+        <p class="texto"><%= truncate_html(strip_tags(e.enunciado), lengt: 140) %></p>
+      </span>
     <% end %>
-  </ul>
+  <% end %>
 <% else %>
   <p>Este material não possui exercícios</p>
 <% end %>
-
+</br>
 <%= link_to "Criar Exercício", new_exercicio_path(:material_motivador_id => @material_motivador.id) %>

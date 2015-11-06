@@ -126,6 +126,10 @@ at3 = Atividade.create(titulo: "Análise de Risco", projeto_id: pj3.id)
 at4 = Atividade.create(titulo: "Plantas Herbáceas", projeto_id: pj1.id)
 at5 = Atividade.create(titulo: "Animais em Cativeiro", projeto_id: pj1.id)
 
+pj1.atividades << [at4, at5]
+pj2.atividades << [at1, at2]
+pj3.atividades << [at3]
+
 mm1 = MaterialMotivador.create(titulo: "Base de Vetores", palavrasChave: "matemática", tipo: "texto", conteudo: "Este é o começo da Geometria Analítica...", atividade_id: at1.id)
 mm2 = MaterialMotivador.create(titulo: "Diferenças Finitas", palavrasChave: "matemática", tipo: "texto", conteudo: "Este é o começo do Cálculo...", atividade_id: at2.id)
 mm3 = MaterialMotivador.create(titulo: "Canvas MM", palavrasChave: "administração", tipo: "texto", conteudo: "A primeira pergunta que devemos nos fazer é: qual a...", atividade_id: at3.id)
