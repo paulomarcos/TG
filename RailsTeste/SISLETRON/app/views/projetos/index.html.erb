@@ -1,26 +1,42 @@
 <h1>Projetos:</h1>
 
-<h2>Projetos que criou:</h2>
 
-<% if @projetos_plano.first.nil? %>
+<% if current_professor? %>
+  <h2>Projetos que criou:</h2>
+
+  <% if @projetos_plano.first.nil? %>
+    <p>Não há projetos encontrados</p>
+  <% else %>
+    <ul>
+      <% @projetos_plano.each do |p| %>
+        <li> <%= link_to p.titulo, projeto_path(p) %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= link_to 'Criar novo projeto', new_projeto_path(), class: 'create' %>
+
+  <h2>Seus projetos em andamento:</h2>
+
+  <% if @projetos_execucao.first.nil? %>
+    <p>Não há projetos encontrados</p>
+  <% else %>
+    <ul>
+      <% @projetos_execucao.each do |p| %>
+        <li> <%= link_to p.titulo, projeto_path(p) %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+<% else %> <!-- current_aluno -->
+<h2>Seus projetos em andamento:</h2>
+
+<% if @projetos.first.nil? %>
   <p>Não há projetos encontrados</p>
 <% else %>
   <ul>
-    <% @projetos_plano.each do |p| %>
+    <% @projetos.each do |p| %>
       <li> <%= link_to p.titulo, projeto_path(p) %> </li>
     <% end %>
   </ul>
 <% end %>
-<%= link_to 'Criar novo projeto', new_projeto_path(), class: 'create' %>
-
-<h2>Seus projetos em andamento:</h2>
-
-<% if @projetos_execucao.first.nil? %>
-  <p>Não há projetos encontrados</p>
-<% else %>
-  <ul>
-    <% @projetos_execucao.each do |p| %>
-      <li> <%= link_to p.titulo, projeto_path(p) %> </li>
-    <% end %>
-  </ul>
 <% end %>

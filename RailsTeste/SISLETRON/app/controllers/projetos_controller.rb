@@ -1,11 +1,18 @@
 class ProjetosController < ApplicationController
-  before_action :require_professor, only: [:create, :new, :index]
+  before_action :authorize
+  before_action :require_professor, only: [:create, :new]
 
   def index
-    @execucao_id = Execucao.where(professor_id: current_professor.id).pluck('projeto_id')
-    @projetos_execucao = Projeto.find(@execucao_id)
-    @plano_id = Plano.where(professor_id: current_professor.id).pluck('projeto_id')
-    @projetos_plano = Projeto.find(@plano_id)
+
+    if current_professor?
+      @execucao_id = Execucao.where(professor_id: current_professor.id).pluck('projeto_id')
+      @projetos_execucao = Projeto.find(@execucao_id)
+      @plano_id = Plano.where(professor_id: current_professor.id).pluck('projeto_id')
+      @projetos_plano = Projeto.find(@plano_id)
+    else # current_aluno
+      @projetos_turma = ProjetoTurma.where(turma_id: current_aluno.turma_id).pluck('projeto_id')
+      @projetos = Projeto.find(@projetos_turma)
+    end
   end
 
   def show

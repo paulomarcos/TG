@@ -17,8 +17,9 @@
 <% @atividades.each do |a| %>
   <h4> <%= link_to a.titulo, atividade_path(a)%> </h4>
 <% end %>
-<h3><%= link_to "Criar Atividade", new_atividade_path(:projeto_id => @projeto.id) %> </h3>
-
+<% if current_professor? %>
+  <h3><%= link_to "Criar Atividade", new_atividade_path(:projeto_id => @projeto.id) %> </h3>
+<% end %>
 
 
 <h3>Projeto aplicado nas seguintes turmas: </h3>
