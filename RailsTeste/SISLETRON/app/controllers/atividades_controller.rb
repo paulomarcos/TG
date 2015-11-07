@@ -1,4 +1,6 @@
 class AtividadesController < ApplicationController
+  before_action :authorize
+  before_action :require_professor, only: [:create, :new]
 
   def new
     @atividade = Atividade.new()

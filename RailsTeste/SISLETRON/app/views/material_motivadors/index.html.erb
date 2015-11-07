@@ -11,4 +11,6 @@
 
 <br>
 
-<h3><%= link_to 'Criar material', "material_motivadors/new"%> </h3>
+<% if current_professor? %>
+  <%= link_to 'Criar material', "material_motivadors/new", class: 'create'%> 
+<% end %>

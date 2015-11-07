@@ -16,4 +16,6 @@
   <p>Esta atividade não possui materiais</p>
 <% end %>
 
-<%= link_to "Criar Material Motivador", new_material_motivador_path(:atividade_id => @atividade.id) %>
+<% if current_professor? %>
+  <%= link_to "Criar Material Motivador", new_material_motivador_path(:atividade_id => @atividade.id), class: 'create' %>
+<% end %>

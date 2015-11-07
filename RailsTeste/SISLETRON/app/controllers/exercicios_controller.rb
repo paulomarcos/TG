@@ -1,5 +1,7 @@
 class ExerciciosController < ApplicationController
-
+  before_action :authorize
+  before_action :require_professor, only: [:create, :new]
+  
   def index
     @exercicios = Exercicio.all
   end

@@ -1,4 +1,6 @@
 class EscolasController < ApplicationController
+  before_action :authorize
+  
   def index
     @escolas = Escola.all
   end

@@ -1,4 +1,7 @@
 class MaterialMotivadorsController < ApplicationController
+  before_action :authorize
+  before_action :require_professor, only: [:create, :new]
+  
   def index
     @material_motivadors = MaterialMotivador.all
   end

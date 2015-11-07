@@ -15,4 +15,6 @@
   <p>Este material não possui exercícios</p>
 <% end %>
 </br>
-<%= link_to "Criar Exercício", new_exercicio_path(:material_motivador_id => @material_motivador.id) %>
+<% if current_professor? %>
+  <%= link_to "Criar Exercício", new_exercicio_path(:material_motivador_id => @material_motivador.id), class: 'create' %>
+<% end %>
