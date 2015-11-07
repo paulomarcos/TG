@@ -2,7 +2,10 @@ class ProjetosController < ApplicationController
   before_action :require_professor, only: [:create, :new, :index]
 
   def index
-    @projetos = Projeto.all
+    @execucao_id = Execucao.where(professor_id: current_professor.id).pluck('projeto_id')
+    @projetos_execucao = Projeto.find(@execucao_id)
+    @plano_id = Plano.where(professor_id: current_professor.id).pluck('projeto_id')
+    @projetos_plano = Projeto.find(@plano_id)
   end
 
   def show

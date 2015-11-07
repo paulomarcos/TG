@@ -99,6 +99,21 @@ a:hover{
 }
 
 
+a.create{
+  width: auto;
+  padding: 8px;
+  height: 18px;
+  background-color: #efefef;
+  color: #666699;
+  border: solid 1px #e0e0e0;
+  border-radius: 7px;
+}
+
+a.create:HOVER{
+  color: slateblue;
+  background-color: #fff;
+}
+
 #alert, #notice{
   background-color: #efefef;
   border: 1px solid #e0e0e0;
