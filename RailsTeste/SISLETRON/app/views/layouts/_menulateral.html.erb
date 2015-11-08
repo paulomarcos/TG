@@ -1,0 +1,39 @@
+
+<%= link_to :root, class: "menu-link"  do %>
+  <div class="side-link">
+    <%= image_tag("home.svg",:title => "Home", class: "icon") %>
+    <p>Home</p>
+  </div>
+<% end %>
+<%= link_to projetos_path, class: "menu-link"  do %>
+  <div class="side-link">
+    <%= image_tag("projeto.svg",:title => "Projetos", class: "icon") %>
+    <p>Projetos</p>
+  </div>
+<% end %>
+<%= link_to atividades_path, class: "menu-link"  do %>
+  <div class="side-link">
+    <%= image_tag("atividade.svg",:title => "Atividades", class: "icon") %>
+    <p>Atividades</p>
+  </div>
+<% end %>
+<%= link_to material_motivadors_path, class: "menu-link"  do %>
+  <div class="side-link">
+    <%= image_tag("material.svg",:title => "Materiais base", class: "icon") %>
+    <p>Materiais base</p>
+  </div>
+<% end %>
+<%= link_to exercicios_path, class: "menu-link"  do %>
+  <div class="side-link">
+    <%= image_tag("exercicio.svg",:title => "Exercícios", class: "icon") %>
+    <p>Exercícios</p>
+  </div>
+<% end %>
+<% if current_aluno? %>
+  <%= link_to exercicios_path, class: "menu-link"  do %>
+    <div class="side-link">
+      <%= image_tag("resposta.svg",:title => "Minhas respostas", class: "icon") %>
+      <p>Minhas respostas</p>
+    </div>
+  <% end %>
+<% end %>

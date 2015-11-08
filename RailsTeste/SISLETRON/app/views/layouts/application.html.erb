@@ -25,10 +25,10 @@
     <div id="login-box">
       <div class="login-text">
         <% if current_aluno %>
-          Logado como <%= link_to current_aluno.nome, aluno_path(current_aluno) %>  | <%= link_to "Logout", '/logout' %>
+          <%= link_to current_aluno.nome, aluno_path(current_aluno) %>  | <%= link_to "Sair", '/logout' %>
         <% else %>
           <% if current_professor %>
-            Logado como <%= link_to current_professor.nome, professor_path(current_professor) %> | <%= link_to "Logout", '/logout' %>
+            <%= link_to current_professor.nome, professor_path(current_professor) %> | <%= link_to "Sair", '/logout' %>
           <% else %>
             <%= link_to 'Login', '/login' %> | <%= link_to 'Cadastro de Alunos', '/cadastro_aluno' %> | <%= link_to 'Cadastro de Professores', '/cadastro_professor' %>
           <% end %>
@@ -38,15 +38,21 @@
   </div>
 </div>
 
-
-
 <div id="container">
+  <% if current_aluno? || current_professor %>
+    <div id="side-menu">
+      <%= render :partial => 'layouts/menulateral' %>
+    </div>
+  <% end %>
+  
   <div id="content">
+
     <% flash.each do |k, v| %>
-       <div id="<%= k %>"><%= v %></div>
-     <% end %>
+      <div id="<%= k %>"><%= v %></div>
+    <% end %>
 
      <%= yield %>
+
   </div>
 </div>
 
