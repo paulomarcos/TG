@@ -1,7 +1,7 @@
 class ExerciciosController < ApplicationController
   before_action :authorize
   before_action :require_professor, only: [:create, :new]
-  
+
   def index
     @exercicios = Exercicio.all
   end
@@ -22,15 +22,25 @@ class ExerciciosController < ApplicationController
       redirect_to :back, alert: "Conteúdo vazio. Não foi possível salvar."
     else
       @material_motivador_id = params[:material_motivador_id]
-      @exercicio.material_motivador_id = @material_motivador_id
-      m = MaterialMotivador.find_by_id(@material_motivador_id)
-      if m != nil
-          m.exercicios << @exercicio
-      end
-      if @exercicio.save
-        redirect_to material_motivador_path(m)
+      material = MaterialMotivador.find(@material_motivador_id)
+      atividade = Atividade.find(material.atividade_id)
+      projeto_id = atividade.projeto_id
+      Projeto.find(projeto_id)
+      plano = Plano.where(projeto_id: projeto_id).pluck('professor_id')
+      execucao = Execucao.where(projeto_id: projeto_id).pluck('professor_id')
+
+      if plano.include?(current_professor.id) || execucao.include?(current_professor.id)
+        @exercicio.material_motivador_id = @material_motivador_id
+        if material != nil
+            material.exercicios << @exercicio
+        end
+        if @exercicio.save
+          redirect_to material_motivador_path(material)
+        else
+          render new
+        end
       else
-        render new
+        redirect_to :back, alert: "Você não pode criar exercicios para este material."
       end
     end
   end

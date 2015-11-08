@@ -16,15 +16,21 @@ class AtividadesController < ApplicationController
   def create
     @atividade = Atividade.new(atividade_params)
     @projeto_id = params[:projeto_id]
-    @atividade.projeto_id = @projeto_id
-    p = Projeto.find_by_id(@projeto_id)
-    if p != nil
-        p.atividades << @atividade
-    end
-    if @atividade.save
-      redirect_to projeto_path(p)
+    plano = Plano.where(projeto_id: @projeto_id).pluck('professor_id')
+    execucao = Execucao.where(projeto_id: @projeto_id).pluck('professor_id')
+    if plano.include?(current_professor.id) || execucao.include?(current_professor.id)
+      @atividade.projeto_id = @projeto_id
+      p = Projeto.find_by_id(@projeto_id)
+      if p != nil
+          p.atividades << @atividade
+      end
+      if @atividade.save
+        redirect_to projeto_path(p)
+      else
+        render new
+      end
     else
-      render new
+      redirect_to :back, alert: "Você não pode criar atividade para este projeto."
     end
   end
 
