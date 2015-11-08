@@ -38,22 +38,29 @@
   </div>
 </div>
 
-<div id="container">
+<% if current_aluno? || current_professor %>
+  <div id="side-menu">
+    <%= render :partial => 'layouts/menulateral' %>
+  </div>
+<% end %>
+
+<div id="container">  
+
   <% if current_aluno? || current_professor %>
-    <div id="side-menu">
-      <%= render :partial => 'layouts/menulateral' %>
+    <div id="content">
+
+      <% flash.each do |k, v| %>
+        <div id="<%= k %>"><%= v %></div>
+      <% end %>
+
+       <%= yield %>
+
+     </div>
+  <% else %>
+    <div id="content-no-session">
+      <%= yield %>
     </div>
   <% end %>
-  
-  <div id="content">
-
-    <% flash.each do |k, v| %>
-      <div id="<%= k %>"><%= v %></div>
-    <% end %>
-
-     <%= yield %>
-
-  </div>
 </div>
 
 </body>
