@@ -14,6 +14,7 @@ class ExerciciosController < ApplicationController
   def show
     @exercicio = Exercicio.find(params[:id])
     @material_motivador = MaterialMotivador.find_by_id(@exercicio.material_motivador_id)
+    @resposta = Resposta.where(exercicio_id: @exercicio.id).where(aluno_id: current_aluno.id).first 
   end
 
   def create

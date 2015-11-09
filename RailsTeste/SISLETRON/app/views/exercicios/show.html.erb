@@ -1,3 +1,12 @@
-<%= @exercicio.numero %>)
+<div class="post-content">
+  <%= @exercicio.enunciado.html_safe %>
+</div>
 
-<%= @exercicio.enunciado.html_safe %>
+<% if @resposta.nil? %>
+  <%= link_to 'Responder', new_resposta_path(:exercicio_id => @exercicio.id), class: 'create' %>
+<% else %>
+  <div class="post-content">
+    <%= @resposta.conteudo.html_safe %>
+  </div>
+  <%= link_to 'Editar resposta', '#', class: 'create' %>
+<% end %>

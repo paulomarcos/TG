@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/projetos' => 'projetos#index'
   get '/projetos/new' => 'projetos#new'
   get '/projetos/:id' => 'projetos#show', as: :projeto
+  get '/respostas' => 'respostas#index'
+  get '/respostas/new' => 'respostas#new'
   get '/turmas' => 'turmas#index'
   get '/turmas/:id' => 'turmas#show', as: :turma
 
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   post 'exercicios' => 'exercicios#create'
   post 'material_motivadors' => 'material_motivadors#create'
   post 'projetos' => 'projetos#create'
+  post 'respostas' => 'respostas#create'
 
 
   resources :projetos do
@@ -43,6 +46,12 @@ Rails.application.routes.draw do
     resources :exercicios, shallow: true
   end
   resources :exercicios
+
+
+  resources :exercicios do
+    resources :respostas, shallow: true
+  end
+  resources :respostas
 
 
   get '/cadastro_aluno' => 'alunos#new'
