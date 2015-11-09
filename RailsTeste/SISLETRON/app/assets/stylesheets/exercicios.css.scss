@@ -10,10 +10,40 @@ span.exercicio{
   width: 300px;
   height: 100px;
   display: inline-table;
-  margin: 30px;
+  margin: 0px 30px 30px 0;
 }
 
 p.texto{
   margin: 7px;
   word-break: break-all;
+}
+
+
+.post-content{
+  background-color: white;
+  border: 1px solid rgb(233, 233, 233);
+  width: 90%;
+  min-width: 500px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+h1.post-title{
+  font-size: 11pt;
+  font-weight: 600;
+  margin-bottom: -1px;
+  background-color: rgb(242, 242, 242);
+  width: 100px;
+  text-align: center;
+  border: 1px solid rgb(233, 233, 233);
+  padding-top: 3px;
+  color: #669;
+  font-family: sans-serif;
+  font-size: 11pt;
+}
+
+.post-content > p > img{
+  max-width: 100%;
+
 }

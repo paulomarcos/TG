@@ -1,12 +1,17 @@
+<h1 class="post-title">Exercício</h1>
 <div class="post-content">
   <%= @exercicio.enunciado.html_safe %>
 </div>
 
-<% if @resposta.nil? %>
+<% if @resposta.nil? && current_aluno? %>
   <%= link_to 'Responder', new_resposta_path(:exercicio_id => @exercicio.id), class: 'create' %>
 <% else %>
+  <h1 class="post-title">Resposta</h1>
   <div class="post-content">
     <%= @resposta.conteudo.html_safe %>
   </div>
   <%= link_to 'Editar resposta', '#', class: 'create' %>
+<% end %>
+<% if current_professor? %>
+  <%= link_to 'Editar exercício', '#', class: 'create' %>
 <% end %>

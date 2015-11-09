@@ -1,6 +1,9 @@
-<h2><%= @material_motivador.titulo %></h2>
+<h1 class="post-title">Material</h1>
+<div class="post-content">
+  <h2><%= @material_motivador.titulo %></h2>
+  <%= @material_motivador.conteudo.html_safe %>
+</div>
 
-<%= @material_motivador.conteudo.html_safe %>
 
 <h3>Exercícios</h3>
 <% if !@exercicios.nil? %>

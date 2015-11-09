@@ -1,16 +1,14 @@
 <%= tinymce_assets %>
 
 <%= tinymce %>
-
+<h1 class="post-title">Exercício</h1>
 <div class="post-content">
   <%= @exercicio.enunciado.html_safe %>
 </div>
 
-<div class="basic-grey">
+<div class="basic-grey content-filler">
   <%= simple_form_for(@resposta) do |f| %>
-    <h1>Responder ao exercício
-      <span></span>
-    </h1>
+    <h1>Respondendo o exercício</h1>
     <%= f.text_area :conteudo, :class => "tinymce", :rows => 20, :cols => 20 %>
     </br>
     <%= hidden_field_tag(:exercicio_id, params[:exercicio_id]) %>
