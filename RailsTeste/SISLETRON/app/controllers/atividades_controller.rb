@@ -2,6 +2,19 @@ class AtividadesController < ApplicationController
   before_action :authorize
   before_action :require_professor, only: [:create, :new]
 
+  def index
+    if current_professor?
+      projetos_execucao_id = Execucao.where(professor_id: current_professor.id).pluck('projeto_id')
+      @projetos_execucao = Projeto.find(projetos_execucao_id)
+      projetos_plano_id = Plano.where(professor_id: current_professor.id).pluck('projeto_id')
+      @projetos_plano = Projeto.find(projetos_plano_id)
+    else # current_aluno?
+      projetos_turma_id = ProjetoTurma.where(turma_id: current_aluno.turma_id).pluck('projeto_id')
+      @projetos_aluno = Projeto.find(projetos_turma_id)
+    end
+  end
+
+
   def new
     @atividade = Atividade.new()
     @projeto_id = params[:projeto_id]
