@@ -1,16 +1,11 @@
+<h2>Materiais Motivadores:</h2>
 
-
-<h2>Materiais Motivadores</h2>
-
-<h3>Lista de materiais</h3>
-<ul>
+<div class="post-content no-padding">
   <% @material_motivadors.each do |m| %>
-    <li><%= link_to m.titulo, material_motivador_path(m) %></li>
+    <%= link_to m.titulo, material_motivador_path(m), class: 'link' %>
   <% end %>
-</ul>
-
-<br>
+</div>
 
 <% if current_professor? %>
-  <%= link_to 'Criar material', "material_motivadors/new", class: 'create'%> 
+  <%= link_to 'Criar material', "material_motivadors/new", class: 'create'%>
 <% end %>

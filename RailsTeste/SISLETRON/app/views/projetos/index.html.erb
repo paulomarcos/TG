@@ -1,42 +1,41 @@
-<h1>Projetos:</h1>
-
-
 <% if current_professor? %>
   <h2>Projetos que criou:</h2>
 
-  <% if @projetos_plano.first.nil? %>
-    <p>Não há projetos encontrados</p>
-  <% else %>
-    <ul>
+  <div class="post-content no-padding">
+    <% if @projetos_plano.first.nil? %>
+      <p>Não há projetos encontrados</p>
+    <% else %>
       <% @projetos_plano.each do |p| %>
-        <li> <%= link_to p.titulo, projeto_path(p) %> </li>
+      <%= link_to p.titulo, projeto_path(p), class: 'link' %>
       <% end %>
-    </ul>
-  <% end %>
+    <% end %>
+  </div>
   <%= link_to 'Criar novo projeto', new_projeto_path(), class: 'create' %>
 
   <h2>Seus projetos em andamento:</h2>
 
-  <% if @projetos_execucao.first.nil? %>
-    <p>Não há projetos encontrados</p>
-  <% else %>
-    <ul>
+  <div class="post-content no-padding">
+    <% if @projetos_execucao.first.nil? %>
+      <p>Não há projetos encontrados</p>
+    <% else %>
       <% @projetos_execucao.each do |p| %>
-        <li> <%= link_to p.titulo, projeto_path(p) %> </li>
+        <%= link_to p.titulo, projeto_path(p), class: 'link' %>
       <% end %>
-    </ul>
-  <% end %>
+    <% end %>
+  </div>
 
 <% else %> <!-- current_aluno -->
-<h2>Seus projetos em andamento:</h2>
+  <h2>Seus projetos em andamento:</h2>
 
-<% if @projetos.first.nil? %>
-  <p>Não há projetos encontrados</p>
-<% else %>
-  <ul>
-    <% @projetos.each do |p| %>
-      <li> <%= link_to p.titulo, projeto_path(p) %> </li>
+  <div class="post-content no-padding">
+    <% if @projetos.first.nil? %>
+      <p>Não há projetos encontrados</p>
+    <% else %>
+      <% @projetos.each do |p| %>
+        <%= link_to p.titulo, projeto_path(p), class: 'link' %>
+      <% end %>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+
+
 <% end %>

@@ -1,6 +1,13 @@
+<div class="content-path">
+  <i><%= link_to @projeto.titulo, projeto_path(@projeto)%></i> &#8594;
+  <i><%= link_to @atividade.titulo, atividade_path(@atividade)%></i> &#8594;
+  <i><%= @material_motivador.titulo %></i>
+</div>
+
 <h1 class="post-title">Material</h1>
 <div class="post-content">
-  <h2><%= @material_motivador.titulo %></h2>
+  <h3><%= @material_motivador.titulo %></h3>
+  <div class="separation-line"></div>
   <%= @material_motivador.conteudo.html_safe %>
 </div>
 

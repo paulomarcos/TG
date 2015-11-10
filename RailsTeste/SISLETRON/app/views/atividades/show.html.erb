@@ -1,21 +1,20 @@
-<h3>
-  Atividade
+<div class="content-path">
+  <i><%= link_to @projeto.titulo, projeto_path(@projeto)%></i> &#8594;
   <i><%= @atividade.titulo %></i>
-  do projeto
-  <%= link_to @projeto.titulo, projeto_path(@projeto)%>
-</h3>
+</div>
 
-<h3>Lista de Materiais Motivadores</h3>
-<% if @materiais.count > 0 %>
-  <ul>
+<h2><%= @atividade.titulo %></h2>
+
+<h4>Lista de Materiais Motivadores</h4>
+<div class="post-content no-padding">
+  <% if @materiais.count > 0 %>
     <% @materiais.each do |m| %>
-      <li><%= link_to m.titulo, material_motivador_path(m) %></li>
+      <%= link_to m.titulo, material_motivador_path(m), class: 'link' %>
     <% end %>
-  </ul>
-<% else %>
-  <p>Esta atividade não possui materiais</p>
-<% end %>
-
+  <% else %>
+    <p>Esta atividade não possui materiais</p>
+  <% end %>
+</div>
 <% if current_professor? %>
   <%= link_to "Criar Material Motivador", new_material_motivador_path(:atividade_id => @atividade.id), class: 'create' %>
 <% end %>
