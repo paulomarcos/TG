@@ -1,0 +1,51 @@
+<% if current_aluno? %>
+  <h2>Suas atividades</h2>
+  <div class="post-content no-padding">
+    <% if not @projetos_aluno.first.nil? %>
+      <% @projetos_aluno.each do |p| %>
+        <% if not p.atividades.first.nil? %>
+          <h3><%= link_to p.titulo, projeto_path(p) %></h3>
+          <% p.atividades.each do |a| %>
+            <%= link_to a.titulo, atividade_path(a), class: 'link'%>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>Não há atividades encontradas</p>
+    <% end %>
+  </div>
+
+<% else %> <!-- current_professor? -->
+
+  <h2>Atividades dos seus projetos</h2>
+    <div class="post-content no-padding">
+      <% if not @projetos_plano.first.nil? %>
+        <% @projetos_plano.each do |p| %>
+          <% if not p.atividades.first.nil? %>
+            <h3><%= link_to p.titulo, projeto_path(p) %></h3>
+            <% p.atividades.each do |a| %>
+              <%= link_to a.titulo, atividade_path(a), class: 'link'%>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>Não há atividades encontradas</p>
+      <% end %>
+    </div>
+
+  <h2>Atividades dos seus projetos em andamento</h2>
+    <div class="post-content no-padding">
+      <% if not @projetos_execucao.first.nil? %>
+        <% @projetos_execucao.each do |p| %>
+          <% if not p.atividades.first.nil? %>
+            <h3><%= link_to p.titulo, projeto_path(p) %></h3>
+            <% p.atividades.each do |a| %>
+              <%= link_to a.titulo, atividade_path(a), class: 'link'%>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>Não há atividades encontradas</p>
+      <% end %>
+    </div>
+<% end %>
