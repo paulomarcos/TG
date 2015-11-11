@@ -1,5 +1,5 @@
 class AlunosController < ApplicationController
-  before_action :require_aluno, only: [:show, :index]
+  before_action :require_aluno, only: [:show, :index, :edit, :update]
 
   def index
     @alunos = Aluno.all
@@ -48,14 +48,6 @@ class AlunosController < ApplicationController
   end
 
     private
-
-      def own_aluno?(aluno)
-        if current_aluno.id != aluno.id
-          redirect_to :root, alert: "Sem permissão para acessar página"
-        end
-      end
-
-
       def aluno_params
         params.require(:aluno).permit(:nome, :identificador, :data_nascimento, :password, :password_confirmation)
       end

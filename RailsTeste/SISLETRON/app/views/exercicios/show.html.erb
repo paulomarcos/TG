@@ -18,8 +18,8 @@
     <div class="post-content">
       <%= @resposta.conteudo.html_safe %>
     </div>
-    <%= link_to 'Editar resposta', '#', class: 'create' %>
+    <%= link_to 'Editar resposta', edit_resposta_path(@resposta), class: 'create' %>
   <% end %>
 <% else %>
-  <%= link_to 'Editar exercício', '#', class: 'create' %>
+  <%= link_to 'Editar exercício', edit_exercicio_path(@exercicio), class: 'create' %>
 <% end %>

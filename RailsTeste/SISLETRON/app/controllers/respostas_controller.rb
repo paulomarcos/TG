@@ -1,5 +1,6 @@
 class RespostasController < ApplicationController
   before_action :authorize
+  before_action :require_aluno, only: [:create, :new, :update, :edit]
 
   def index
     @respostas = Resposta.all
@@ -9,6 +10,26 @@ class RespostasController < ApplicationController
     @resposta = Resposta.new()
     @exercicio_id = params[:exercicio_id]
     @exercicio = Exercicio.find(@exercicio_id)
+  end
+
+  def edit
+    @resposta = Resposta.find(params[:id])
+    aluno = Aluno.find(@resposta.aluno_id)
+    own_aluno?(aluno)
+    @exercicio = Exercicio.find(@resposta.exercicio_id)
+  end
+
+  def update
+    @resposta = Resposta.find(params[:id])
+    if @resposta.aluno_id != current_aluno.id
+      redirect_to :back, alert: "Você não tem autorização para editar esta resposta"
+    else
+      if  @resposta.update_attributes(resposta_params)
+        redirect_to exercicio_path(@resposta.exercicio_id)
+      else
+        render 'edit'
+      end
+    end
   end
 
   def create
@@ -32,7 +53,7 @@ class RespostasController < ApplicationController
           render new
         end
       else
-        redirect_to :back, alert: "Você não pode criar respostas para este material."
+        redirect_to :back, alert: "Você não pode criar respostas para esta material."
       end
     end
   end

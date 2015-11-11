@@ -1,5 +1,5 @@
 class ProfessorsController < ApplicationController
-  before_action :require_professor, only: [:show, :index]
+  before_action :require_professor, only: [:show, :index, :edit, :update]
 
   def index
     @professors = Professor.all

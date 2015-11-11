@@ -17,6 +17,14 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_aluno?
 
+
+  def own_aluno?(aluno)
+    if current_aluno.id != aluno.id
+      redirect_to :root, alert: "Sem permissão para acessar página"
+    end
+  end
+  helper_method :own_aluno?
+
   def current_professor
     @current_professor ||= Professor.find(session[:professor_id]) if session[:professor_id]
   end

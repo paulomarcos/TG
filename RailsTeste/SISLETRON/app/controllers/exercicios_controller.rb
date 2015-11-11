@@ -1,6 +1,6 @@
 class ExerciciosController < ApplicationController
   before_action :authorize
-  before_action :require_professor, only: [:create, :new]
+  before_action :require_professor, only: [:create, :new, :edit, :update]
 
   def index
     @exercicios = Exercicio.all
@@ -22,6 +22,39 @@ class ExerciciosController < ApplicationController
     end
   end
 
+  def edit
+    @exercicio = Exercicio.find(params[:id])
+
+    projeto_id = @exercicio.material_motivador.atividade.projeto_id
+    plano = Plano.where(projeto_id: projeto_id).pluck('professor_id')
+    execucao = Execucao.where(projeto_id: projeto_id).pluck('professor_id')
+
+    if plano.include?(current_professor.id) || execucao.include?(current_professor.id)
+      foo = @exercicio
+    else
+      redirect_to :back, alert: "Você não tem autorização para editar este exercício"
+    end
+
+  end
+
+  def update
+    @exercicio = Exercicio.find(params[:id])
+
+    projeto_id = @exercicio.material_motivador.atividade.projeto_id
+    plano = Plano.where(projeto_id: projeto_id).pluck('professor_id')
+    execucao = Execucao.where(projeto_id: projeto_id).pluck('professor_id')
+
+    if plano.include?(current_professor.id) || execucao.include?(current_professor.id)
+      if  @exercicio.update_attributes(exercicio_params)
+        redirect_to exercicio_path(@exercicio)
+      else
+        render 'edit'
+      end
+    else
+      redirect_to :back, alert: "Você não tem autorização para editar este exercício"
+    end
+  end
+
   def create
     @exercicio = Exercicio.new(exercicio_params)
     if exercicio_params[:enunciado].empty?
@@ -31,7 +64,6 @@ class ExerciciosController < ApplicationController
       material = MaterialMotivador.find(@material_motivador_id)
       atividade = Atividade.find(material.atividade_id)
       projeto_id = atividade.projeto_id
-      Projeto.find(projeto_id)
       plano = Plano.where(projeto_id: projeto_id).pluck('professor_id')
       execucao = Execucao.where(projeto_id: projeto_id).pluck('professor_id')
 

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/escolas' => 'escolas#index'
   get '/escolas/:id' => 'escolas#show', as: :escola
+  get '/exercicios/:id/edit' => 'exercicios#edit', as: :edit_exercicio
+  patch '/exercicios/:id' => 'exercicios#update'
 
   get '/exercicios' => 'exercicios#index'
   get '/exercicios/new' => 'exercicios#new'
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
 
   get '/respostas' => 'respostas#index'
   get '/respostas/new' => 'respostas#new'
+  get '/respostas/:id/edit' => 'respostas#edit', as: :edit_resposta
+  patch '/respostas/:id' => 'respostas#update'
 
   get '/turmas' => 'turmas#index'
   get '/turmas/:id' => 'turmas#show', as: :turma

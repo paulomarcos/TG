@@ -1,0 +1,14 @@
+<%= tinymce_assets %>
+
+<%= tinymce %>
+<div class="basic-grey content-filler">
+  <%= simple_form_for(@exercicio) do |f| %>
+    <h1>Editar exercício
+      <span></span>
+    </h1>
+    <%= f.text_area :enunciado, :class => "tinymce", :rows => 20, :cols => 20 %>
+    </br>
+    <%= hidden_field_tag(:material_motivador_id, params[:material_motivador_id]) %>
+      <%= f.submit "Editar" %>
+  <% end %>
+</div>
