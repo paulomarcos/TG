@@ -416,3 +416,15 @@ span.checkbox_container:hover{
   display: inline;
   vertical-align: -5px;
  }
+
+
+
+
+#errorExplanation{
+  color: #FF6300;
+  font-size: 10pt;
+}
+
+#errorExplanation > h2{
+  font-size: 11pt;
+}

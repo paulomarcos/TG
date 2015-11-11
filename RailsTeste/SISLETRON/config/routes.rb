@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/alunos' => 'alunos#index'
   get '/alunos/:id' => 'alunos#show', as: :aluno
+  get '/alunos/:id/edit' => 'alunos#edit', as: :edit_aluno
+  patch '/alunos/:id' => 'alunos#update'
   get '/atividades' => 'atividades#index'
   get '/atividades/new' => 'atividades#new'
   get '/atividades/:id' => 'atividades#show', as: :atividade
