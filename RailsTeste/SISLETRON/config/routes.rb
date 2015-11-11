@@ -5,24 +5,34 @@ Rails.application.routes.draw do
   get '/alunos/:id' => 'alunos#show', as: :aluno
   get '/alunos/:id/edit' => 'alunos#edit', as: :edit_aluno
   patch '/alunos/:id' => 'alunos#update'
+
   get '/atividades' => 'atividades#index'
   get '/atividades/new' => 'atividades#new'
   get '/atividades/:id' => 'atividades#show', as: :atividade
+
   get '/escolas' => 'escolas#index'
   get '/escolas/:id' => 'escolas#show', as: :escola
+
   get '/exercicios' => 'exercicios#index'
   get '/exercicios/new' => 'exercicios#new'
   get '/exercicios/:id' => 'exercicios#show', as: :exercicio
+
   get '/material_motivadors/' => 'material_motivadors#index'
   get '/material_motivadors/new' => 'material_motivadors#new'
   get '/material_motivadors/:id' => 'material_motivadors#show', as: :material_motivador
+
   get '/professors' => 'professors#index'
   get '/professors/:id' => 'professors#show', as: :professor
+  get '/professors/:id/edit' => 'professors#edit', as: :edit_professor
+  patch '/professors/:id' => 'professors#update'
+
   get '/projetos' => 'projetos#index'
   get '/projetos/new' => 'projetos#new'
   get '/projetos/:id' => 'projetos#show', as: :projeto
+
   get '/respostas' => 'respostas#index'
   get '/respostas/new' => 'respostas#new'
+
   get '/turmas' => 'turmas#index'
   get '/turmas/:id' => 'turmas#show', as: :turma
 

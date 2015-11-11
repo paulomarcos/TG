@@ -1,7 +1,8 @@
 class Professor < ActiveRecord::Base
   validates :identificador, presence: true, uniqueness: true
+  validates :nome, presence: true, :length => { minimum: 5, maximum: 40 }
   validates :password, :presence => true, :confirmation => true, :length => { minimum: 6 }
-  
+
   has_many :professor_turmas
   has_many :turmas, through: :professor_turmas
 
