@@ -1,6 +1,6 @@
 class AtividadesController < ApplicationController
   before_action :authorize
-  before_action :require_professor, only: [:create, :new]
+  before_action :require_professor, only: [:create, :new, :update, :create]
 
   def index
     if current_professor?
@@ -24,6 +24,39 @@ class AtividadesController < ApplicationController
     @atividade = Atividade.find(params[:id])
     @projeto = Projeto.find_by_id(@atividade.projeto_id)
     @materiais = @atividade.material_motivadors
+  end
+
+  def edit
+    @atividade = Atividade.find(params[:id])
+
+    projeto_id = @atividade.projeto_id
+    plano = Plano.where(projeto_id: projeto_id).pluck('professor_id')
+    execucao = Execucao.where(projeto_id: projeto_id).pluck('professor_id')
+
+    if plano.include?(current_professor.id) || execucao.include?(current_professor.id)
+      foo = @atividade
+    else
+      redirect_to :back, alert: "Você não tem autorização para editar esta atividade"
+    end
+
+  end
+
+  def update
+    @atividade = Atividade.find(params[:id])
+
+    projeto_id = @atividade.projeto_id
+    plano = Plano.where(projeto_id: projeto_id).pluck('professor_id')
+    execucao = Execucao.where(projeto_id: projeto_id).pluck('professor_id')
+
+    if plano.include?(current_professor.id) || execucao.include?(current_professor.id)
+      if  @atividade.update_attributes(atividade_params)
+        redirect_to atividade_path(@atividade)
+      else
+        render 'edit'
+      end
+    else
+      redirect_to :back, alert: "Você não tem autorização para editar esta atividade"
+    end
   end
 
   def create

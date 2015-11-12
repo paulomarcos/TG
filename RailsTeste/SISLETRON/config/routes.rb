@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/atividades' => 'atividades#index'
   get '/atividades/new' => 'atividades#new'
   get '/atividades/:id' => 'atividades#show', as: :atividade
+  get '/atividades/:id/edit' => 'atividades#edit', as: :edit_atividade
+  patch '/atividades/:id' => 'atividades#update'
 
   get '/escolas' => 'escolas#index'
   get '/escolas/:id' => 'escolas#show', as: :escola

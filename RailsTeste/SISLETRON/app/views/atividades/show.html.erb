@@ -5,6 +5,10 @@
 
 <h2><%= @atividade.titulo %></h2>
 
+<% if current_professor? %>
+  <%= link_to "Editar Atividade", edit_atividade_path(@atividade), class: 'create' %>
+<% end %>
+
 <h4>Lista de Materiais Motivadores</h4>
 <div class="post-content no-padding">
   <% if @materiais.count > 0 %>

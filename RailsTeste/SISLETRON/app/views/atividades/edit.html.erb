@@ -1,0 +1,10 @@
+<div class="basic-grey">
+  <%= simple_form_for(@atividade) do |f| %>
+    <h1>Editar atividade
+        <span>Preencha o formulário para editar esta atividade.</span>
+    </h1>
+    <span>Título: <%= f.text_field :titulo %></span>
+    <%= hidden_field_tag(:projeto_id, params[:projeto_id]) %>
+    <%= submit_tag "Editar" %>
+  <% end %>
+</div>
