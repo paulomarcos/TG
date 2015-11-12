@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/material_motivadors/' => 'material_motivadors#index'
   get '/material_motivadors/new' => 'material_motivadors#new'
   get '/material_motivadors/:id' => 'material_motivadors#show', as: :material_motivador
+  get '/material_motivadors/:id/edit' => 'material_motivadors#edit', as: :edit_material_motivadors
+  patch '/material_motivadors/:id' => 'material_motivadors#update'
 
   get '/professors' => 'professors#index'
   get '/professors/:id' => 'professors#show', as: :professor

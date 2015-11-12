@@ -5,7 +5,3 @@
     <%= link_to m.titulo, material_motivador_path(m), class: 'link' %>
   <% end %>
 </div>
-
-<% if current_professor? %>
-  <%= link_to 'Criar material', "material_motivadors/new", class: 'create'%>
-<% end %>

@@ -1,0 +1,15 @@
+<%= tinymce_assets %>
+
+<%= tinymce %>
+<div class="basic-grey content-filler">
+  <%= simple_form_for(@material_motivador) do |f| %>
+    <h1>Editar material motivador
+      <span></span>
+    </h1>
+    <span>Título: <%= f.text_field :titulo %> </span>
+    <%= f.text_area :conteudo, :class => "tinymce", :rows => 20, :cols => 120 %>
+    </br>
+    <%= hidden_field_tag(:atividade_id, params[:atividade_id]) %>
+      <%= f.submit "Editar" %>
+  <% end %>
+</div>

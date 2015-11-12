@@ -11,6 +11,7 @@
   <%= @material_motivador.conteudo.html_safe %>
 </div>
 
+<%= link_to 'Editar Material', edit_material_motivador_path(@material_motivador), class: 'create' %>
 
 <h3>Exercícios</h3>
 <% if !@exercicios.nil? %>
