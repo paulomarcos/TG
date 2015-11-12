@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   get '/projetos' => 'projetos#index'
   get '/projetos/new' => 'projetos#new'
   get '/projetos/:id' => 'projetos#show', as: :projeto
+  get '/projetos/:id/edit' => 'projetos#edit', as: :edit_projeto
+  patch '/projetos/:id' => 'projetos#update'
 
   get '/respostas' => 'respostas#index'
   get '/respostas/new' => 'respostas#new'

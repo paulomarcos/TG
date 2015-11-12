@@ -1,0 +1,21 @@
+<div class="basic-grey">
+  <%= simple_form_for(@projeto) do |f| %>
+    <h1>Editar projeto
+        <span>Preencha os campos abaixo para editar um projeto.</span>
+    </h1>
+    <span>Título: <%= f.text_field :titulo %></span>
+    <span>Descrição: <%= f.text_area :descricao%></span>
+
+    <h2>Conteúdos
+      <span>Selecione os conteúdos que serão usados no projeto</span>
+    </h2>
+    <%= f.collection_check_boxes(:conteudo_ids, Conteudo.all, :id, :titulo, :item_wrapper_class => 'checkbox_container') %>
+
+    <h2>Turma
+      <span>Selecione as turmas em que aplicará o projeto</span>
+    </h2>
+    <%= f.collection_check_boxes(:turma_ids, @turmas, :id, :descricao, :item_wrapper_class => 'checkbox_container') %>
+
+    <%= submit_tag "Editar" %>
+  <% end %>
+</div>

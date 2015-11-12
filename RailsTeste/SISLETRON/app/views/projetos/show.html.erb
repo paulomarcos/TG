@@ -41,3 +41,7 @@
 
 
 </div>
+
+<% if current_professor? %>
+  <%= link_to "Editar Projeto", edit_projeto_path(@projeto), class: 'create' %>
+<% end %>
