@@ -19,6 +19,8 @@ class ExerciciosController < ApplicationController
 
     if current_aluno?
       @resposta = Resposta.where(exercicio_id: @exercicio.id).where(aluno_id: current_aluno.id).first
+    else
+      @respostas = Resposta.where(exercicio_id: @exercicio.id)
     end
   end
 
@@ -81,6 +83,13 @@ class ExerciciosController < ApplicationController
         redirect_to :back, alert: "Você não pode criar exercicios para este material."
       end
     end
+  end
+
+  def destroy
+    @exercicio = Exercicio.find(params[:id])
+    material_motivador_id = @exercicio.material_motivador_id
+    @exercicio.destroy
+    redirect_to material_motivador_path(material_motivador_id), alert: "Exercício excluído com sucesso"
   end
 
   private

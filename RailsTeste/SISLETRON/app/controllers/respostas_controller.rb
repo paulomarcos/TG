@@ -1,15 +1,26 @@
 class RespostasController < ApplicationController
   before_action :authorize
-  before_action :require_aluno, only: [:create, :new, :update, :edit]
+  before_action :require_aluno, only: [:create, :new, :update, :edit, :index]
+  before_action :require_professor, only: [:show]
 
   def index
-    @respostas = Resposta.all
+    @respostas = Resposta.where(aluno_id: current_aluno.id)
   end
 
   def new
     @resposta = Resposta.new()
     @exercicio_id = params[:exercicio_id]
     @exercicio = Exercicio.find(@exercicio_id)
+  end
+
+  def show
+    @resposta = Resposta.find(params[:id])
+    @exercicio = @resposta.exercicio
+    @aluno = @resposta.aluno
+
+    @material_motivador = @exercicio.material_motivador
+    @atividade = @material_motivador.atividade
+    @projeto = @atividade.projeto
   end
 
   def edit

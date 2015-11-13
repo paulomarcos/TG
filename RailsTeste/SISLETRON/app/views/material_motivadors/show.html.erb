@@ -11,10 +11,12 @@
   <%= @material_motivador.conteudo.html_safe %>
 </div>
 
-<%= link_to 'Editar Material', edit_material_motivador_path(@material_motivador), class: 'create' %>
+<% if current_professor? %>
+  <%= link_to 'Editar Material', edit_material_motivador_path(@material_motivador), class: 'create' %>
+<% end %>
 
 <h3>Exercícios</h3>
-<% if !@exercicios.nil? %>
+<% if !@exercicios.first.nil? %>
   <% @exercicios.each do |e| %>
     <%= link_to exercicio_path(e), class: "exercicio"  do %>
       <span class="exercicio">

@@ -1,0 +1,15 @@
+<h2>Minhas respostas</h2>
+<% if !@respostas.first.nil? %>
+  <% @respostas.each do |r| %>
+    <%= link_to exercicio_path(r), class: "exercicio"  do %>
+      <% if not r.exercicio.nil?%>
+        <span class="exercicio">
+          <p class="texto">Exercício: <%= truncate_html(strip_tags(r.exercicio.enunciado), lengt: 140) %></p>
+          <p class="texto">Resposta: <%= truncate_html(strip_tags(r.conteudo), lengt: 140) %></p>
+        </span>
+      <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>Você ainda não respondeu nenhum exercício</p>
+<% end %>

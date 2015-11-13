@@ -40,6 +40,7 @@ Rails.application.routes.draw do
 
   get '/respostas' => 'respostas#index'
   get '/respostas/new' => 'respostas#new'
+  get '/respostas/:id' => 'respostas#show', as: :resposta
   get '/respostas/:id/edit' => 'respostas#edit', as: :edit_resposta
   patch '/respostas/:id' => 'respostas#update'
 
@@ -51,6 +52,9 @@ Rails.application.routes.draw do
   post 'material_motivadors' => 'material_motivadors#create'
   post 'projetos' => 'projetos#create'
   post 'respostas' => 'respostas#create'
+
+
+  delete 'exercicios' => 'exercicios#destroy'
 
 
   resources :projetos do

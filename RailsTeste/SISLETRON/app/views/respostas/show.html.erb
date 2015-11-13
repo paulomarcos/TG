@@ -1,0 +1,16 @@
+<div class="content-path">
+  <i><%= link_to @projeto.titulo, projeto_path(@projeto)%></i> &#8594;
+  <i><%= link_to @atividade.titulo, atividade_path(@atividade)%></i> &#8594;
+  <i><%= link_to @material_motivador.titulo, material_motivador_path(@material_motivador)%></i> &#8594;
+  <i>Resposta</i>
+</div>
+
+<h2 class="post-title">Exercício</h2>
+<div class="post-content">
+  <%= @exercicio.enunciado.html_safe %>
+</div>
+
+<h2 class="post-title">Resposta de <%= @aluno.nome %></h2>
+<div class="post-content">
+  <%= @resposta.conteudo.html_safe %>
+</div>

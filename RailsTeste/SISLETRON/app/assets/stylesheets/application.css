@@ -233,8 +233,8 @@ h3.project-score{
 }
 
 #alert, #notice{
-  background-color: #efefef;
-  border: 1px solid #e0e0e0;
+  background-color: white;
+  border: 1px solid orange;
   border-radius: 7px;
   text-align: center;
   padding: 5px;
