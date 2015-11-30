@@ -25,17 +25,18 @@
   <%= link_to 'Deletar exercício', @exercicio,
     :method => :delete, :data => {:confirm => "Tem certeza que deseja excluir este exercício?"} %>
 <% end %>
+<% if current_professor? %>
+  <h2>Respostas</h2>
 
-<h2>Respostas</h2>
-
-<% if not @respostas.nil? %>
-  <div class="post-content no-padding">
-    <% @respostas.each do |r| %>
-      <% if not r.aluno.nil? %>
-        <%= link_to r.aluno.turma.escola.nome+" - "+r.aluno.turma.ano+r.aluno.turma.turma+" - "+r.aluno.nome, resposta_path(r), class: 'link' %>
+  <% if not @respostas.nil? %>
+    <div class="post-content no-padding">
+      <% @respostas.each do |r| %>
+        <% if not r.aluno.nil? %>
+          <%= link_to r.aluno.turma.escola.nome+" - "+r.aluno.turma.ano+r.aluno.turma.turma+" - "+r.aluno.nome, resposta_path(r), class: 'link' %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-<% else %>
-  <p>Não há nenhuma resposta</p>
+    </div>
+  <% else %>
+    <p>Não há nenhuma resposta</p>
+  <% end %>
 <% end %>
