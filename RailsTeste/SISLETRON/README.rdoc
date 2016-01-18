@@ -1,27 +1,26 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The following README is provided only in Brazilian Portuguese.
 
-Things you may want to cover:
+Este repositório contém a implementação do trabalho de graduação do aluno Paulo Marcos, defendido em Dezembro de 2015.
+"Saliento que é possível encontrar bugs, falta de documentação e irregularidades no código devido ao pequeno tempo de implementação.
+Preferi usar o tempo que tive para deixar o sistema o mais completo possível em termos de usabilidade, em detrimento da solução
+dos problemas apresentados. Peço perdão por quaisquer confusões ou dificuldades encontradas."
 
-* Ruby version
+* Versão Ruby: ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-linux]
 
-* System dependencies
+* Passos de instalação:
 
-* Configuration
+  1- Instalar Ruby
+  2- Instalar Rails
+  3- Instalar servidor (postgresql)
+  4- Realizar git clone deste repositório
+  5- <tt>bundle install</tt>
+  6- <tt>bundle update</tt>
+  7- <tt>rake db:setup</tt>
+  8- <tt>rails server</tt>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* O documento que apresenta o sistema pode ser encontrado em SISLETRON/doc/tg.pdf
 
 
 Please feel free to use a different markup language if you do not plan to run
