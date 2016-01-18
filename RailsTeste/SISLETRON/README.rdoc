@@ -9,16 +9,16 @@ dos problemas apresentados. Peço perdão por quaisquer confusões ou dificuldad
 
 * Versão Ruby: ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-linux]
 
-* Passos de instalação:
+== Passos de instalação:
 
-  **1- Instalar Ruby
-  **2- Instalar Rails
-  **3- Instalar servidor (postgresql)
-  **4- Realizar git clone deste repositório
-  **5- <tt>bundle install</tt>
-  **6- <tt>bundle update</tt>
-  **7- <tt>rake db:setup</tt>
-  **8- <tt>rails server</tt>
+  * 1- Instalar Ruby
+  * 2- Instalar Rails
+  * 3- Instalar servidor (postgresql)
+  * 4- Realizar git clone deste repositório
+  * 5- <tt>bundle install</tt>
+  * 6- <tt>bundle update</tt>
+  * 7- <tt>rake db:setup</tt>
+  * 8- <tt>rails server</tt>
 
 * O documento que apresenta o sistema pode ser encontrado em SISLETRON/doc/tg.pdf
 
