@@ -15,9 +15,9 @@ dos problemas apresentados. Peço perdão por quaisquer confusões ou dificuldad
   * 2- Instalar Rails
   * 3- Instalar servidor (postgresql)
   * 4- Realizar git clone deste repositório
-  * 5- <tt>bundle install</tt>
-  * 6- <tt>bundle update</tt>
-  * 7- <tt>rake db:setup</tt>
-  * 8- <tt>rails server</tt>
+  * 5- bundle install
+  * 6- bundle update
+  * 7- rake db:setup
+  * 8- rails server
 
 * O documento que apresenta o sistema pode ser encontrado em SISLETRON/doc/tg.pdf
