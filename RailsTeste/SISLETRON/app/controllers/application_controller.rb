@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_aluno?
 
-
+  # Students can only edit their own profile
   def own_aluno?(aluno)
     if current_aluno.id != aluno.id
       redirect_to :root, alert: "Sem permissão para acessar página"

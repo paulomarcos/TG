@@ -14,7 +14,6 @@ class AtividadesController < ApplicationController
     end
   end
 
-
   def new
     @atividade = Atividade.new()
     @projeto_id = params[:projeto_id]

@@ -15,7 +15,7 @@ class AlunosController < ApplicationController
 
   def edit
     @aluno = Aluno.find(params[:id])
-    own_aluno?(@aluno)
+    own_aluno?(@aluno) # Students can only edit their own profile
   end
 
   def update
