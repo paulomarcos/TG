@@ -21,7 +21,3 @@ dos problemas apresentados. Peço perdão por quaisquer confusões ou dificuldad
   * 8- <tt>rails server</tt>
 
 * O documento que apresenta o sistema pode ser encontrado em SISLETRON/doc/tg.pdf
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
